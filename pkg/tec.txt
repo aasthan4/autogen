@@ -1,0 +1,4 @@
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{i}_{j} ,  E^{k}_{l}\]\\
+Answer :
+$$+1.0\{E^{ik}_{lj}\}\\$$
+$$-1.0\delta_{il}\{E^{k}_{j}\}\\$$

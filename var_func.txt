@@ -1,0 +1,3 @@
+mail functions outsiede : 
+multi_cont(st1,st2,co1,co2): does contraction of 1 string of operators with other string of operators. central function in any GWT
+
