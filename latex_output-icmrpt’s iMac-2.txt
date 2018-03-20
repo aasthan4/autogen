@@ -1,2 +1,0 @@
--0.5\sum_{i b j }<ij||kb>T^{c}_{i}T^{b}_{j}\\ 
-0.5\sum_{a b j }<jc||ba>T^{a}_{k}T^{b}_{j}\\ 
