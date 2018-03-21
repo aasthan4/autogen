@@ -34,7 +34,7 @@ def returnop2(full_con_term, output, new_list):
             new_output.append(item)
             down.append(tmp_4.name)
             new_list.append(tmp_4.name)
-    #make and object of the operator 
+    #make and object of the operator
     op_left=func_ewt.contractedobj('op', 1, 1)
     output=new_output
     op_left.upper=up
@@ -85,7 +85,7 @@ def returnop(full_con_term, output, new_list):
             down.append(tmp_4.name)
 	    new_list.append(tmp_4.name)
     '''
-    #make and object of the operator 
+    #make and object of the operator
     op_left=func_ewt.contractedobj('op', 1, 1)
     output=new_output
     output.extend(reversed(new_output1))
@@ -107,7 +107,7 @@ def returnop(full_con_term, output, new_list):
             new_output.append(item)
             up.append(tmp_4.name)
             new_list.append(tmp_4.name)
-    #make and object of the operator 
+    #make and object of the operator
     op_left=func_ewt.contractedobj('op', 1, 1)
     output=new_output
     op_left.upper=up

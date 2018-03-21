@@ -1,6 +1,6 @@
 '''
-Problems : 
-    1. the fully uncontrancted expression has wrong ordering in the lower half.  
+Problems :
+    1. the fully uncontrancted expression has wrong ordering in the lower half.
     2. look at fewt there is a problem with adding general states in line 298
 
 '''

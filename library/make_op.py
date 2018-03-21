@@ -1,4 +1,4 @@
-from pkg import func_ewt as func_ewt 
+from .. import func_ewt
 import class_large_operator as class1
 def count_list(dict_ind):
     a=0
@@ -29,26 +29,26 @@ def make_op(list_op, dict_ind):
 	    summ=[]
 	    coeff=[]
             fac=1.0
-	    
+	
 	    for pos in range(2*int(lop[1])):
 		if lop[pos+2] in ilist:
 		    print lop
 		    if pos<int(lop[1]):
 			opp.upper.append(chr(numi))
-            		dict_ind[chr(numi)]=lop 
+            		dict_ind[chr(numi)]=lop
 			numi=numi+1
 		    else:
 			opp.lower.append(chr(numi))
-            		dict_ind[chr(numi)]=lop 
+            		dict_ind[chr(numi)]=lop
 			numi=numi+1
 		elif lop[pos+2] in alist:
 		    if pos<int(lop[1]):
 			opp.upper.append(chr(numa))
-            		dict_ind[chr(numa)]=lop 
+            		dict_ind[chr(numa)]=lop
 			numa=numa+1
 		    else:
 			opp.lower.append(chr(numa))
-            		dict_ind[chr(numa)]=lop 
+            		dict_ind[chr(numa)]=lop
 			numa=numa+1
 		
 
@@ -56,7 +56,7 @@ def make_op(list_op, dict_ind):
 	    print 'lower',opp.lower
             stp=[[opp]]
             co=[[1,1]]
-    
+
             F = class1.large_operator(lop,fac, summ, coeff, stp, co)
 
 	
@@ -70,11 +70,11 @@ def make_op(list_op, dict_ind):
             opp=func_ewt.contractedobj('op', 1, 1)
             opp.upper=[chr(num)]
             opp.lower=[chr(num+1)]
-            dict_ind[chr(num)]=lop 
+            dict_ind[chr(num)]=lop
             dict_ind[chr(num+1)]=lop
             stp=[[opp]]
             co=[[1,1]]
-    
+
             F = class1.large_operator(lop,fac, summ, coeff, stp, co)
 
 
@@ -95,7 +95,7 @@ def make_op(list_op, dict_ind):
             dict_ind[chr(num+3)]=lop
             stp=[[opp]]
             co=[[1,1]]
-    
+
             V = class1.large_operator(lop,fac, summ, coeff, stp, co)
 
             list_main.append(V)
@@ -120,7 +120,7 @@ def make_op(list_op, dict_ind):
             co=[[1,1]]
             dict_ind[chr(num1)]=lop
             dict_ind[chr(num2)]=lop
-    
+
             X1 = class1.large_operator(lop,fac, summ, coeff, st, co)
             list_main.append(X1)
 
@@ -141,7 +141,7 @@ def make_op(list_op, dict_ind):
             co=[[1,1]]
             dict_ind[chr(num1)]=lop
             dict_ind[chr(num2)]=lop
-    
+
             X1 = class1.large_operator(lop,fac, summ, coeff, st, co)
             list_main.append(X1)
 
@@ -169,7 +169,7 @@ def make_op(list_op, dict_ind):
             dict_ind[chr(num1+1)]=lop
             dict_ind[chr(num2)]=lop
             dict_ind[chr(num2+1)]=lop
-            
+
             X2 = class1.large_operator(lop,fac, summ, coeff, st, co)
             list_main.append(X2)
 
@@ -194,7 +194,7 @@ def make_op(list_op, dict_ind):
             dict_ind[chr(num1+1)]=lop
             dict_ind[chr(num2)]=lop
             dict_ind[chr(num2+1)]=lop
-            
+
             X2 = class1.large_operator(lop,fac, summ, coeff, st, co)
             list_main.append(X2)
 
@@ -220,7 +220,7 @@ def make_op(list_op, dict_ind):
             dict_ind[chr(num1+1)]=lop
             dict_ind[chr(num2)]=lop
             dict_ind[chr(num2+1)]=lop
-            
+
             X2 = class1.large_operator(lop,fac, summ, coeff, st, co)
             list_main.append(X2)
 
@@ -271,7 +271,7 @@ def make_op(list_op, dict_ind):
 
             T2 = class1.large_operator(lop,fac, summ, coeff, stt, co)
             list_main.append(T2)
-        else : 
+        else :
             print "input error in making operators--------------------"
-    print 'from make op', lop[0],opp.upper, opp.lower 
+    print 'from make op', lop[0],opp.upper, opp.lower
     return list_main, dict_ind

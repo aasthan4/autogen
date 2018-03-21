@@ -101,7 +101,7 @@ def make_c(lim_cu, contracted, a, i, u, full, poss, f, store_for_repeat, full_po
             	            if operator.pos<item.pos and int(item.dag)!=int(operator.dag):
                 	        y.append(item)
     			#if (y): remember that empty strings are also included
-    	            poss.append(y) #list of list in dictionary order i.e 1st annhilation -> possible creation then 2nd ...   
+    	            poss.append(y) #list of list in dictionary order i.e 1st annhilation -> possible creation then 2nd ...
 		else:
     	            if operator.kind == 'pa' and operator.dag=='0':
         	        for item in a:
@@ -118,7 +118,7 @@ def make_c(lim_cu, contracted, a, i, u, full, poss, f, store_for_repeat, full_po
             	            if operator.pos<item.pos and int(item.dag)!=int(operator.dag) and operator.string!=item.string:
                 	        y.append(item)
     			#if (y): remember that empty strings are also included
-    	            poss.append(y) #list of list in dictionary order i.e 1st annhilation -> possible creation then 2nd ...   
+    	            poss.append(y) #list of list in dictionary order i.e 1st annhilation -> possible creation then 2nd ...
             '''
             no = len(full)/2
             for lim_cnt in range(0, no+1):
