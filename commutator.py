@@ -242,7 +242,7 @@ comm(comm(['V2'],['D2'],1,0),['D21'],1,1)
 '''
 
 # Only test case at the moment is this commutator being computed.
-comm(['V2'],['T1'],1,1)
+comm(['V2'],['T2'],1,1)
 
 '''
 comm(['X2'], comm(['V2'],['D1'],1,0),0,1)
