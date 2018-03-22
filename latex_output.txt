@@ -251,3 +251,14 @@
 0.5\sum_{k l c d i j a b r }D^{kl}_{cd}D^{ij}_{ab}<bd||ri>E^{klj}_{car}\\ 
 1.0\sum_{k l c d i j a b }D^{kl}_{cd}D^{ij}_{ab}<bd||ki>E^{lj}_{ca}\\ 
 -0.125\sum_{k l c d i j a b r }D^{kl}_{cd}D^{ij}_{ab}<ba||rk>E^{lij}_{cdr}\\ 
+-0.25\sum_{q r s a b i j }<jq||rs>T^{ab}_{ij}E^{qab}_{rsi}\\ 
+0.25\sum_{p q r a b i j }<pq||ra>T^{ab}_{ij}E^{pqb}_{rij}\\ 
+-0.125\sum_{r s a b i j }<ji||rs>T^{ab}_{ij}E^{ab}_{rs}\\ 
+1.0\sum_{q r a b i j }<jq||ra>T^{ab}_{ij}E^{qb}_{ri}\\ 
+-0.125\sum_{p q a b i j }<pq||ba>T^{ab}_{ij}E^{pq}_{ij}\\ 
+-0.5\sum_{r a b i j }<ji||ra>T^{ab}_{ij}E^{b}_{r}\\ 
+0.5\sum_{q a b i j }<jq||ba>T^{ab}_{ij}E^{q}_{i}\\ 
+0.25\sum_{a b i j }<ji||ba>T^{ab}_{ij}\\ 
+0.5\sum_{q r s a i }<iq||rs>T^{a}_{i}E^{qa}_{rs}\\ 
+0.5\sum_{p q r a i }<pq||ra>T^{a}_{i}E^{pq}_{ri}\\ 
+-1.0\sum_{q r a i }<iq||ra>T^{a}_{i}E^{q}_{r}\\ 
