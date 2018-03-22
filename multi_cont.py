@@ -7,9 +7,9 @@ Problems :
 import pkg.func_ewt as func_ewt
 import pkg.fewt as fewt
 import copy
-import pkg.library.make_op as make_op
-import pkg.library.print_op as p_op
-import pkg.library.full_con as full_con
+import library.make_op as make_op
+import library.print_op as p_op
+import library.full_con as full_con
 
 #make operators
 #X, V, T1 = make_op.make_op()

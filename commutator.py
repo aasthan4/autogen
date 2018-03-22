@@ -4,14 +4,14 @@
 #Problem incomplete : in compare level 3 : in case of T1T2VD1D2, both are not permuted together. they are separate. 
 #Possible bug : in compare function line 58, the range of coeff starts from 0, 0 can be an X type operator
 import copy
-import pkg.library.print_terms as pt
-import pkg.library.make_op as make_op
-import pkg.library.change_terms as ct 
-import pkg.library.class_term as class_terms
-import pkg.library as lib
-import pkg.library. compare as cpre
+import library.print_terms as pt
+import library.make_op as make_op
+import library.change_terms as ct 
+import library.class_term as class_terms
+import library as lib
+import library. compare as cpre
 import multi_cont
-import pkg.library.compare_envelope as cpre_env
+import library.compare_envelope as cpre_env
 removed=0
 '''
 class list_op_term:

@@ -1,4 +1,3 @@
-from  .. import func_ewt
 
 def print_op(st, co):
     for term,pre in zip(st,co):

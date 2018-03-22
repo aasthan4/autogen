@@ -6,10 +6,10 @@
 #note 6 : term.mapping() stores names of Large op in map_org and build_map_org stores operators 
 #immediate task : X1 T1 etc are not in one go so a i etc are threr twice. change that just pass dict
 import multi_cont
-import pkg.library as lib
-import pkg.library.change_terms as ct
-import pkg.library.print_terms as pt
-import pkg.library.compare as cpre
+import library as lib
+import library.change_terms as ct
+import library.print_terms as pt
+import library.compare as cpre
 
 #def driver(fc,list_char_op):
 def driver(fc):

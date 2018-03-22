@@ -1,4 +1,3 @@
-from .. import func_ewt
 
 def full_con(st, co):
     final_t=[]
