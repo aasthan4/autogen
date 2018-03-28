@@ -78,7 +78,7 @@ def arrange(cum_d, cum_n, cum_d_pos, cum_n_pos):
 		cum_n_pos[index]=item.pos
 		cum_n_pos[pos_item] = swap_p
 '''
-def cummulant(contracted, full_formed, new_list, cumulant_present): 
+def cummulant(contracted, full_formed, new_list, cumulant_present):
     if (contracted):
         for item1 in contracted:
             cum_nord = []
@@ -105,7 +105,7 @@ def cummulant(contracted, full_formed, new_list, cumulant_present):
                         cum_norn2.append(item2)
             #reverse non daggered from each string and print its name
             cum_norn1.reverse()
-            cum_norn2.reverse()             
+            cum_norn2.reverse()
             cum_norn.extend(cum_norn1)
             cum_norn.extend(cum_norn2)
             #reverse nondaggered from each string and reverse the whole to see the sign
@@ -113,11 +113,11 @@ def cummulant(contracted, full_formed, new_list, cumulant_present):
             cum_norn2_pos.reverse()
             cum_norn_pos.extend(cum_norn1_pos)
             cum_norn_pos.extend(cum_norn2_pos)
-            
+
             arrange(cum_nord, cum_norn, cum_nor_pos, cum_norn_pos)
             cum_norn_pos.reverse()
             cum_nor_pos.extend(cum_norn_pos)
-             
+
             #change operator to str
             cum_d_name = []
             cum_n_name = []
@@ -223,7 +223,7 @@ def list_of_excp(degree, i, j):
         if j_cum.upper[i]!=j_cum.lower[j]:
             excep.append('j')
             print "exception j"
-        
+
         if excep:
             print excep
         return excep
@@ -286,13 +286,13 @@ def addition_matrix(degree, exceptions):
     return const, matrix
 def cummulant(contracted, full_formed, new_list, con_spin_upper, con_spin_lower):
 
-    object_cumulant = []  
+    object_cumulant = []
     #print "entered cumulant for loop", contracted
-    
+
     const = 1.0
     if (contracted):
 
-        #before storing the spin, make the spin of all the contractions equal. 
+        #before storing the spin, make the spin of all the contractions equal.
         #This is needed to sum the small lambdas to capital lambdas
 
 
@@ -322,7 +322,7 @@ def cummulant(contracted, full_formed, new_list, con_spin_upper, con_spin_lower)
                         cum_norn2.append(item2)
             #reverse non daggered from each string and print its name
             cum_norn1.reverse()
-            cum_norn2.reverse()             
+            cum_norn2.reverse()
             cum_norn.extend(cum_norn1)
             cum_norn.extend(cum_norn2)
             #reverse nondaggered from each string and reverse the whole to see the sign
@@ -330,13 +330,13 @@ def cummulant(contracted, full_formed, new_list, con_spin_upper, con_spin_lower)
             cum_norn2_pos.reverse()
             cum_norn_pos.extend(cum_norn1_pos)
             cum_norn_pos.extend(cum_norn2_pos)
-            
+
             arrange(cum_nord, cum_norn, cum_nor_pos, cum_norn_pos)
             cum_norn_pos.reverse()
             cum_nor_pos.extend(cum_norn_pos)
 
 
-	    
+	
 	    #make matrix of contraction of cummulant
 	    cum_spin=matrix_con()
             cum_d_spin = []
@@ -345,13 +345,13 @@ def cummulant(contracted, full_formed, new_list, con_spin_upper, con_spin_lower)
 	    #print "Inside cumulant ------trying to make the object\n"
 
 
-    
+
             for item in cum_nord:
                     cum_d_spin.append(item.spin)
             for item in cum_norn:
                     cum_n_spin.append(item.spin)
             #change the spin of the operators which are contracted already
-            
+
             for i in range(len(cum_d_spin)):
                 #print "in the loop of spin correction", con_spin_upper, con_spin_lower,"\n"
                 for j in range(len(con_spin_lower)):
@@ -364,12 +364,12 @@ def cummulant(contracted, full_formed, new_list, con_spin_upper, con_spin_lower)
                     if cum_n_spin[i] == con_spin_upper[j] :
                         #print "item found----", cum_n_spin[i], con_spin_upper[j]
                         cum_n_spin[i] = min(con_spin_lower[j], con_spin_upper[j])
-            
+
             cum_spin.upper = cum_d_spin
 	    cum_spin.lower = cum_n_spin
 
 	    #print "Here is the cumulant spin list", cum_spin.upper, cum_spin.lower
-            exceptions = [] #the list of the terms that do not follow the condition of the 
+            exceptions = [] #the list of the terms that do not follow the condition of the
 	    #conditions for the degree of cummulant
 	    degree_cum=len(cum_spin.upper)
 	    #store the terms whose summition is not required: small lambdas [01][10] kind of
@@ -379,7 +379,7 @@ def cummulant(contracted, full_formed, new_list, con_spin_upper, con_spin_lower)
 
                         #print "There is an exception generated in cumulant spin :", cum_spin.lower, cum_spin.upper
 			exceptions.extend(list_of_excp(degree_cum, i, j))
-             
+
 	    #do the addition matrix
 
             #print "These are the spin of the cumulant ----------", cum_spin.lower, cum_spin.upper
@@ -391,7 +391,7 @@ def cummulant(contracted, full_formed, new_list, con_spin_upper, con_spin_lower)
 	    try_full_con1.upper = cum_nord
 	    try_full_con1.lower = cum_norn
 	    #if there is an anti term in the lambda:
-            
+
             if value_mat and value_mat[1]!=0:
 		try_full_con1.anti=1
             #store the matrix in the contracted object
@@ -442,7 +442,7 @@ def cummulant(contracted, full_formed, new_list, con_spin_upper, con_spin_lower)
             #    sign=sign*(-1)
             full_formed.extend(cum_nor_pos)
     return const, object_cumulant
-	    
+	
 def normal_order(full, output, output_pos, full_formed):
     for item1 in full:
         if item1.dag=='1' and item1.string == 1:
@@ -502,14 +502,14 @@ def write_normal_order(new_list, output):
             new_list.append(tmp_4)
     new_list.append('}_{')
     for item in reversed(output):
-	#remember here the 1st string comes first as in writig in E has different rules than straight 
+	#remember here the 1st string comes first as in writig in E has different rules than straight
         if item.dag=='0' and item.string==1:
 	    #print "item name is ", item.name
             tmp_4 = item.name
 	    new_list.append(tmp_4)
     for item in reversed(output) :
         if ( item.dag=='0') and item.string ==2:
-	    
+	
 	    #print "item name is ", item.name
             tmp_4 = item.name
 	    new_list.append(tmp_4)
@@ -599,7 +599,7 @@ def loop_present(spin_list_upper, spin_list_lower, loop_start, counter):
 
 def make_operators_single(string1, string2, str_no, p):
     overall=deque([])
-    
+
 
     for item in string1:
         if item>='i' and item<='n':
@@ -619,7 +619,7 @@ def make_operators_single(string1, string2, str_no, p):
 	    x=operator('ge', '1', p+1, item, str_no, -1, 0)
 	    overall.append(x)
 	    p+=1
-    
+
     for item in reversed(string2):
         if item>='i' and item<='n':
 	    x=operator('ho', '0', p+1, item, str_no, -1, 0)
@@ -734,7 +734,7 @@ def evaluate(full_con, const_con, gamma_sin, eta_sin, lambda2, lambda3=None):
 
                     lower_mat = full_con[i][j].lower
                     val_tmp += multiply_cum_matrix(tmp_mat, full_con[i][j].matrix)
-                    
+
 		val = val*val_tmp
 	#print 'in the evaluate per term loop', val_expr, " + ", val, const_con[i][0], const_con[i][1]
 	val_expr += val*const_con[i][0]*const_con[i][1]

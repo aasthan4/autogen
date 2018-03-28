@@ -4,11 +4,11 @@ import class_term
 import print_op
 import copy
 def change_terms1(a, b, fac,dict_ind, list_op_used):
-    
+
     sum_ind=[]
     coeff=[]
     list_terms=[]
-    
+
     for op in list_op_used:
         fac=op.fac*fac
         sum_ind.extend(op.sum_ind)
@@ -47,4 +47,4 @@ def change_terms1(a, b, fac,dict_ind, list_op_used):
         list_terms.append(x)
 	
     return list_terms
-        
+

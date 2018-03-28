@@ -1,14 +1,14 @@
 import copy
 import class_term
-import functions 
-from pkg import parity as parity
+import functions
+import parity
 class ind(object):
     def __init__(self, name, seen, parent):
         self.name = name
         self.seen=seen
         self.parent=parent
         self.pair=self
-        
+
 
 def unsee(coeff):
     for c1 in coeff:
@@ -38,11 +38,11 @@ def swap(c1):
     c[3]=tmp
 
 def match(term1,term2,i1,i2):
-    #same type:if not dummy, samename: if dummy ok 
+    #same type:if not dummy, samename: if dummy ok
     if term1.type(i1.name)==term2.type(i2.name):
         if not term1.is_dummy(i1.name) and not term2.is_dummy(i2.name) and i1.name==i2.name:
             #they are same move forward
-       
+
             return 1
             #print 'non dummy match'
         elif term1.is_dummy(i1.name) and term2.is_dummy(i2.name):
@@ -57,7 +57,7 @@ def match(term1,term2,i1,i2):
 def pick(coeff1, coeff2):
     #print 'length of coeff1',len(coeff1)
     for c1 in reversed(range(0,len(coeff1))):
-        ''' 
+        '''
         print 'in pick',len(coeff1[c1]), len(coeff2[c1]), coeff1[c1][0].seen,coeff1[c1][1].seen,
         if len(coeff1[c1])==4:
             print coeff1[c1][2].seen,coeff1[c1][3].seen
@@ -83,8 +83,8 @@ def pick(coeff1, coeff2):
 	    for i in range((len(coeff1[c1])/2)-1,len(coeff1[c1])):
 		if coeff1[c1][i].seen==0:
 
-		    coeff1[c1][i].seen==1 
-		    coeff2[c1][i].seen==1 
+		    coeff1[c1][i].seen==1
+		    coeff2[c1][i].seen==1
 		    return c1, coeff1[c1][i], coeff2[c1][i]
     print "something is wrong in picking, see compare function line 48 file in library"
     return -1,0,0
@@ -133,7 +133,7 @@ def juggle(term,pos):
 
 
 def level1(term1,term2):
-    #    Level 1 : same operators (redundant ) and same number of 
+    #    Level 1 : same operators (redundant ) and same number of
     #contractions made (E()() also of the same size)
     if len(term1.coeff_list)!=len(term2.coeff_list):
         return 0
@@ -153,7 +153,7 @@ def level2(term1,term2):
     #type and count of dummy of each type is the same in each coeff
     #just to reduce computaitons
     #Algorithm --
-    # 
+    #
     for c1,t1 in zip(term1.coeff_list, term2.map_org):
         matched=0
         for c2,t2 in zip(term2.coeff_list, term2.map_org):
@@ -195,7 +195,7 @@ def heapit(a, size, n,ret):
             swap(a,0,size-1)
         else:
             swap(a,i,size-1)
-                
+
 
     return ret
 
@@ -219,7 +219,7 @@ def level3(term1,term2):
     if len(permute)==1:
         after_permute=[after_permute]
     #print 'after permute ', after_permute
-    
+
     for termx in after_permute:
         tmp_term=[]
         i=0
@@ -246,7 +246,7 @@ def level3(term1,term2):
     if len(permute)==1:
         after_permute=[after_permute]
     #print 'after permute ', after_permute
-    
+
     for termx in after_permute:
         tmp_term=[]
         i=0
@@ -258,7 +258,7 @@ def level3(term1,term2):
                 i=i+1
 	if len(term2.coeff_list)!=len(term2.map_org):
        	    tmp_term.append(term2.coeff_list[-1])#adding the operator coeff----
-       
+
         x=class_term.term(+1,copy.deepcopy(term2.sum_list), tmp_term, copy.deepcopy(term2.large_op_list),copy.deepcopy(term2.st),copy.deepcopy(term2.co))
         final_terms.append(x)
 
@@ -266,9 +266,9 @@ def level3(term1,term2):
 
 #Algo : all possible terms through permutations of a 4index coefficient etc
 # are produced. so there will be many forms of the same term in final_terms
-#Pitfall : the same terms will also be present when we use jiggle. Jiggle produces 
-# all permutations of the index inclusing the same index. so a 4 index coeff will 
-# lead to 5 terms instead of 4. 1 and 2 will be the same. 
+#Pitfall : the same terms will also be present when we use jiggle. Jiggle produces
+# all permutations of the index inclusing the same index. so a 4 index coeff will
+# lead to 5 terms instead of 4. 1 and 2 will be the same.
 def level4(term1, term2, final_terms):
     #produce all possibilities of each element coeffcient
     tmp_terms1=[]
@@ -281,7 +281,7 @@ def level4(term1, term2, final_terms):
             final_terms.extend(tmp_terms1)
             tmp_terms1=[]
 
-    
+
 
 def go_find(term1,term2,coeff1,coeff2,i1,i2):
     if match(term1,term2,i1,i2):
@@ -316,7 +316,7 @@ def go_forward(term1,term2,coeff1,coeff2,i1,i2):
     if match(term1,term2,i1,i2):
         i1=i1.pair
         i2=i2.pair
-	#print 'in go forward going to find ',i1.name, i2.name 
+	#print 'in go forward going to find ',i1.name, i2.name
         if i1.seen==0:
             i1.seen=1
         else:
@@ -355,17 +355,17 @@ def arrowwork(term1,term2,coeff1, coeff2):
             #print 'not finding'
             return 0
     return 1
-    
 
-       
+
+
 
 def level5(term1, term2, final_terms):
     #map_org becomes immaterial for t2 terms
 
-    #---Algorithm - 
+    #---Algorithm -
     #
     #
-    #build alterntive terms because of antisymmetry condition of 4 indeces operators. 
+    #build alterntive terms because of antisymmetry condition of 4 indeces operators.
     tmp1=[]
     tmp2=[]
     #build class ind
@@ -487,10 +487,10 @@ def compare(term1, term2):
         #print len(final_terms)
         #1.include the sign in the face
     if flag!=0:
-        #2.return not only 1 but the sign of the face as well. 
+        #2.return not only 1 but the sign of the face as well.
         flag=level5(term1,term2, final_terms)
 	#print 'flag level 5 :', flag
         #print len(final_terms)
     final_terms=[]
     return flag
-        
+
