@@ -1,4 +1,4 @@
-from .. import func_ewt
+from pkg import func_ewt 
 import class_large_operator as class1
 def count_list(dict_ind):
     a=0

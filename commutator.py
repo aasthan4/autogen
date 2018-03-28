@@ -166,8 +166,6 @@ def comm(a,b,on,last):
     print 'second term'
     lib.print_op.print_op(st2,co2)
     print 'end'
-<<<<<<< HEAD
-    
      
     if last!=0: 
     	st1,co1=lib.full_con.full_con(st1,co1)    
@@ -180,19 +178,6 @@ def comm(a,b,on,last):
     
     '''
        
-=======
-
-    '''
-    if last!=0:
-    	st1,co1=lib.full_con.full_con(st1,co1)
-    	if on==1:
-    	    st2,co2=lib.full_con.full_con(st2,co2)
-    '''
-    if last!=0:
-	lib.print_op.print_op(st1,co1)
-
-
->>>>>>> 6b87510dbb389c2c0ffa8f15f06a885abab529f9
     if last!=0:
 	fc=last
     #make terms of st and co and list of terms

@@ -1,5 +1,5 @@
 def parity(A,B):
-"""Relative parity between two lists
+    """Relative parity between two lists
 
 Parameters
 ----------
@@ -15,20 +15,20 @@ parity : integer
 
 Examples
 --------
->>> relative_parity( [0,1], [0,1] )
+#>>> relative_parity( [0,1], [0,1] )
 0
->>> relative_parity( [0,1], [1,0] )
+#>>> relative_parity( [0,1], [1,0] )
 1
->>> relative_parity( [0,1,2], [0,1,2] )
+#>>> relative_parity( [0,1,2], [0,1,2] )
 0
->>> relative_parity( [0,1,2], [0,2,1] )
+#>>> relative_parity( [0,1,2], [0,2,1] )
 1
->>> relative_parity( ['A','B','C'], ['A','B','C'] )
+#>>> relative_parity( ['A','B','C'], ['A','B','C'] )
 0
->>> relative_parity( ['A','B','C'], ['A','C','B'] )
+#>>> relative_parity( ['A','B','C'], ['A','C','B'] )
 1
 
-"""
+    """
 
     if len(A) != len(B): raise ValueError("B is not a permutation of A")
 
@@ -47,7 +47,7 @@ Examples
 
 
 def permutation_parity(perm, check_input=True):
-"""Parity of a permutation of the integers
+    """Parity of a permutation of the integers
 
 Parameters
 ----------
@@ -80,7 +80,7 @@ Examples
 >>> permutation_parity( [0,1,3,2] )
 1
 
-"""
+    """
 
     n = len(perm)
     if check_input:
