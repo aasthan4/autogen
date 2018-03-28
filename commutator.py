@@ -167,16 +167,18 @@ def comm(a,b,on,last):
     lib.print_op.print_op(st2,co2)
     print 'end'
     
-    ''' 
+     
     if last!=0: 
     	st1,co1=lib.full_con.full_con(st1,co1)    
     	if on==1:
     	    st2,co2=lib.full_con.full_con(st2,co2)  
+    
     '''
     if last!=0:
 	lib.print_op.print_op(st1,co1)
     
-    
+    '''
+       
     if last!=0:
 	fc=last
     #make terms of st and co and list of terms
@@ -199,7 +201,7 @@ def comm(a,b,on,last):
     print 'end', len(list_terms)
     #if last!=0:
 
-    cpre_env.compare_envelope(list_terms, fc)    
+    cpre_env.compare_envelope(list_terms, fc, last)    
     '''
     #compare terms based on 5 levels of check all in cpre.compare()
     for i in range(len(list_terms)):
@@ -227,23 +229,20 @@ def comm(a,b,on,last):
 
 
 
-
+#'''
+comm(['X1'],comm(comm(['V2'],['T1'],1,0),['T11'],1,0),0,1)
+comm(['X1'],comm(comm(['V2'],['D1'],1,0),['T11'],1,0),0,1)
+comm(['X1'],comm(comm(['V2'],['T1'],1,0),['D11'],1,0),0,1)
+comm(['X1'],comm(comm(['V2'],['D1'],1,0),['D11'],1,0),0,1)
+#'''
 '''
-comm(['X2'],comm(comm(['V2'],['T2'],1,0),['T11'],1,0),0,1)
-comm(['X2'],comm(comm(['V2'],['D1'],1,0),['T21'],1,0),0,1)
-comm(['X2'],comm(comm(['V2'],['T2'],1,0),['D11'],1,0),0,1)
-comm(['X2'],comm(comm(['V2'],['D2'],1,0),['D11'],1,0),0,1)
+comm(comm(['V2'],['T1'],1,0),['T11'],1,1)
+comm(comm(['V2'],['D1'],1,0),['T11'],1,1)
+comm(comm(['V2'],['T1'],1,0),['D11'],1,1)
+comm(comm(['V2'],['D1'],1,0),['D11'],1,1)
 '''
-'''
-comm(comm(['V2'],['T2'],1,0),['T21'],1,1)
-comm(comm(['V2'],['D2'],1,0),['T21'],1,1)
-comm(comm(['V2'],['T2'],1,0),['D21'],1,1)
-comm(comm(['V2'],['D2'],1,0),['D21'],1,1)
-'''
-
 # Only test case at the moment is this commutator being computed.
-comm(['V2'],['T2'],1,1)
-
+#comm(['V2'],['T2'],1,1)
 '''
 comm(['X2'], comm(['V2'],['D1'],1,0),0,1)
 

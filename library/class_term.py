@@ -213,25 +213,27 @@ class term(object):
                 f.write(item+' ')
             f.write("}")
         for i in range(0,len(self.map_org)):
-            if self.map_org[i].name[0]!='V':
+            if self.map_org[i].name[0]!='V' and self.map_org[i].name[0]!='X':
                 f.write(self.map_org[i].name[0])
                 f.write("^{")
-            else:
+
+            elif self.map_org[i].name[0]=='V':
                 f.write("<")
 
             for it1 in range(0,len(self.coeff_list[i])/2):
                 f.write(self.coeff_list[i][it1])
                 
-            if self.map_org[i].name[0]!='V':
+
+            if self.map_org[i].name[0]!='V' and self.map_org[i].name[0]!='X':
                 f.write("}_{")
-            else :
+            elif self.map_org[i].name[0]=='V':
                 f.write("||")
 
             for it2 in range(len(self.coeff_list[i])/2, len(self.coeff_list[i])):
                 f.write(self.coeff_list[i][it2])
-            if self.map_org[i].name[0]!='V':
+            if self.map_org[i].name[0]!='V' and self.map_org[i].name[0]!='X':
                 f.write("}")
-            else:
+            elif self.map_org[i].name[0]=='V':
                 f.write(">")
 	if len(self.coeff_list)==len(self.map_org)+1:
 	    f.write("E^{")

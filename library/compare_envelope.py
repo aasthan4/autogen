@@ -1,7 +1,7 @@
 import compare as cpre
 import print_terms as pt
 
-def compare_envelope(list_terms, fc):
+def compare_envelope(list_terms, fc,last):
     #compare terms based on 5 levels of check all in cpre.compare()
     #for i in range(1):
 	#for j in range(1,2):
@@ -21,15 +21,17 @@ def compare_envelope(list_terms, fc):
     for item in list_terms:
         if item.fac!=0.0:
             item.fac=item.fac*fc
-
+    
     #print terms properly
-    pt.print_terms(list_terms)
-    #delete operator coefficient in self.coeff_list
-    for term in list_terms:
-	if len(term.coeff_list)==len(term.map_org)+1:
-	    #print 'deleting operator coeff'
-	    term.coeff_list.pop()
-	elif len(term.coeff_list)>len(term.map_org):
-	    print ' in compare envolope terminal error'
-	    sys.exit(0)
+    if last!=0:
+	    
+        pt.print_terms(list_terms)
+        #delete operator coefficient in self.coeff_list
+        for term in list_terms:
+	    if len(term.coeff_list)==len(term.map_org)+1:
+	        #print 'deleting operator coeff'
+	        term.coeff_list.pop()
+	    elif len(term.coeff_list)>len(term.map_org):
+	        print ' in compare envolope terminal error'
+	        sys.exit(0)
     return list_terms
