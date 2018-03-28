@@ -28,7 +28,7 @@ def express():
     driv2.driver(['X2','F1','T1','T2','T21'])
     driv2.driver(['X2','F1','T2','T21','T22'])
     '''
-    
+
     print 'X1 V2'
     driv2.driver(1.0,['X1','V2'])
     print 'X1 V2 T1'
@@ -45,7 +45,7 @@ def express():
     driv2.driver(1.0/6.0,['X1','V2','T1','T11','T12'])
 
     print 'X2 Terms'
-    
+
 
     driv2.driver(1.0,['X2','F1'])
     driv2.driver(1.0,['X2','F1', 'T1'])

@@ -4,7 +4,7 @@ class ind(object):
         self.seen=seen
         self.parent=parent
         self.pair=self
-        
+
 
 def unsee(coeff):
     for c1 in coeff:
@@ -60,7 +60,7 @@ def level1(term1,term2):
     return 1
 
 def level2(term1,term2):
-    #position of non dummy indeces is the same, if not, exchange 
+    #position of non dummy indeces is the same, if not, exchange
     for ind in range(len(term1.coeff_list)):
         flag1 =1
         for item in term1.coeff_list[ind]:
@@ -109,7 +109,7 @@ def level3(term1,term2):
             return 0
 
 def level4(term1, term2):
-    #build class objects, find pair and follow pair till everything is seen 
+    #build class objects, find pair and follow pair till everything is seen
     #build objects
     tmp1=[]
     tmp2=[]
@@ -159,7 +159,7 @@ def level4(term1, term2):
             also pick the coeff number
             i1.seen=1
             i2.seen=1
-        else:    
+        else:
         #go to its pair and check on the other term too
         i1,i2=i1.pair,i2.pair
         i1.seen=1
@@ -186,10 +186,10 @@ def level4(term1, term2):
                 #switch the i's in the old coeff number and check again
                 flag1==1
 
-        #if match for ij not found, use another pick else us the same 
+        #if match for ij not found, use another pick else us the same
         #if not match swap and check, if match good else return no
         #if all are seen good else repeat
-    
+
 def compare(term1, term2):
     flag=1
 
@@ -205,4 +205,4 @@ def compare(term1, term2):
         #flag=level1(term1,temr2)
 
     return flag
-        
+

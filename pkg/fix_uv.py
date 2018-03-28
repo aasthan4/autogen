@@ -55,16 +55,16 @@ def fix_con(op_no, cnt, lim_cnt, t_list, matched, contracted, contracted_l, cont
 	full_con_term = []	
 	#const_con = []
 	#const_of_expression is the constant in case of a GWT
-	const_of_expression = 1.0 
+	const_of_expression = 1.0
 	const_of_cumulant = 1.0	
 	#lists declaration for loop factor check : spin_list_upper, spin_list_lower
 
 	spin_list_upper=deque([])
 	spin_list_lower=deque([])
 
-	output_pos = [] #stores the actual string 
-	output_name = deque([]) #stores the actual string 
-	output_dag = deque([]) #stores the actual string 
+	output_pos = [] #stores the actual string
+	output_name = deque([]) #stores the actual string
+	output_dag = deque([]) #stores the actual string
 	main_list = [] #stores the main list positions
 	#make the main_list positions
 	if not i_c :
@@ -80,10 +80,10 @@ def fix_con(op_no, cnt, lim_cnt, t_list, matched, contracted, contracted_l, cont
 	for index in range(len(contracted_l)):
 	    output.append(contracted_l[index])
 	    output.append(contracted_r[index])
-	    #cross contraction have a 1/2 factor due to Ms summing 
+	    #cross contraction have a 1/2 factor due to Ms summing
 	    if (contracted_l[index].spin != contracted_r[index].spin and contracted_l[index].kind=='ac'):
 		const_of_expression=const_of_expression*(1.0/2.0)
-	    #!!!!!make the spin change of the operators here. Think 
+	    #!!!!!make the spin change of the operators here. Think
 	    #print const_of_expression, contracted_l[index].spin, contracted_r[index].spin
 	flag=0
 	#append all the operators that are not contracted
@@ -111,8 +111,8 @@ def fix_con(op_no, cnt, lim_cnt, t_list, matched, contracted, contracted_l, cont
 		    #print "In the spin formation dag else case : spin :", tmp_1.dag, tmp_1.spin, tmp_2.dag, tmp_2.spin
 		    spin_list_upper.append(tmp_2.pos2)
 		    spin_list_lower.append(tmp_1.pos2)
-		#print "spin list u check : it should have all contracted ", spin_list_upper, lim_cnt 
-		#print "spin list l check : it should have all contracted ", spin_list_lower 
+		#print "spin list u check : it should have all contracted ", spin_list_upper, lim_cnt
+		#print "spin list l check : it should have all contracted ", spin_list_lower
 		
 
 		#print "before spin change ", full_formed, full_pos, tmp_1.spin
@@ -152,7 +152,7 @@ def fix_con(op_no, cnt, lim_cnt, t_list, matched, contracted, contracted_l, cont
 		full_con_term.append(try_full_con)#full contracted product
 
 		#print "to full_con_term -----------", full_con_term
-	    
+	
 	    #formed cumulants being appended in new_list------------------------
 	    object_cumulant = []
 	    #print " before object_cumulant -------- ", object_cumulant
@@ -177,7 +177,7 @@ def fix_con(op_no, cnt, lim_cnt, t_list, matched, contracted, contracted_l, cont
 
             #print output
             if output:
-                output1=returnop.returnop(full_con_term, output, new_list) 
+                output1=returnop.returnop(full_con_term, output, new_list)
             #print output
 	    #append all the normal ordered operators not contracted	
 	    for item in output:
@@ -195,13 +195,13 @@ def fix_con(op_no, cnt, lim_cnt, t_list, matched, contracted, contracted_l, cont
 	if (parity.parity(full_formed, full_pos)):
 		sign=sign*(-1)
         #if not output :
-        #print sign 
+        #print sign
 	#make the fully contracted terms in full_con and const with sign in const_con
         ###there are terms in output which need to be made into an object and added to full_con_term
 
 	#if output:
 	#    func.write_normal_order(new_list, output)
-        #print "here for check", output 
+        #print "here for check", output
         #adds uncontracted operator in new_list(printing) and full_con for later use
 
 
@@ -236,8 +236,8 @@ def fix_con(op_no, cnt, lim_cnt, t_list, matched, contracted, contracted_l, cont
 	const_of_expression = 1.0	
 	main_list = []#used for the original string
 	output_pos = []
-	full_formed = [] #this stores the 
-	contracted_l = []#used to store the left part of a contracted string 
+	full_formed = [] #this stores the
+	contracted_l = []#used to store the left part of a contracted string
 	contracted_r = []
 	new_list = []
 	if not i_c: #when the string is 1st part of a commutator

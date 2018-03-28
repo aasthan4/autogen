@@ -43,7 +43,7 @@ def eq8(list1,list2,t1,t2):
     elif tmp1%2==1:
         return -1.0
 def eq821(list1, list2, t1, t2):
-    
+
     if list1[2]==list2[0] or eq(list1[2],list2[0],t1,t2):
         if list1[3]==list2[1] or eq(list1[3],list2[1],t1,t2):
             if list1[0]==list2[2] or eq(list1[0],list2[2],t1,t2):
@@ -87,7 +87,7 @@ def eq821(list1, list2, t1, t2):
                 if list1[2]==list2[3] or eq(list1[2],list2[3],t1,t2):
                     print "case4"
                     return -1.0
-     
+
     return 0.0
 def eq81(list1, list2, t1, t2):
     if list1[0]==list2[0] or eq(list1[0],list2[0],t1,t2):

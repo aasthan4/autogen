@@ -15,29 +15,29 @@ class term(object):
             for op in term:
                 if op.kind=='d':
                     if op.upper[0].name>='p' and op.upper[0].name<='s':
-                        #find name in coeff 
-                        self.coeff_list=[[w.replace(op.upper[0].name, op.lower[0].name) for w in l] for l in self.coeff_list]  
+                        #find name in coeff
+                        self.coeff_list=[[w.replace(op.upper[0].name, op.lower[0].name) for w in l] for l in self.coeff_list]
                         self.sum_list.remove(op.upper[0].name)
 
                     elif op.lower[0].name>='p' and op.lower[0].name<='s':
 
 
-                        self.coeff_list=[[w.replace(op.lower[0].name, op.upper[0].name) for w in l] for l in self.coeff_list]  
+                        self.coeff_list=[[w.replace(op.lower[0].name, op.upper[0].name) for w in l] for l in self.coeff_list]
                         self.sum_list.remove(op.lower[0].name)
                     elif (op.upper[0].name in self.sum_list) and (op.lower[0].name in self.sum_list):
- 
+
                         if op.upper[0].name>=op.lower[0].name:
-                            self.coeff_list=[[w.replace(op.upper[0].name, op.lower[0].name) for w in l] for l in self.coeff_list]  
+                            self.coeff_list=[[w.replace(op.upper[0].name, op.lower[0].name) for w in l] for l in self.coeff_list]
                             self.sum_list.remove(op.upper[0].name)
                         elif op.upper[0].name<op.lower[0].name:
-                            self.coeff_list=[[w.replace(op.lower[0].name, op.upper[0].name) for w in l] for l in self.coeff_list]  
+                            self.coeff_list=[[w.replace(op.lower[0].name, op.upper[0].name) for w in l] for l in self.coeff_list]
                             self.sum_list.remove(op.lower[0].name)
 
                     elif op.lower[0].name in self.sum_list:
-                        self.coeff_list=[[w.replace(op.lower[0].name, op.upper[0].name) for w in l] for l in self.coeff_list]  
+                        self.coeff_list=[[w.replace(op.lower[0].name, op.upper[0].name) for w in l] for l in self.coeff_list]
                         self.sum_list.remove(op.lower[0].name)
                     elif op.upper[0].name in self.sum_list:
-                        self.coeff_list=[[w.replace(op.upper[0].name, op.lower[0].name) for w in l] for l in self.coeff_list]  
+                        self.coeff_list=[[w.replace(op.upper[0].name, op.lower[0].name) for w in l] for l in self.coeff_list]
                         self.sum_list.remove(op.upper[0].name)
 
 
@@ -81,7 +81,7 @@ class term(object):
                 #print "case to study is happening"
                 return 0
         #return num
-         
+
         if (self.fac*term2.fac)<0 and num!=0:
             print num, '-1'
             return -1
@@ -91,8 +91,8 @@ class term(object):
         else :
             print num, '0'
             return 0
-        
-    #algorithm to condition that each contraction should have 1 end to H 
+
+    #algorithm to condition that each contraction should have 1 end to H
     #once reach H, store coeff of H in ind
     #store all other Ts in map_org
     #from dict and mapping, locate all ends of contraction
@@ -141,12 +141,12 @@ class term(object):
 	elif self.isp(x):
 	    return 'p'
 
-        
+
     def cpre_cstm(self,term2,a,b):
         for i,j in zip(a,b):
             flag1=0
             #print a,b
-            #print i,self.sum_list,j,term2.sum_list 
+            #print i,self.sum_list,j,term2.sum_list
             if i in self.sum_list and j in term2.sum_list:
 
                 if self.isi(i) and self.isi(j):
@@ -222,7 +222,6 @@ class term(object):
 
             for it1 in range(0,len(self.coeff_list[i])/2):
                 f.write(self.coeff_list[i][it1])
-                
 
             if self.map_org[i].name[0]!='V' and self.map_org[i].name[0]!='X':
                 f.write("}_{")
@@ -243,14 +242,14 @@ class term(object):
             for it2 in range(len(self.coeff_list[-1])/2, len(self.coeff_list[-1])):
                 f.write(self.coeff_list[-1][it2])
 	    f.write("}")
-	    
+	
         f.write('\\\\ \n')
-            
+
     def build_map_org(self):
 	for item in self.large_op_list:
 	    self.map_org.append(item)
 
 
 
-            
-        
+
+

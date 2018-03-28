@@ -1,12 +1,12 @@
 #in order to put it on a same footing as make_cont output, aop=aop[0]
 #Incomplete 2 : when both terms of a commutator are computed, comparing and adding and subtracting should take place
-# to get rid of the first term. 
-#Problem incomplete : in compare level 3 : in case of T1T2VD1D2, both are not permuted together. they are separate. 
+# to get rid of the first term.
+#Problem incomplete : in compare level 3 : in case of T1T2VD1D2, both are not permuted together. they are separate.
 #Possible bug : in compare function line 58, the range of coeff starts from 0, 0 can be an X type operator
 import copy
 import library.print_terms as pt
 import library.make_op as make_op
-import library.change_terms as ct 
+import library.change_terms as ct
 import library.class_term as class_terms
 import library as lib
 import library. compare as cpre
@@ -25,7 +25,7 @@ class list_op_term:
 #1-> commutator on 2-> commutator off so only 1 term on-> whether commutator is on or it is just a product
 # last-> if its the outside last commutator or not (for taking the fully contracted terms)
 def comm(a,b,on,last):
-    #????assume prefactor of the term to be 1 
+    #????assume prefactor of the term to be 1
     fc=1.0
 
     #develop dict_ind
@@ -73,14 +73,14 @@ def comm(a,b,on,last):
     print 'doing contraction through multi_cont'
     for t1 in a:
 	for t2 in b:
-	     
+	
             lib.print_op.print_op(t1.st, t1.co)
             lib.print_op.print_op(t2.st, t2.co)
 
-	    print len(t1.st[0]), t2.st[0][0].upper 
-	    
+	    print len(t1.st[0]), t2.st[0][0].upper
+	
     	    stt,cot=multi_cont.multi_cont(t1.st,t2.st,t1.co,t2.co)
-	    #COMMUTATOR CONDITION : removing element where length of input operator strings = 
+	    #COMMUTATOR CONDITION : removing element where length of input operator strings =
 	    #length of output operator string
 
 	    for (term,termco) in zip(stt,cot):
@@ -117,7 +117,7 @@ def comm(a,b,on,last):
 		
 	    #print 'length of output string', len(stt)
 	    st1.extend(stt)
-	    co1.extend(cot) 
+	    co1.extend(cot)
 
     #contract b,a and store in list_terms if on is 1 (commutator working)
     if on ==1:
@@ -137,7 +137,7 @@ def comm(a,b,on,last):
 		    	        if op.kind=='op' and op1.kind=='op' and op2.kind=='op' and len(op.upper)==(len(op1.upper)+len(op2.upper)):
 				    stt.remove(term)
 				    cot.remove(termco)
-				    
+				
 				    removed=1
 			        if op2.kind=='op':
 				    present_op2=1
@@ -152,20 +152,21 @@ def comm(a,b,on,last):
     		            cot.remove(termco)
 	        #print 'length of output string', len(stt)
 	        st2.extend(stt)
-	        co2.extend(cot) 
+	        co2.extend(cot)
         #lib.print_op.print_op(st2,co2)
     elif on!=0:
 	print 'error in commutator input on switch-------------------'
-    
+
     print 'contraction done'
     #testing printing
-    
+
     print 'length of list terms',len(st1)+len(st2)
     print 'first term'
     lib.print_op.print_op(st1,co1)
     print 'second term'
     lib.print_op.print_op(st2,co2)
     print 'end'
+<<<<<<< HEAD
     
      
     if last!=0: 
@@ -179,6 +180,19 @@ def comm(a,b,on,last):
     
     '''
        
+=======
+
+    '''
+    if last!=0:
+    	st1,co1=lib.full_con.full_con(st1,co1)
+    	if on==1:
+    	    st2,co2=lib.full_con.full_con(st2,co2)
+    '''
+    if last!=0:
+	lib.print_op.print_op(st1,co1)
+
+
+>>>>>>> 6b87510dbb389c2c0ffa8f15f06a885abab529f9
     if last!=0:
 	fc=last
     #make terms of st and co and list of terms
@@ -222,9 +236,9 @@ def comm(a,b,on,last):
             item.fac=item.fac*fc
 
     #print terms properly
-    pt.print_terms(list_terms) 
+    pt.print_terms(list_terms)
     '''
-    return list_terms 
+    return list_terms
 
 
 
