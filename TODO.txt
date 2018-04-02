@@ -1,0 +1,8 @@
+operator -> full hamiltonian 
+	convert p,q,r -> holes and particles
+	compare again to produce full Hamiltonian
+
+*
+include Active States
+Extended Wicks Theorem
+

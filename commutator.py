@@ -166,12 +166,20 @@ def comm(a,b,on,last):
     print 'second term'
     lib.print_op.print_op(st2,co2)
     print 'end'
-     
+
+
+
+    
+    #only if you want fully contracted 
+    '''
     if last!=0: 
     	st1,co1=lib.full_con.full_con(st1,co1)    
     	if on==1:
     	    st2,co2=lib.full_con.full_con(st2,co2)  
-    
+    '''
+
+
+    #if you want to print terms while debugging
     '''
     if last!=0:
 	lib.print_op.print_op(st1,co1)
@@ -228,18 +236,18 @@ def comm(a,b,on,last):
 
 
 
-#'''
+'''
 comm(['X1'],comm(comm(['V2'],['T1'],1,0),['T11'],1,0),0,1)
 comm(['X1'],comm(comm(['V2'],['D1'],1,0),['T11'],1,0),0,1)
 comm(['X1'],comm(comm(['V2'],['T1'],1,0),['D11'],1,0),0,1)
 comm(['X1'],comm(comm(['V2'],['D1'],1,0),['D11'],1,0),0,1)
-#'''
 '''
+#'''
 comm(comm(['V2'],['T1'],1,0),['T11'],1,1)
 comm(comm(['V2'],['D1'],1,0),['T11'],1,1)
-comm(comm(['V2'],['T1'],1,0),['D11'],1,1)
-comm(comm(['V2'],['D1'],1,0),['D11'],1,1)
-'''
+#comm(comm(['V2'],['T1'],1,0),['D11'],1,1)
+#comm(comm(['V2'],['D1'],1,0),['D11'],1,1)
+#'''
 # Only test case at the moment is this commutator being computed.
 #comm(['V2'],['T2'],1,1)
 '''
