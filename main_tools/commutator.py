@@ -24,7 +24,7 @@ class list_op_term:
 #comm should accept a list of terms/Alphabet operator and list of terms/Alphabet operator.
 #1-> commutator on 2-> commutator off so only 1 term on-> whether commutator is on or it is just a product
 # last-> if its the outside last commutator or not (for taking the fully contracted terms)
-def comm(a,b,on,last):
+def omm(a,b,on,last):
     #????assume prefactor of the term to be 1
     fc=1.0
 
