@@ -1,3 +1,7 @@
+MISC 
+	decouple separattion of full contracted terms add it to math operations
+	delete the terms that haev 0 contribution in compare envelope
+	
 operator -> full hamiltonian 
 	convert p,q,r -> holes and particles
 	compare again to produce full Hamiltonian
