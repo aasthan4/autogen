@@ -1,5 +1,5 @@
-import driv3 as driv2
-def express():
+from main_tools import driv3 as driv2
+def amplitude():
 
 
     print 'X1 Terms'
@@ -63,4 +63,3 @@ def express():
     driv2.driver(0.5,['X2','V2','T1','T11','T2'])
     #driv2.driver(0.5,['X2','V2','T1','T2','T21'])
     driv2.driver(1.0/24.0,['X2','V2','T1','T11','T12','T13'])
-express()

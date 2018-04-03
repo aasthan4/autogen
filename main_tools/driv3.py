@@ -11,10 +11,10 @@ import library.change_terms as ct
 import library.print_terms as pt
 import library.compare as cpre
 
-#def driver(fc,list_char_op):
-def driver(fc):
+def driver(fc,list_char_op):
+#def driver(fc):
     #build operators
-    list_char_op=['D2','V2','Y2']
+    #list_char_op=['D2','V2','Y2']
     dict_ind={}
     lou, dict_ind=lib.make_op.make_op(list_char_op, dict_ind)
     #Do contractions
@@ -36,7 +36,7 @@ def driver(fc):
 
 
     #change to terms
-    list_terms=ct.change_terms1(a,b,dict_ind, lou)
+    list_terms=ct.change_terms1(a,b,fc,dict_ind, lou)
 
     #compress terms eliminating deltas
     for term in list_terms:
@@ -102,4 +102,4 @@ def driver(fc):
 
     #print terms properly
     pt.print_terms(list_terms)
-driver(1.0)
+#driver(1.0)
