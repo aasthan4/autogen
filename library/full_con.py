@@ -1,4 +1,4 @@
-
+import library
 def full_con(st, co):
     final_t=[]
     final_co=[]
@@ -11,3 +11,11 @@ def full_con(st, co):
             final_t.append(term)
             final_co.append(const)
     return final_t, final_co
+def full_con_terms(list_terms):
+    for i in range(len(list_terms)):
+	flag=0
+	for item in list_terms[i].st[0]:
+	    if item.kind=='op' and flag==0:
+		list_terms[i].fac=0.0
+		flag=1
+    return list_terms

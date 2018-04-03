@@ -199,7 +199,6 @@ def comm(a,b,last):
     for item in list_terms:
 	item.compress()
 	item.build_map_org()
-
 	#item.cond_cont(item.dict_ind) only for CCSD noy for general case
 	
 	#open to print terms
