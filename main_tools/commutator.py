@@ -3,6 +3,7 @@
 # to get rid of the first term.
 #Problem incomplete : in compare level 3 : in case of T1T2VD1D2, both are not permuted together. they are separate.
 #Possible bug : in compare function line 58, the range of coeff starts from 0, 0 can be an X type operator
+#possible porblem in change_pqr->add_dict: the coeffs can be the same then ind can be added to a different operator name like V vs T1:
 import copy
 import library.print_terms as pt
 import library.make_op as make_op

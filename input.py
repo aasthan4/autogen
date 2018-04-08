@@ -7,3 +7,4 @@ import library
 #ccsd.amplitude()
 list=math2.prod(['V2'],['T2'],1)
 library.print_terms.print_terms(full_con.full_con_terms(list))
+#library.convert_pqr.convert_pqr()
