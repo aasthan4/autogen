@@ -19,7 +19,9 @@ def pick(list_terms, upper, lower):
     lo_list=[i,a]
 
     for term in list_terms:
-
+	flag=0
+	up=[]
+ 	lo=[]
 	for op in term.st[0]:
 	    if op.kind=='op':
 		i=0
@@ -38,8 +40,9 @@ def pick(list_terms, upper, lower):
 		    elif term.isa(ind)==1:
 			a=a+1
 		lo=[i,a]
+		flag=1
 	#print up, up_list
-	if up==up_list and lo==lo_list:
+	if up==up_list and lo==lo_list and flag==1:
 	    final_terms.append(term)
     return final_terms
 		
