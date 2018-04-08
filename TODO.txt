@@ -4,7 +4,7 @@ MISC
 operator -> full hamiltonian 
 	compare again to produce full Hamiltonian
 R and S commutator ->
-	
+	change the class large operator to term	so that V can be selected for R and N in the same way as any particualr operator. 
 
 *
 include Active States

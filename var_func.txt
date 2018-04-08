@@ -5,6 +5,9 @@ library/print_terms(list_terms): prints all terms in teh list_terms
 library/convert_pqr(list_terms): converts general terms to all possible combinations of i,a
 library/pick(list_terms,upper_form,lower_form)- picks terms from list terms which are npt fully contracted terms
 library/compare_envelope - envelope of comparing list terms and returning the reduced form
+library/rn_comm-select_r - select rest type commutator terms from a set of 'not' fully contracted terms
+library/rn_comm-select_n - select non diagonal terms of any commutator terms
+library/rn_comm-rank - rank of any term
 
 Functions for general operators -
 main_tools/product - product of 2 operators
