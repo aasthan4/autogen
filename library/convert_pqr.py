@@ -32,6 +32,15 @@ def change_sum(term, oldi, newi):
     for ind in range(len(term.sum_list)):
 	if term.sum_list[ind]==oldi:
 	    term.sum_list[ind]=newi
+    if term.st[0][-1].kind=='op':
+
+	for ind in term.st[0][-1].upper:
+	    if ind in term.sum_list:
+		term.sum_list.remove(ind)
+	for ind in term.st[0][-1].lower:
+	    if ind in term.sum_list:
+		term.sum_list.remove(ind)
+	
 	    return term	
 def change_op(term, oldi, newi):
     if term.st[0][-1].kind=='op':
@@ -57,8 +66,9 @@ def convert(term):
 	for coeff in term.coeff_list:
 	    for ind in range(len(coeff)):
 	        if term.isa(coeff[ind])==0 and term.isi(coeff[ind])==0 and flag==0:
-		    term=change_sum(term, coeff[ind], chr(ord('i')+ia_list[0]))
 		    term=change_op(term,coeff[ind], chr(ord('i')+ia_list[0]))
+		    #first change op before sum, to remove op ind in sum 
+		    term=change_sum(term, coeff[ind], chr(ord('i')+ia_list[0]))
 		    term=add_dict(term,coeff,chr(ord('i')+ia_list[0]))
 	            coeff[ind]=chr(ord('i')+ia_list[0])
 		    final_terms.extend(convert(copy.deepcopy(term)))
