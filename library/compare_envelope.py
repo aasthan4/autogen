@@ -18,14 +18,14 @@ def compare_envelope(list_terms, fc,last):
                     list_terms[j].fac=0.0
 
     #muliply with the prefactor of the expression from the Housdoff Expression
-    for item in list_terms:
-        if item.fac!=0.0:
-            item.fac=item.fac*fc
+    #for item in list_terms:
+        #if item.fac!=0.0:
+            #item.fac=item.fac*fc
     
     #print terms properly
     if last!=0:
 	    
-        pt.print_terms(list_terms)
+        #pt.print_terms(list_terms)
         #delete operator coefficient in self.coeff_list
         for term in list_terms:
 	    if len(term.coeff_list)==len(term.map_org)+1:

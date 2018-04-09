@@ -196,6 +196,7 @@ def comm(a,b,last):
 	terms_tmp=ct.change_terms1(st2,co2,fc,dict_add, b[0].map_org+a[0].map_org)
         for item in terms_tmp:
 	    item.fac=item.fac*-1
+	    item.co[0][0]=item.co[0][0]*-1.0
 	list_terms.extend(terms_tmp)
     for item in list_terms:
 	item.compress()
