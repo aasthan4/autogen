@@ -201,7 +201,9 @@ class term(object):
         for i in range(len(self.map_org)):
 	    if self.map_org[i].name[0]!='X':
                 print self.map_org[i].name[0],self.coeff_list[i],
+
 	if self.st[0][-1].kind=='op':
+
 	    print 'E^',self.st[0][-1].upper,'_',self.st[0][-1].lower,
         print '\n',
     def print_latex(self, f):
@@ -234,13 +236,13 @@ class term(object):
                 f.write("}")
             elif self.map_org[i].name[0]=='V':
                 f.write(">")
-	if len(self.coeff_list)==len(self.map_org)+1:
+	if self.st[0][-1].kind=='op':
 	    f.write("E^{")
-            for it1 in range(0,len(self.coeff_list[-1])/2):
-                f.write(self.coeff_list[-1][it1])
+            for it1 in self.st[0][-1].upper:
+                f.write(it1)
 	    f.write("}_{")
-            for it2 in range(len(self.coeff_list[-1])/2, len(self.coeff_list[-1])):
-                f.write(self.coeff_list[-1][it2])
+            for it1 in self.st[0][-1].lower:
+                f.write(it1)
 	    f.write("}")
 	
         f.write('\\\\ \n')
