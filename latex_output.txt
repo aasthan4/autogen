@@ -14,3 +14,7 @@
 -0.5\sum_{i a b }D^{i}_{a}<ak||lb>T^{b}_{i}E^{k}_{l}\\ 
 0.5\sum_{a b j }D^{i}_{a}<aj||kb>T^{b}_{j}E^{i}_{k}\\ 
 -0.5\sum_{i a b }D^{i}_{a}<ak||bi>T^{b}_{j}E^{k}_{j}\\ 
+0.5\sum_{i a j }D^{i}_{a}<jk||li>T^{a}_{j}E^{k}_{l}\\ 
+-0.5\sum_{i a b }D^{i}_{a}<ak||lb>T^{b}_{i}E^{k}_{l}\\ 
+0.5\sum_{a b j }D^{i}_{a}<aj||kb>T^{b}_{j}E^{i}_{k}\\ 
+-0.5\sum_{i a b }D^{i}_{a}<ak||bi>T^{b}_{j}E^{k}_{j}\\ 
