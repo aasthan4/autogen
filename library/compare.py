@@ -37,12 +37,27 @@ def swap(c1):
     c[2]=c[3]
     c[3]=tmp
 
-def match(term1,term2,i1,i2):
+def match(term1,term2,i1,i2,nondummy_map):
     #same type:if not dummy, samename: if dummy ok
     if term1.type(i1.name)==term2.type(i2.name):
+
+        if not term1.is_dummy(i1.name) and not term2.is_dummy(i2.name) and i1.name==i2.name:
+	    if i1.name not in nondummy_map:
+                #pushing non dummy in dict
+	        nondummy_map[i1.name]=i2.name
+                return 1
+	    elif nondummy_map[i1.name]!=i2.name:
+		return 0
+        elif not term1.is_dummy(i1.name) and not term2.is_dummy(i2.name) and i1.name!=i2.name:
+	    if i1.name not in nondummy_map:
+		nondummy_map[i1.name]=i2.name
+		return 1
+	    elif nondummy_map[i1.name]==i2.name:
+		return 1
+	    else:
+		return 0
         if not term1.is_dummy(i1.name) and not term2.is_dummy(i2.name) and i1.name==i2.name:
             #they are same move forward
-
             return 1
             #print 'non dummy match'
         elif term1.is_dummy(i1.name) and term2.is_dummy(i2.name):
@@ -283,8 +298,8 @@ def level4(term1, term2, final_terms):
 
 
 
-def go_find(term1,term2,coeff1,coeff2,i1,i2):
-    if match(term1,term2,i1,i2):
+def go_find(term1,term2,coeff1,coeff2,i1,i2,nondummy_map):
+    if match(term1,term2,i1,i2,nondummy_map):
         j1,c1,d1=find_ind(coeff1,i1)
         j2,c2,d2=find_ind(coeff2,i2)
         if j1==0 and j2==0:#both are non dummy
@@ -302,7 +317,7 @@ def go_find(term1,term2,coeff1,coeff2,i1,i2):
                 return 1
             if j2.seen==0:
                 j2.seen=1
-                return  go_forward(term1,term2,coeff1,coeff2,j1,j2)
+                return  go_forward(term1,term2,coeff1,coeff2,j1,j2,nondummy_map)
             else:
                 return 1
         else :
@@ -312,8 +327,8 @@ def go_find(term1,term2,coeff1,coeff2,i1,i2):
         return 0
 
 
-def go_forward(term1,term2,coeff1,coeff2,i1,i2):
-    if match(term1,term2,i1,i2):
+def go_forward(term1,term2,coeff1,coeff2,i1,i2,nondummy_map):
+    if match(term1,term2,i1,i2,nondummy_map):
         i1=i1.pair
         i2=i2.pair
 	#print 'in go forward going to find ',i1.name, i2.name
@@ -323,7 +338,7 @@ def go_forward(term1,term2,coeff1,coeff2,i1,i2):
             return 1
         if i2.seen==0:
             i2.seen=1
-            return  go_find(term1,term2,coeff1,coeff2,i1,i2)
+            return  go_find(term1,term2,coeff1,coeff2,i1,i2,nondummy_map)
         else:
             return 1
 
@@ -341,6 +356,7 @@ def arrowwork(term1,term2,coeff1, coeff2):
         print '\n'
     print '---e'
     '''
+    nondummy_map={}
     while not coeff_seen(coeff1):
 	#print len(coeff1),len(coeff2)
         c1,i1, i2 =pick(coeff1, coeff2)
@@ -348,10 +364,10 @@ def arrowwork(term1,term2,coeff1, coeff2):
         if c1==-1:#case when the 2 coeff are of unequal length
             #print 'cant pick'
             return 0
-        if go_forward(term1,term2,coeff1,coeff2,i1,i2)==0:
+        if go_forward(term1,term2,coeff1,coeff2,i1,i2, nondummy_map)==0:
             #print 'not going forward'
             return 0
-        if go_find(term1,term2,coeff1,coeff2,i1,i2)==0:
+        if go_find(term1,term2,coeff1,coeff2,i1,i2,nondummy_map)==0:
             #print 'not finding'
             return 0
     return 1
