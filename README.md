@@ -3,7 +3,7 @@ This is an automatic expression generator code using Wicks Thoerem for Quantum C
 # Input/Output
 All input are written in input.py and all latex form outtput expressions are generated in the latex.output.txt
 # Testing 
-You may test the code by running test.py file. 
-It is written to generate all operators of [V,T2] presently.
+You may test the code please refer to the file test.py. 
+It is written to go through simple examples of commutator operaration.
 Please further test the working of the code by generating all CCSD amplitude expressions by running test_ccsd.py  
  
