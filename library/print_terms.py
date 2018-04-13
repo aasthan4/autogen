@@ -10,4 +10,4 @@ def print_terms(list_terms):
         #if term.fac!=0.0:
         term.print_term()
         term.print_latex(pfile)
-    pfile.write("------------\n")
+    pfile.write("------------\\ \n")
