@@ -209,7 +209,7 @@ def comm(a,b,last):
 	    #item.print_term()
     print 'end', len(list_terms)
     #if last!=0:
-
+    list_terms=print_terms.clean_list(list_terms)
     cpre_env.compare_envelope(list_terms, fc, last)    
     '''
     #compare terms based on 5 levels of check all in cpre.compare()
