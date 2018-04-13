@@ -44,7 +44,6 @@ def comm(a,b,last):
     #intelligently check input
     if type(a[0])==str:
 	#build operator
-	print 'inside char'
 	a,a_dict_add=make_op.make_op(a, dict_add)
 	#a=a[0] #refer to the header
 	a[0].map_org=a
@@ -54,7 +53,6 @@ def comm(a,b,last):
 	b,b_dict_add=make_op.make_op(b,dict_add)
 	#b=b[0]
 	b[0].map_org=b
-	print b[0].coeff
     #????so aop is a list of operators not just an operator how to deal with it on the same footing as the result of a cont
     #contract a,b and store in list_terms
     st2=[]
@@ -75,11 +73,6 @@ def comm(a,b,last):
     print 'doing contraction through multi_cont'
     for t1 in a:
 	for t2 in b:
-	
-            lib.print_op.print_op(t1.st, t1.co)
-            lib.print_op.print_op(t2.st, t2.co)
-
-	    print len(t1.st[0]), t2.st[0][0].upper
 	
     	    stt,cot=multi_cont.multi_cont(t1.st,t2.st,t1.co,t2.co)
 	    #COMMUTATOR CONDITION : removing element where length of input operator strings =
@@ -159,19 +152,7 @@ def comm(a,b,last):
     elif on!=0:
 	print 'error in commutator input on switch-------------------'
 
-    print 'contraction done'
-    #testing printing
 
-    print 'length of list terms',len(st1)+len(st2)
-    print 'first term'
-    lib.print_op.print_op(st1,co1)
-    print 'second term'
-    lib.print_op.print_op(st2,co2)
-    print 'end'
-
-
-
-    
     #only if you want fully contracted 
     '''
     if last!=0: 
@@ -181,12 +162,6 @@ def comm(a,b,last):
     '''
 
 
-    #if you want to print terms while debugging
-    '''
-    if last!=0:
-	lib.print_op.print_op(st1,co1)
-    
-    '''
        
     if last!=0:
 	fc=last
@@ -202,37 +177,11 @@ def comm(a,b,last):
 	item.compress()
 	item.build_map_org()
 	#item.cond_cont(item.dict_ind) only for CCSD noy for general case
-	
-	#open to print terms
-	#if item.fac!=0:
-	    #item.print_term()
-	    #item.print_term()
-    print 'end', len(list_terms)
-    #if last!=0:
-    list_terms=print_terms.clean_list(list_terms)
+
+
+    list_terms=pt.clean_list(list_terms)
     cpre_env.compare_envelope(list_terms, fc, last)    
-    '''
-    #compare terms based on 5 levels of check all in cpre.compare()
-    for i in range(len(list_terms)):
-        for  j in range(i+1,len(list_terms)):
-            if list_terms[i].fac!=0 and list_terms[j].fac!=0:
-                #print "comparing inside drive -------:", i,j,list_terms[i].coeff_list, list_terms[j].coeff_list
-                flo= cpre.compare(list_terms[i],list_terms[j])
-		print flo
-                if flo!=0:
-                    #print 'result in the comparision',i,j,flo
-                    #print 'this should be 0 always = ',list_terms[i].fac+list_terms[j].fac*flo
-                    list_terms[i].fac=list_terms[i].fac+list_terms[j].fac * flo
-                    list_terms[j].fac=0.0
-
-    #muliply with the prefactor of the expression from the Housdoff Expression
-    for item in list_terms:
-        if item.fac!=0.0:
-            item.fac=item.fac*fc
-
-    #print terms properly
-    pt.print_terms(list_terms)
-    '''
+    list_terms=pt.clean_list(list_terms)
     return list_terms
 
 

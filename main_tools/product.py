@@ -12,6 +12,7 @@ import library as lib
 import library. compare as cpre
 import multi_cont
 import library.compare_envelope as cpre_env
+from library import full_con
 removed=0
 '''
 class list_op_term:
@@ -43,7 +44,6 @@ def prod(a,b,last):
     #intelligently check input
     if type(a[0])==str:
 	#build operator
-	print 'inside char'
 	a,a_dict_add=make_op.make_op(a, dict_add)
 	#a=a[0] #refer to the header
 	a[0].map_org=a
@@ -53,32 +53,15 @@ def prod(a,b,last):
 	b,b_dict_add=make_op.make_op(b,dict_add)
 	#b=b[0]
 	b[0].map_org=b
-	print b[0].coeff
     #????so aop is a list of operators not just an operator how to deal with it on the same footing as the result of a cont
     #contract a,b and store in list_terms
     st2=[]
     st1=[]
     co2=[]
     co1=[]
-    '''
-    if on==1:
-        print 'terms in b', len(b)
-    	for item in b:
-	    #item.print_term()
-	    for op in item.st:
-		print 'op kind', op[0].upper
-	    print 'coeff of item',item.co
-	    #lib.print_op.print_op(item.st,item.co)
-    '''
-
-    print 'doing contraction through multi_cont'
     for t1 in a:
 	for t2 in b:
 	
-            lib.print_op.print_op(t1.st, t1.co)
-            lib.print_op.print_op(t2.st, t2.co)
-
-	    print len(t1.st[0]), t2.st[0][0].upper
 	
     	    stt,cot=multi_cont.multi_cont(t1.st,t2.st,t1.co,t2.co)
 	    #COMMUTATOR CONDITION : removing element where length of input operator strings =
@@ -101,8 +84,6 @@ def prod(a,b,last):
 				removed=1
 				stt.remove(term)
 				cot.remove(termco)
-
-
 			    if op2.kind=='op':
 				present_op2=1
 			if op1.kind=='op':
@@ -114,79 +95,9 @@ def prod(a,b,last):
 		        #print 'here in fully contracted'
 		        stt.remove(term)
     		        cot.remove(termco)
-				
-		
 	    #print 'length of output string', len(stt)
 	    st1.extend(stt)
 	    co1.extend(cot)
-
-    #contract b,a and store in list_terms if on is 1 (commutator working)
-    if on ==1:
-        for t1 in b:
-	    for t2 in a:
-    	        stt,cot=multi_cont.multi_cont(t1.st,t2.st,t1.co,t2.co)
-	        for (term,termco) in zip(stt,cot):
-		    #print 'new term'
-		    present_op=0
-		    present_op1=0
-		    present_op2=0
-		    removed=0
-		    for op in term:
-		        for op1 in t1.st[0]:
-			    for op2 in t2.st[0]:
-		                #print 'there is a problem here', op.kind, len(op.upper),len(t1.st[0][0].upper),len(t2.st[0][0].upper)
-		    	        if op.kind=='op' and op1.kind=='op' and op2.kind=='op' and len(op.upper)==(len(op1.upper)+len(op2.upper)):
-				    stt.remove(term)
-				    cot.remove(termco)
-				
-				    removed=1
-			        if op2.kind=='op':
-				    present_op2=1
-			    if op1.kind=='op':
-		                present_op1=1
-		        if op.kind=='op':
-			    present_op2=1
-		    if  present_op1==0 or present_op2==0:
-			if removed==0:	
-			    # print 'here in fully contracted'
-		            stt.remove(term)
-    		            cot.remove(termco)
-	        #print 'length of output string', len(stt)
-	        st2.extend(stt)
-	        co2.extend(cot)
-        #lib.print_op.print_op(st2,co2)
-    elif on!=0:
-	print 'error in commutator input on switch-------------------'
-
-    print 'contraction done'
-    #testing printing
-
-    print 'length of list terms',len(st1)+len(st2)
-    print 'first term'
-    lib.print_op.print_op(st1,co1)
-    print 'second term'
-    lib.print_op.print_op(st2,co2)
-    print 'end'
-
-
-
-    
-    #only if you want fully contracted 
-    '''
-    if last!=0: 
-    	st1,co1=lib.full_con.full_con(st1,co1)    
-    	if on==1:
-    	    st2,co2=lib.full_con.full_con(st2,co2)  
-    '''
-
-
-    #if you want to print terms while debugging
-    '''
-    if last!=0:
-	lib.print_op.print_op(st1,co1)
-    
-    '''
-       
     if last!=0:
 	fc=last
     #make terms of st and co and list of terms
@@ -199,33 +110,14 @@ def prod(a,b,last):
     for item in list_terms:
 	item.compress()
 	item.build_map_org()
-	#item.cond_cont(item.dict_ind) only for CCSD noy for general case
 	
-	#open to print terms
-	#if item.fac!=0:
-	    #item.print_term()
-	    #item.print_term()
-    print 'end', len(list_terms)
+    list_terms=full_con.full_terms(list_terms)
     cpre_env.compare_envelope(list_terms, fc, last)    
     return list_terms
 
 
 
 
-'''
-comm(['X1'],comm(comm(['V2'],['T1'],1,0),['T11'],1,0),0,1)
-comm(['X1'],comm(comm(['V2'],['D1'],1,0),['T11'],1,0),0,1)
-comm(['X1'],comm(comm(['V2'],['T1'],1,0),['D11'],1,0),0,1)
-comm(['X1'],comm(comm(['V2'],['D1'],1,0),['D11'],1,0),0,1)
-'''
-#'''
-#comm(comm(['V2'],['T1'],1,0),['T11'],1,1)
-#comm(comm(['V2'],['D1'],1,0),['T11'],1,1)
-#comm(comm(['V2'],['T1'],1,0),['D11'],1,1)
-#comm(comm(['V2'],['D1'],1,0),['D11'],1,1)
-#'''
-# Only test case at the moment is this commutator being computed.
-#comm(['V2'],['T2'],1,1)
 '''
 comm(['X2'], comm(['V2'],['D1'],1,0),0,1)
 

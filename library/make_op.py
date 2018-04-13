@@ -273,5 +273,4 @@ def make_op(list_op, dict_ind):
             list_main.append(T2)
         else :
             print "input error in making operators--------------------"
-    print 'from make op', lop[0],opp.upper, opp.lower
     return list_main, dict_ind

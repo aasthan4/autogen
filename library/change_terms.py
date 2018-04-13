@@ -36,7 +36,6 @@ def change_terms1(a, b, fac,dict_ind, list_op_used):
 	        temp.extend(item.lower)
 	if flag==1:
 	    coeff.append(temp)
-	print 'in change terms',coeff
         x=class_term.term(copy.copy(fac*c[0][0]), copy.copy(sum_ind), copy.copy(coeff), list_op_used,t, c)
 	x.dict_ind=dict_ind
 	if flag==1:
