@@ -602,6 +602,7 @@ def make_operators_single(string1, string2, str_no, p):
 
 
     for item in string1:
+
         if item>='i' and item<='n':
 	    x=operator('ho', '1', p+1, item, str_no, -1, 0)
 	    overall.append(x)
@@ -619,6 +620,24 @@ def make_operators_single(string1, string2, str_no, p):
 	    x=operator('ge', '1', p+1, item, str_no, -1, 0)
 	    overall.append(x)
 	    p+=1
+	elif len(item)==2:
+            if item[0]>='i' and item[0]<='n':
+	        x=operator('ho', '1', p+1, item, str_no, -1, 0)
+	        overall.append(x)
+	        p+=1
+            elif item[0]>='u' and item[0]<='z':
+                x=operator('ac', '1', p+1, item, str_no, -1, 0)
+                overall.append(x)
+	        p+=1
+
+            elif item[0] >='a' and item[0]<='h':
+	        x=operator('pa', '1', p+1, item, str_no, -1, 0)
+	        overall.append(x)
+	        p+=1
+            elif item[0] >='p' and item[0]<='s':
+	        x=operator('ge', '1', p+1, item, str_no, -1, 0)
+	        overall.append(x)
+	        p+=1
 
     for item in reversed(string2):
         if item>='i' and item<='n':
