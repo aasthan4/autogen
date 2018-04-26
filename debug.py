@@ -4,12 +4,19 @@ from  main_tools.commutator import comm
 from library import pick
 from library import print_terms
 from library import rn_comm
-list_terms=comm(['V2'],['T2'],1)
-'''
+from tests.debugcases import general_term 
+#list_terms=comm(comm(['V2'],['T2'],0),['T1'],1)
+#list_terms=comm(['V2'],['T1'],1)
+term=general_term(['V2','T2','T1'])
+list_terms=[term]
+print 'general term creation done'
+print_terms.print_terms(list_terms)
+print 'printing done'
 list_terms=convert_pqr.convert_pqr(list_terms)
-list_terms=print_terms.clean_list(list_terms)
+print 'conversion done'
+#list_terms=print_terms.clean_list(list_terms)
 #list_terms=pick.pick(list_terms, ['i'],['j'])
-'''
+
 print '------'
 print_terms.print_terms(list_terms)
 print '------'

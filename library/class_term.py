@@ -119,7 +119,7 @@ class term(object):
             return 1
         else: return 0
     def isi(self,x):
-        if x>='i' and x<='n':
+        if x>='i' and x<='o':
             return 1
         else:
             return 0
@@ -201,7 +201,6 @@ class term(object):
         for i in range(len(self.map_org)):
 	    if self.map_org[i].name[0]!='X':
                 print self.map_org[i].name[0],self.coeff_list[i],
-
 	if self.st[0][-1].kind=='op':
 
 	    print 'E^',self.st[0][-1].upper,'_',self.st[0][-1].lower,

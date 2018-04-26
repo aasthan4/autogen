@@ -52,41 +52,64 @@ def change_op(term, oldi, newi):
             if term.st[0][-1].lower[ind]==oldi:
 	        term.st[0][-1].lower[ind]=newi
 	        return term
+    else :
+	print 'ERROR in change op in change+pqr. There is no op in the term. term is fully contracted yet has general indices'
 def add_dict(term,coeff,newi):
     for i in range(len(term.coeff_list)):
 	if term.coeff_list[i]==coeff:
 	    term.dict_ind[newi]=term.map_org[i]
 	    return term
-def convert(term):
+def convert_single(term):
+
     final_terms=[]
     if pqr_present(term):
-        ia_list=ia_limit(term)
-
-        flag=0
+	ia_list=ia_limit(term)
+	flag=0
 	for coeff in term.coeff_list:
 	    for ind in range(len(coeff)):
 	        if term.isa(coeff[ind])==0 and term.isi(coeff[ind])==0 and flag==0:
+
+    		    #print 'in convert single ,', term.sum_list
 		    term=change_op(term,coeff[ind], chr(ord('i')+ia_list[0]))
+
 		    #first change op before sum, to remove op ind in sum 
 		    term=change_sum(term, coeff[ind], chr(ord('i')+ia_list[0]))
 		    term=add_dict(term,coeff,chr(ord('i')+ia_list[0]))
 	            coeff[ind]=chr(ord('i')+ia_list[0])
-		    final_terms.extend(convert(copy.deepcopy(term)))
+		    final_terms.append(copy.deepcopy(term))
 		    del term.dict_ind[coeff[ind]]
 		    
 		    term=change_sum(term, coeff[ind], chr(ord('a')+ia_list[1]))
 		    term=change_op(term,coeff[ind], chr(ord('a')+ia_list[1]))
 		    term=add_dict(term,coeff,chr(ord('a')+ia_list[1]))
 		    coeff[ind]=chr(ord('a')+ia_list[1])
-		    final_terms.extend(convert(copy.deepcopy(term)))
+		    final_terms.append(copy.deepcopy(term))
 		    del term.dict_ind[coeff[ind]]
-		    flag=1
+		    return final_terms
     else:
         final_terms.append(term)
+    	return final_terms
+
+    print 'ERROR :something wrong in pqr convert : other than pqr_present or not present happening!!!!!!!'
+    return []
+	
+def convert(term):
+    final_terms=[]
+    final_terms=convert_single(term)
+    print 'first single', len(final_terms)
+
+    while pqr_present(final_terms[0]):
+	print_terms.print_terms([final_terms[0]])
+	inter_terms=[]
+	for term in final_terms:
+	    inter_terms.extend(convert_single(term))
+	final_terms=inter_terms
+        #print_terms.print_terms(final_terms)
     return final_terms
 def convert_pqr(list_terms):
     final_terms=[]
-    print '---------------'
+    
+    #print '---------------'
     for term in list_terms:
 	final_terms.extend(convert(term))
     #print_terms.print_terms(final_terms)
