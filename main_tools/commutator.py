@@ -5,7 +5,9 @@
 #Possible bug : in compare function line 58, the range of coeff starts from 0, 0 can be an X type operator
 #possible porblem in change_pqr->add_dict: the coeffs can be the same then ind can be added to a different operator name like V vs T1:
 import copy
+
 import library.print_terms as pt
+from library.print_op import print_op
 import library.make_op as make_op
 import library.change_terms as ct
 import library.class_term as class_terms
@@ -29,7 +31,7 @@ def comm(a,b,last):
     on=1
     #????assume prefactor of the term to be 1
     fc=1.0
-
+    #print a,b
     #develop dict_ind
     if type(a[0])==str and type(b[0])==str:
 	dict_add={}
@@ -160,13 +162,15 @@ def comm(a,b,last):
     	if on==1:
     	    st2,co2=lib.full_con.full_con(st2,co2)  
     '''
-
-
+    '''
+    print_op(st1,co1)
+    '''
        
     if last!=0:
 	fc=last
     #make terms of st and co and list of terms
     list_terms=ct.change_terms1(st1,co1,fc,dict_add, a[0].map_org+b[0].map_org)#Problem : how to make lou?
+    #print len(list_terms)
     if on==1:
 	terms_tmp=ct.change_terms1(st2,co2,fc,dict_add, b[0].map_org+a[0].map_org)
         for item in terms_tmp:
@@ -179,9 +183,12 @@ def comm(a,b,last):
 	#item.cond_cont(item.dict_ind) only for CCSD noy for general case
 
 
+
     list_terms=pt.clean_list(list_terms)
     cpre_env.compare_envelope(list_terms, fc, last)    
     list_terms=pt.clean_list(list_terms)
+
+    #print 'at the end of comm', len(list_terms)
     return list_terms
 
 

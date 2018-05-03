@@ -115,17 +115,26 @@ class term(object):
         #self.map_org=map_org
         #self.build_map_org()
     def isa(self,x):
+
         if x>='a' and x<='h':
             return 1
-        else: return 0
+
+        elif len(x)==2 and x[0]>='a' and x[0]<='h':
+            return 1
+        else: 
+	    return 0
     def isi(self,x):
-        if x>='i' and x<='o':
+        if x>='i' and x<='n':
+            return 1
+        elif len(x)==2 and x[0]>='i' and x[0]<='n':
             return 1
         else:
             return 0
     def isp(self,x):
 	if x>='p' and x<='t':
 	    return 1
+        elif len(x)==2 and x[0]>='p' and x[0]<='t':
+            return 1
 	else :
 	    return 0
     def is_dummy(self, x):

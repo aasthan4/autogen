@@ -620,6 +620,7 @@ def make_operators_single(string1, string2, str_no, p):
 	    x=operator('ge', '1', p+1, item, str_no, -1, 0)
 	    overall.append(x)
 	    p+=1
+
 	elif len(item)==2:
             if item[0]>='i' and item[0]<='n':
 	        x=operator('ho', '1', p+1, item, str_no, -1, 0)
@@ -657,6 +658,24 @@ def make_operators_single(string1, string2, str_no, p):
 	    x=operator('ge', '0', p+1, item, str_no, -1, 0)
 	    overall.append(x)
 	    p+=1
+	elif len(item)==2:
+            if item[0]>='i' and item[0]<='n':
+	        x=operator('ho', '0', p+1, item, str_no, -1, 0)
+	        overall.append(x)
+	        p+=1
+            elif item[0]>='u' and item[0]<='z':
+                x=operator('ac', '0', p+1, item, str_no, -1, 0)
+                overall.append(x)
+	        p+=1
+
+            elif item[0] >='a' and item[0]<='h':
+	        x=operator('pa', '0', p+1, item, str_no, -1, 0)
+	        overall.append(x)
+	        p+=1
+            elif item[0] >='p' and item[0]<='s':
+	        x=operator('ge', '0', p+1, item, str_no, -1, 0)
+	        overall.append(x)
+	        p+=1
     return overall
 def make_operators(holes, active, particles):
     overall_i=deque([])

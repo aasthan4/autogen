@@ -101,7 +101,7 @@ def ewt(string1_upper, string1_lower, string2_upper, string2_lower):
     op2=func_ewt.make_operators_single(string2_upper,string2_lower, 2, len(op1))
     #print 'op1:'
     #for item in op1:
-        #print item.name,item.pos
+        #print string1,item.name,item.pos
     #for item in op2:
         #print item.name,item.pos
 

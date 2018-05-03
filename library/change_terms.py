@@ -42,7 +42,7 @@ def change_terms1(a, b, fac,dict_ind, list_op_used):
 	    coeff.pop()
 	#print c
 	#print_op.print_op(t,c)
-        #print c,fac, sum_ind, coeff
+        #print c,fac, sum_ind, coeff,temp
         list_terms.append(x)
 	
     return list_terms

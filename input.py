@@ -1,6 +1,6 @@
 from tests import ccsd_amplitude as ccsd
 
-from main_tools import commutator as math1
+from main_tools.commutator import comm
 from main_tools import product as math2
 from library import full_con
 from library import convert_pqr
@@ -19,7 +19,7 @@ list_terms7=[]
 list_terms8=[]
 list_terms=[]
 
-list_terms1.extend(math1.comm(math1.comm(['V2'],['D2'],0),['T21'],1))
+list_terms1.extend(comm(comm(['V2'],['D2'],0),['T21'],1))
 list_terms=library.convert_pqr.convert_pqr(list_terms1)
 list_terms1=pick.pick(list_terms,['i'],['j'])
 list_terms2=pick.pick(list_terms,['a'],['b'])

@@ -9,11 +9,16 @@
 
 import print_terms
 import copy
+from next_op import next_op
 def pqr_present(term):
     for coeff in term.coeff_list:
 	for ind in coeff:
-	    if term.isa(ind)==0 and term.isi(ind)==0:
-		return 1
+	    if len(ind)==2:
+	        if term.isa(ind[0])==0 and term.isi(ind[0])==0:
+		    return 1
+	    else:
+	        if term.isa(ind)==0 and term.isi(ind)==0:
+		    return 1
     return 0
 def ia_limit(term):
     a=0
@@ -21,12 +26,20 @@ def ia_limit(term):
     p=0
     for key, value in term.dict_ind.items():
 
-        if key>='a' and key<='h':
-            a=a+1
-        elif key>='p' and key<='t':
-            p=p+1
-        elif key>='i' and key<='n':
-            i=i+1
+	if len(key)==1:
+            if key>='a' and key<='h':
+                a=a+1
+            elif key>='p' and key<='t':
+                p=p+1
+            elif key>='i' and key<='n':
+                i=i+1
+	elif len(key)==2:
+            if key[0]>='a' and key[0]<='h':
+                a=a+1
+            elif key[0]>='p' and key[0]<='t':
+                p=p+1
+            elif key[0]>='i' and key[0]<='n':
+                i=i+1
     return [i,a,p]
 def change_sum(term, oldi, newi):
     for ind in range(len(term.sum_list)):
@@ -63,26 +76,29 @@ def convert_single(term):
 
     final_terms=[]
     if pqr_present(term):
+	#print 'in pqr_present'
 	ia_list=ia_limit(term)
 	flag=0
 	for coeff in term.coeff_list:
 	    for ind in range(len(coeff)):
+
+	        #print  term.isa(coeff[ind]), term.isi(coeff[ind]) 
 	        if term.isa(coeff[ind])==0 and term.isi(coeff[ind])==0 and flag==0:
 
     		    #print 'in convert single ,', term.sum_list
-		    term=change_op(term,coeff[ind], chr(ord('i')+ia_list[0]))
+		    term=change_op(term,coeff[ind], next_op('i',ia_list,0))
 
 		    #first change op before sum, to remove op ind in sum 
-		    term=change_sum(term, coeff[ind], chr(ord('i')+ia_list[0]))
-		    term=add_dict(term,coeff,chr(ord('i')+ia_list[0]))
-	            coeff[ind]=chr(ord('i')+ia_list[0])
+		    term=change_sum(term, coeff[ind], next_op('i',ia_list,0))
+		    term=add_dict(term,coeff,next_op('i',ia_list,0))
+	            coeff[ind]=next_op('i',ia_list,0)
 		    final_terms.append(copy.deepcopy(term))
 		    del term.dict_ind[coeff[ind]]
 		    
-		    term=change_sum(term, coeff[ind], chr(ord('a')+ia_list[1]))
-		    term=change_op(term,coeff[ind], chr(ord('a')+ia_list[1]))
-		    term=add_dict(term,coeff,chr(ord('a')+ia_list[1]))
-		    coeff[ind]=chr(ord('a')+ia_list[1])
+		    term=change_sum(term, coeff[ind], next_op('a',ia_list,0))
+		    term=change_op(term,coeff[ind], next_op('a',ia_list,0))
+		    term=add_dict(term,coeff,next_op('a',ia_list,0))
+		    coeff[ind]=next_op('a',ia_list,0)
 		    final_terms.append(copy.deepcopy(term))
 		    del term.dict_ind[coeff[ind]]
 		    return final_terms
@@ -96,10 +112,10 @@ def convert_single(term):
 def convert(term):
     final_terms=[]
     final_terms=convert_single(term)
-    print 'first single', len(final_terms)
+    #print 'first single', len(final_terms)
 
     while pqr_present(final_terms[0]):
-	print_terms.print_terms([final_terms[0]])
+	#print_terms.print_terms([final_terms[0]])
 	inter_terms=[]
 	for term in final_terms:
 	    inter_terms.extend(convert_single(term))
