@@ -45,9 +45,9 @@ list_terms=list_terms1+list_terms2+list_terms3+list_terms4#+list_terms5+list_ter
 
 list_terms1=ce.compare_envelope(list_terms1,1,1)
 list_terms2=ce.compare_envelope(list_terms2,1,1)
-list_terms2=ce.compare_envelope(list_terms3,1,1)
-list_terms2=ce.compare_envelope(list_terms4,1,1)
-list_terms2=ce.compare_envelope(list_terms5,1,1)
+list_terms3=ce.compare_envelope(list_terms3,1,1)
+list_terms4=ce.compare_envelope(list_terms4,1,1)
+list_terms5=ce.compare_envelope(list_terms5,1,1)
 
 
 library.print_terms.print_terms(list_terms1)
