@@ -45,6 +45,7 @@ def change_sum(term, oldi, newi):
     for ind in range(len(term.sum_list)):
 	if term.sum_list[ind]==oldi:
 	    term.sum_list[ind]=newi
+    
     if term.st[0][-1].kind=='op':
 
 	for ind in term.st[0][-1].upper:
@@ -53,8 +54,9 @@ def change_sum(term, oldi, newi):
 	for ind in term.st[0][-1].lower:
 	    if ind in term.sum_list:
 		term.sum_list.remove(ind)
-	
-	    return term	
+    	
+
+    return term	
 def change_op(term, oldi, newi):
     if term.st[0][-1].kind=='op':
         for ind in range(len(term.st[0][-1].upper)):

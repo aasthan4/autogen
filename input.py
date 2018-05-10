@@ -7,6 +7,8 @@ from library import convert_pqr
 from library import pick
 from library import compare_envelope as ce
 import library
+from library.rn_comm import select_r
+from library.symmetric import symm
 #ccsd.amplitude()
 
 list_terms1=[]
@@ -19,13 +21,24 @@ list_terms7=[]
 list_terms8=[]
 list_terms=[]
 
-list_terms1.extend(comm(comm(['V2'],['D2'],0),['T21'],1))
+
+#list_terms1.extend(comm(comm(['V2'],['T2'],0),['D1'],1))
+
+
+
+list_terms1.extend(comm(['V2'],['T1'],1))
+#list_terms.extend(select_r(comm(['V2'],['T1'],1)))
+
+#list_terms1.extend(comm(list_terms,['T21'],1))
+
 list_terms=library.convert_pqr.convert_pqr(list_terms1)
 list_terms1=pick.pick(list_terms,['i'],['j'])
 list_terms2=pick.pick(list_terms,['a'],['b'])
 list_terms3=pick.pick(list_terms,['i','j'],['k','l'])
 list_terms4=pick.pick(list_terms,['a','b'],['c','d'])
 list_terms5=pick.pick(list_terms,['i','a'],['b','j'])
+
+list_terms3=symm(list_terms3)
 '''
 list_terms2.extend(math1.comm(math1.comm(['V2'],['T2'],0),['D21'],-1))
 list_terms3.extend(math1.comm(math1.comm(['V2'],['D2'],0),['T21'],-1))
