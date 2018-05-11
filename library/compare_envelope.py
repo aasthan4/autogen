@@ -12,10 +12,12 @@ def compare_envelope(list_terms, fc,last):
                 flo= cpre.compare(list_terms[i],list_terms[j])
                 #print flo
                 if flo!=0:
-                    print 'result in the comparision',i,j,flo
+
+                    #print 'result in the comparision',i,j,flo
                     #print 'this should be 0 always = ',list_terms[i].fac+list_terms[j].fac*flo
                     list_terms[i].fac=list_terms[i].fac+list_terms[j].fac * flo
                     list_terms[j].fac=0.0
+                #print 'result in the comparision',i,j,flo
 
     #muliply with the prefactor of the expression from the Housdoff Expression
     #for item in list_terms:
@@ -34,5 +36,5 @@ def compare_envelope(list_terms, fc,last):
 	    elif len(term.coeff_list)>len(term.map_org):
 	        print ' in compare envolope terminal error'
 	        sys.exit(0)
-    list_terms=pt.clean_list(list_terms)
+    ##list_terms=pt.clean_list(list_terms)
     return list_terms

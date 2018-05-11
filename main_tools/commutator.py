@@ -162,17 +162,17 @@ def comm(a,b,last):
     	if on==1:
     	    st2,co2=lib.full_con.full_con(st2,co2)  
     '''
-    '''
-    print_op(st1,co1)
-    '''
+    
+    #print_op(st2,co2)
+    
        
-    if last!=0:
-	fc=last
+    #if last!=0:
+	#fc=last
     #make terms of st and co and list of terms
-    list_terms=ct.change_terms1(st1,co1,fc,dict_add, a[0].map_org+b[0].map_org)#Problem : how to make lou?
+    list_terms=ct.change_terms1(st1,co1,last,dict_add, a[0].map_org+b[0].map_org)#Problem : how to make lou?
     #print len(list_terms)
     if on==1:
-	terms_tmp=ct.change_terms1(st2,co2,fc,dict_add, b[0].map_org+a[0].map_org)
+	terms_tmp=ct.change_terms1(st2,co2,last,dict_add, b[0].map_org+a[0].map_org)
         for item in terms_tmp:
 	    item.fac=item.fac*-1
 	    item.co[0][0]=item.co[0][0]*-1.0
@@ -183,11 +183,10 @@ def comm(a,b,last):
 	#item.cond_cont(item.dict_ind) only for CCSD noy for general case
 
 
-
-    list_terms=pt.clean_list(list_terms)
     cpre_env.compare_envelope(list_terms, fc, last)    
     list_terms=pt.clean_list(list_terms)
-
+    for term in list_terms:
+	term.co[0][0]=term.fac
     #print 'at the end of comm', len(list_terms)
     return list_terms
 

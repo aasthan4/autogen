@@ -10,7 +10,11 @@ def change_terms1(a, b, fac,dict_ind, list_op_used):
     list_terms=[]
 
     for op in list_op_used:
-        fac=op.fac*fac
+	#Only multiply op.fac when computing the outermost commutator
+	if fac!=0:
+            fac=op.fac*fac
+	else:
+	    fac=1.0
         sum_ind.extend(op.sum_ind)
         coeff.append(op.coeff)
 	
