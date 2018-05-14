@@ -13,7 +13,7 @@ def compare_envelope(list_terms, fc,last):
                 #print flo
                 if flo!=0:
 
-                    #print 'result in the comparision',i,j,flo
+                    print 'result in the comparision',i,j,flo
                     #print 'this should be 0 always = ',list_terms[i].fac+list_terms[j].fac*flo
                     list_terms[i].fac=list_terms[i].fac+list_terms[j].fac * flo
                     list_terms[j].fac=0.0

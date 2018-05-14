@@ -45,18 +45,30 @@ def change_sum(term, oldi, newi):
     for ind in range(len(term.sum_list)):
 	if term.sum_list[ind]==oldi:
 	    term.sum_list[ind]=newi
-    
-    if term.st[0][-1].kind=='op':
+    ''' 
 
+    if term.st[0][-1].kind=='op':
+	#if len(term.sum_list)==6:
+	    #print term.sum_list
 	for ind in term.st[0][-1].upper:
 	    if ind in term.sum_list:
 		term.sum_list.remove(ind)
 	for ind in term.st[0][-1].lower:
 	    if ind in term.sum_list:
 		term.sum_list.remove(ind)
-    	
-
+	#if len(term.sum_list)>=4:
+	    #print 'after',term.sum_list
+    '''
     return term	
+def delete_op_from_sum(term):
+    if term.st[0][-1].kind=='op':
+	for ind in term.st[0][-1].upper:
+	    if ind in term.sum_list:
+		term.sum_list.remove(ind)
+	for ind in term.st[0][-1].lower:
+	    if ind in term.sum_list:
+		term.sum_list.remove(ind)
+    return term 
 def change_op(term, oldi, newi):
     if term.st[0][-1].kind=='op':
         for ind in range(len(term.st[0][-1].upper)):
@@ -121,6 +133,7 @@ def convert(term):
 	inter_terms=[]
 	for term in final_terms:
 	    inter_terms.extend(convert_single(term))
+	    #print 'after single convert',term.sum_list
 	final_terms=inter_terms
         #print_terms.print_terms(final_terms)
     return final_terms
@@ -129,7 +142,10 @@ def convert_pqr(list_terms):
     
     #print '---------------'
     for term in list_terms:
+	print '----',term.sum_list
 	final_terms.extend(convert(term))
-    #print_terms.print_terms(final_terms)
+    	print_terms.print_terms(convert(term))
+    for term in final_terms:
+	term=delete_op_from_sum(term)
     return final_terms
 
