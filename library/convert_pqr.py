@@ -142,9 +142,9 @@ def convert_pqr(list_terms):
     
     #print '---------------'
     for term in list_terms:
-	print '----',term.sum_list
+	#print '----',term.sum_list
 	final_terms.extend(convert(term))
-    	print_terms.print_terms(convert(term))
+    	#print_terms.print_terms(convert(term))
     for term in final_terms:
 	term=delete_op_from_sum(term)
     return final_terms

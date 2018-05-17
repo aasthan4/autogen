@@ -9,14 +9,20 @@ def change_terms1(a, b, fac,dict_ind, list_op_used):
     coeff=[]
     list_terms=[]
 
-    for op in list_op_used:
-	#Only multiply op.fac when computing the outermost commutator
-	if fac!=0:
+
+    if fac!=0:
+        for op in list_op_used:
             fac=op.fac*fac
-	else:
-	    fac=1.0
-        sum_ind.extend(op.sum_ind)
-        coeff.append(op.coeff)
+	    #Only multiply op.fac when computing the outermost commutator
+            sum_ind.extend(op.sum_ind)
+            coeff.append(op.coeff)
+	print fac, 'fac is this for each term'
+    else:
+	fac=1.0
+	for op in list_op_used:
+            sum_ind.extend(op.sum_ind)
+            coeff.append(op.coeff)
+
 	
     for (t,c)  in zip(a,b):
 	t=[t]#as t is a list of terms and each term has operators like delta and op

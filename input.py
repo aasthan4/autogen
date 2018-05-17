@@ -23,15 +23,17 @@ list_terms8=[]
 list_terms=[]
 
 
-list_terms1.extend(comm(comm(['V2'],['T2'],0),['D1'],1))
+list_terms1.extend(comm(comm(['V2'],['T2'],0),['D21'],1))
 
-#list_terms1.extend(comm(['V2'],['D1'],1))
+#list_terms1.extend(comm(['V2'],['T2'],1))
 #list_terms.extend(select_r(comm(['V2'],['T1'],1)))
 
 #list_terms1.extend(comm(list_terms,['T21'],1))
 
 list_terms=library.convert_pqr.convert_pqr(list_terms1)
+
 #library.print_terms.print_terms(list_terms)
+
 list_terms1=pick.pick(list_terms,['i'],['j'])
 list_terms2=pick.pick(list_terms,['a'],['b'])
 list_terms3=pick.pick(list_terms,['i','j'],['k','l'])
@@ -54,25 +56,24 @@ list_terms=list_terms1+list_terms2+list_terms3+list_terms4+list_terms5#+list_ter
 
 
 
-'''
 list_terms1=ce.compare_envelope(list_terms1,1,1)
 list_terms2=ce.compare_envelope(list_terms2,1,1)
 list_terms3=ce.compare_envelope(list_terms3,1,1)
 list_terms4=ce.compare_envelope(list_terms4,1,1)
 list_terms5=ce.compare_envelope(list_terms5,1,1)
-'''
+
 list_terms1=pt.clean_list(list_terms1)
 list_terms2=pt.clean_list(list_terms2)
 list_terms3=pt.clean_list(list_terms3)
 list_terms4=pt.clean_list(list_terms4)
 list_terms5=pt.clean_list(list_terms5)
-'''
+
 list_terms1=symm(list_terms1)
 list_terms2=symm(list_terms2)
 list_terms3=symm(list_terms3)
 list_terms4=symm(list_terms4)
 list_terms5=symm(list_terms5)
-'''
+
 library.print_terms.print_terms(list_terms1)
 library.print_terms.print_terms(list_terms2)
 library.print_terms.print_terms(list_terms3)

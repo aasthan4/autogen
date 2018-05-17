@@ -75,11 +75,9 @@ def comm(a,b,last):
     print 'doing contraction through multi_cont'
     for t1 in a:
 	for t2 in b:
-	
     	    stt,cot=multi_cont.multi_cont(t1.st,t2.st,t1.co,t2.co)
 	    #COMMUTATOR CONDITION : removing element where length of input operator strings =
 	    #length of output operator string
-
 	    for (term,termco) in zip(stt,cot):
 		#lib.print_op.print_op(term,termco)
 		
@@ -173,8 +171,9 @@ def comm(a,b,last):
     #print len(list_terms)
     if on==1:
 	terms_tmp=ct.change_terms1(st2,co2,last,dict_add, b[0].map_org+a[0].map_org)
+
         for item in terms_tmp:
-	    item.fac=item.fac*-1
+	    item.fac=item.fac*-1.0
 	    item.co[0][0]=item.co[0][0]*-1.0
 	list_terms.extend(terms_tmp)
     for item in list_terms:
@@ -182,9 +181,11 @@ def comm(a,b,last):
 	item.build_map_org()
 	#item.cond_cont(item.dict_ind) only for CCSD noy for general case
 
-
+    #pt.print_terms(list_terms)
     cpre_env.compare_envelope(list_terms, fc, last)    
     list_terms=pt.clean_list(list_terms)
+    #pt.print_terms(list_terms)
+
     for term in list_terms:
 	term.co[0][0]=term.fac
     #print 'at the end of comm', len(list_terms)
