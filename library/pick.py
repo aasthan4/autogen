@@ -1,3 +1,4 @@
+import print_terms
 def pick(list_terms, upper, lower):
     final_terms=[]
 
@@ -17,7 +18,7 @@ def pick(list_terms, upper, lower):
 	elif list_terms[0].isa(item)==1:
 	    a=a+1
     lo_list=[i,a]
-
+    print ' here is the pick unction list in input', up_list, lo_list
     for term in list_terms:
 	flag=0
 	up=[]
@@ -41,8 +42,9 @@ def pick(list_terms, upper, lower):
 			a=a+1
 		lo=[i,a]
 		flag=1
-	#print up, up_list
+	print up, up_list, lo, lo_list
 	if up==up_list and lo==lo_list and flag==1:
+	    print 'yes'
 	    final_terms.append(term)
     return final_terms
 		

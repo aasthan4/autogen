@@ -23,7 +23,7 @@ list_terms8=[]
 list_terms=[]
 
 
-list_terms1.extend(comm(comm(['V2'],['T2'],0),['D21'],1))
+list_terms1.extend(comm(comm(['V2'],['D1'],0),['D11'],1))
 
 #list_terms1.extend(comm(['V2'],['T2'],1))
 #list_terms.extend(select_r(comm(['V2'],['T1'],1)))
@@ -32,7 +32,7 @@ list_terms1.extend(comm(comm(['V2'],['T2'],0),['D21'],1))
 
 list_terms=library.convert_pqr.convert_pqr(list_terms1)
 
-#library.print_terms.print_terms(list_terms)
+library.print_terms.print_terms(list_terms)
 
 list_terms1=pick.pick(list_terms,['i'],['j'])
 list_terms2=pick.pick(list_terms,['a'],['b'])

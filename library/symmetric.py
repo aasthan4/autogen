@@ -2,9 +2,9 @@ import copy
 #make unique function
 def unique(i1,i2,term):
     if term.dict_ind[i1]!=term.dict_ind[i2]:
-	if i1 in term.st[0][-1].upper and i2 in term.st[0][-1].upper:
+	if i1 in term.st[0][-1].upper and i2 in term.st[0][-1].upper and term.type(i1)==term.type(i2):
 	    return 1
-	elif i1 in term.st[0][-1].lower and i2 in term.st[0][-1].lower:
+	elif i1 in term.st[0][-1].lower and i2 in term.st[0][-1].lower and term.type(i1)==term.type(i2):
 	    return 1
     return 0
 #make split_terms
@@ -17,6 +17,8 @@ def split_term(term,i1,i2):
 	    elif coeff[ind]==i2:
 		coeff[ind]=i1
    return copy.deepcopy(term)
+#Algo : Make a list of all undummy indices
+#----find the unique pairs in them if found split into two 
 def symm(list_terms):
     final_terms=[]
     for term in list_terms:

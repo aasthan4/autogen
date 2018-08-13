@@ -1,109 +1,60 @@
-0.5\sum_{l a b i j }D^{il}_{ba}<jm||nl>T^{ab}_{ij}E^{m}_{n}\\ 
-0.25\sum_{k l a b j }D^{kl}_{ba}<jm||lk>T^{ab}_{ij}E^{m}_{i}\\ 
-0.5\sum_{d a b i j }D^{ji}_{bd}<dm||na>T^{ab}_{ij}E^{m}_{n}\\ 
--1.0\sum_{l d a b j }D^{jl}_{bd}<dm||la>T^{ab}_{ij}E^{m}_{i}\\ 
-0.25\sum_{k a b i j }D^{kl}_{ba}<ji||mk>T^{ab}_{ij}E^{l}_{m}\\ 
--1.0\sum_{d a b i j }D^{il}_{bd}<jd||ma>T^{ab}_{ij}E^{l}_{m}\\ 
-1.0\sum_{k d a b j }D^{kl}_{bd}<jd||ka>T^{ab}_{ij}E^{l}_{i}\\ 
-0.25\sum_{c d a b j }D^{jl}_{cd}<dc||ba>T^{ab}_{ij}E^{l}_{i}\\ 
+2.0\sum_{j b a }D^{j}_{b}D^{i}_{a}<ab||kj>E^{i}_{k}\\ 
 ------------\\ 
-1.0\sum_{l d a i j }D^{il}_{ad}<jd||el>T^{ab}_{ij}E^{b}_{e}\\ 
-0.5\sum_{l a b i j }D^{il}_{ba}<je||fl>T^{ab}_{ij}E^{e}_{f}\\ 
--0.25\sum_{c d a i j }D^{ji}_{cd}<dc||ea>T^{ab}_{ij}E^{b}_{e}\\ 
-0.5\sum_{d a b i j }D^{ji}_{bd}<de||fa>T^{ab}_{ij}E^{e}_{f}\\ 
--0.25\sum_{k l a i j }D^{kl}_{ca}<ji||lk>T^{ab}_{ij}E^{b}_{c}\\ 
-1.0\sum_{l d a i j }D^{il}_{cd}<jd||la>T^{ab}_{ij}E^{b}_{c}\\ 
--1.0\sum_{l a b i j }D^{il}_{cb}<je||la>T^{ab}_{ij}E^{e}_{c}\\ 
--0.25\sum_{d a b i j }D^{ji}_{cd}<de||ba>T^{ab}_{ij}E^{e}_{c}\\ 
+-2.0\sum_{j b i }D^{j}_{b}D^{i}_{a}<bc||ji>E^{c}_{a}\\ 
 ------------\\ 
--0.125\sum_{a b i j }D^{il}_{ba}<jm||ni1>T^{ab}_{ij}E^{lm}_{ni1}\\ 
-0.125\sum_{a b i j }D^{im}_{ba}<jl||ni1>T^{ab}_{ij}E^{lm}_{ni1}\\ 
-0.125\sum_{k a b j }D^{kl}_{ba}<jm||nk>T^{ab}_{ij}E^{lm}_{ni}\\ 
--0.125\sum_{k a b j }D^{km}_{ba}<jl||nk>T^{ab}_{ij}E^{lm}_{ni}\\ 
--0.125\sum_{k a b j }D^{kl}_{ba}<jm||ik>T^{ab}_{nj}E^{lm}_{ni}\\ 
-0.125\sum_{k a b j }D^{km}_{ba}<jl||ik>T^{ab}_{nj}E^{lm}_{ni}\\ 
--0.25\sum_{d a b j }D^{jl}_{bd}<dm||na>T^{ab}_{ij}E^{lm}_{ni}\\ 
-0.25\sum_{d a b j }D^{jm}_{bd}<dl||na>T^{ab}_{ij}E^{lm}_{ni}\\ 
-0.25\sum_{d a b j }D^{jl}_{bd}<dm||ia>T^{ab}_{nj}E^{lm}_{ni}\\ 
--0.25\sum_{d a b j }D^{jm}_{bd}<dl||ia>T^{ab}_{nj}E^{lm}_{ni}\\ 
--0.25\sum_{k d a b }D^{kl}_{bd}<dm||ka>T^{ab}_{ij}E^{lm}_{ij}\\ 
-0.25\sum_{k d a b }D^{km}_{bd}<dl||ka>T^{ab}_{ij}E^{lm}_{ij}\\ 
--0.0625\sum_{a b i j }D^{kl}_{ba}<ji||mn>T^{ab}_{ij}E^{kl}_{mn}\\ 
-0.25\sum_{d a b j }D^{kl}_{bd}<jd||ma>T^{ab}_{ij}E^{kl}_{mi}\\ 
--0.25\sum_{d a b j }D^{kl}_{bd}<jd||ia>T^{ab}_{mj}E^{kl}_{mi}\\ 
--0.0625\sum_{c d a b }D^{kl}_{cd}<dc||ba>T^{ab}_{ij}E^{kl}_{ij}\\ 
+-0.25\sum_{b a }D^{j}_{b}D^{i}_{a}<ab||kl>E^{ji}_{kl}\\ 
+0.25\sum_{b a }D^{i}_{b}D^{j}_{a}<ab||kl>E^{ji}_{kl}\\ 
 ------------\\ 
--0.25\sum_{l d i j }D^{il}_{cd}<jd||el>T^{ab}_{ij}E^{ab}_{ce}\\ 
-0.25\sum_{l d i j }D^{il}_{ed}<jd||cl>T^{ab}_{ij}E^{ab}_{ce}\\ 
-0.25\sum_{l a i j }D^{il}_{ca}<je||fl>T^{ab}_{ij}E^{eb}_{cf}\\ 
--0.25\sum_{l a i j }D^{il}_{fa}<je||cl>T^{ab}_{ij}E^{eb}_{cf}\\ 
--0.25\sum_{l a i j }D^{il}_{ca}<jb||fl>T^{ae}_{ij}E^{eb}_{cf}\\ 
-0.25\sum_{l a i j }D^{il}_{fa}<jb||cl>T^{ae}_{ij}E^{eb}_{cf}\\ 
-0.125\sum_{d a i j }D^{ji}_{cd}<de||fa>T^{ab}_{ij}E^{eb}_{cf}\\ 
--0.125\sum_{d a i j }D^{ji}_{fd}<de||ca>T^{ab}_{ij}E^{eb}_{cf}\\ 
--0.125\sum_{d a i j }D^{ji}_{cd}<db||fa>T^{ae}_{ij}E^{eb}_{cf}\\ 
-0.125\sum_{d a i j }D^{ji}_{fd}<db||ca>T^{ae}_{ij}E^{eb}_{cf}\\ 
-0.125\sum_{a b i j }D^{ji}_{cb}<ef||ga>T^{ab}_{ij}E^{ef}_{cg}\\ 
--0.125\sum_{a b i j }D^{ji}_{gb}<ef||ca>T^{ab}_{ij}E^{ef}_{cg}\\ 
--0.0625\sum_{k l i j }D^{kl}_{cd}<ji||lk>T^{ab}_{ij}E^{ab}_{cd}\\ 
-0.25\sum_{l a i j }D^{il}_{cd}<je||la>T^{ab}_{ij}E^{eb}_{cd}\\ 
--0.25\sum_{l a i j }D^{il}_{cd}<jb||la>T^{ae}_{ij}E^{eb}_{cd}\\ 
--0.0625\sum_{a b i j }D^{ji}_{cd}<ef||ba>T^{ab}_{ij}E^{ef}_{cd}\\ 
+0.25\sum_{j i }D^{j}_{b}D^{i}_{a}<cd||ji>E^{cd}_{ba}\\ 
+-0.25\sum_{j i }D^{j}_{a}D^{i}_{b}<cd||ji>E^{cd}_{ba}\\ 
 ------------\\ 
-0.25\sum_{l a i j }D^{il}_{ca}<jm||nl>T^{ab}_{ij}E^{mb}_{cn}\\ 
--0.25\sum_{l a i j }D^{il}_{na}<jm||cl>T^{ab}_{ij}E^{mb}_{cn}\\ 
--0.25\sum_{l a i j }D^{il}_{ca}<jb||nl>T^{am}_{ij}E^{mb}_{cn}\\ 
-0.25\sum_{l a i j }D^{il}_{na}<jb||cl>T^{am}_{ij}E^{mb}_{cn}\\ 
-0.125\sum_{k l a j }D^{kl}_{ca}<jm||lk>T^{ab}_{ij}E^{mb}_{ci}\\ 
--0.125\sum_{k l a j }D^{kl}_{ia}<jm||lk>T^{ab}_{cj}E^{mb}_{ci}\\ 
--0.125\sum_{k l a j }D^{kl}_{ca}<jb||lk>T^{am}_{ij}E^{mb}_{ci}\\ 
-0.125\sum_{k l a j }D^{kl}_{ia}<jb||lk>T^{am}_{cj}E^{mb}_{ci}\\ 
-0.25\sum_{k d a j }D^{kl}_{ad}<jd||ek>T^{ab}_{ij}E^{lb}_{ei}\\ 
--0.25\sum_{k d a j }D^{kb}_{ad}<jd||ek>T^{al}_{ij}E^{lb}_{ei}\\ 
--0.25\sum_{k d a j }D^{kl}_{ad}<jd||ik>T^{ab}_{ej}E^{lb}_{ei}\\ 
-0.25\sum_{k d a j }D^{kb}_{ad}<jd||ik>T^{al}_{ej}E^{lb}_{ei}\\ 
-0.125\sum_{k a b j }D^{kl}_{ba}<je||fk>T^{ab}_{ij}E^{le}_{fi}\\ 
--0.125\sum_{k a b j }D^{ke}_{ba}<jl||fk>T^{ab}_{ij}E^{le}_{fi}\\ 
--0.125\sum_{k a b j }D^{kl}_{ba}<je||ik>T^{ab}_{fj}E^{le}_{fi}\\ 
-0.125\sum_{k a b j }D^{ke}_{ba}<jl||ik>T^{ab}_{fj}E^{le}_{fi}\\ 
-0.125\sum_{d a i j }D^{ji}_{cd}<dm||na>T^{ab}_{ij}E^{mb}_{cn}\\ 
--0.125\sum_{d a i j }D^{ji}_{nd}<dm||ca>T^{ab}_{ij}E^{mb}_{cn}\\ 
--0.125\sum_{d a i j }D^{ji}_{cd}<db||na>T^{am}_{ij}E^{mb}_{cn}\\ 
-0.125\sum_{d a i j }D^{ji}_{nd}<db||ca>T^{am}_{ij}E^{mb}_{cn}\\ 
--0.25\sum_{l d a j }D^{jl}_{cd}<dm||la>T^{ab}_{ij}E^{mb}_{ci}\\ 
-0.25\sum_{l d a j }D^{jl}_{id}<dm||la>T^{ab}_{cj}E^{mb}_{ci}\\ 
-0.25\sum_{l d a j }D^{jl}_{cd}<db||la>T^{am}_{ij}E^{mb}_{ci}\\ 
--0.25\sum_{l d a j }D^{jl}_{id}<db||la>T^{am}_{cj}E^{mb}_{ci}\\ 
-0.125\sum_{c d a j }D^{jl}_{cd}<dc||ea>T^{ab}_{ij}E^{lb}_{ei}\\ 
--0.125\sum_{c d a j }D^{jb}_{cd}<dc||ea>T^{al}_{ij}E^{lb}_{ei}\\ 
--0.125\sum_{c d a j }D^{jl}_{cd}<dc||ia>T^{ab}_{ej}E^{lb}_{ei}\\ 
-0.125\sum_{c d a j }D^{jb}_{cd}<dc||ia>T^{al}_{ej}E^{lb}_{ei}\\ 
--0.25\sum_{d a b j }D^{jl}_{bd}<de||fa>T^{ab}_{ij}E^{le}_{fi}\\ 
-0.25\sum_{d a b j }D^{je}_{bd}<dl||fa>T^{ab}_{ij}E^{le}_{fi}\\ 
-0.25\sum_{d a b j }D^{jl}_{bd}<de||ia>T^{ab}_{fj}E^{le}_{fi}\\ 
--0.25\sum_{d a b j }D^{je}_{bd}<dl||ia>T^{ab}_{fj}E^{le}_{fi}\\ 
-0.125\sum_{k a i j }D^{kl}_{ca}<ji||mk>T^{ab}_{ij}E^{lb}_{cm}\\ 
--0.125\sum_{k a i j }D^{kb}_{ca}<ji||mk>T^{al}_{ij}E^{lb}_{cm}\\ 
--0.125\sum_{k a i j }D^{kl}_{ma}<ji||ck>T^{ab}_{ij}E^{lb}_{cm}\\ 
-0.125\sum_{k a i j }D^{kb}_{ma}<ji||ck>T^{al}_{ij}E^{lb}_{cm}\\ 
--0.25\sum_{d a i j }D^{il}_{cd}<jd||ma>T^{ab}_{ij}E^{lb}_{cm}\\ 
-0.25\sum_{d a i j }D^{ib}_{cd}<jd||ma>T^{al}_{ij}E^{lb}_{cm}\\ 
-0.25\sum_{d a i j }D^{il}_{md}<jd||ca>T^{ab}_{ij}E^{lb}_{cm}\\ 
--0.25\sum_{d a i j }D^{ib}_{md}<jd||ca>T^{al}_{ij}E^{lb}_{cm}\\ 
-0.25\sum_{a b i j }D^{il}_{cb}<je||ma>T^{ab}_{ij}E^{le}_{cm}\\ 
--0.25\sum_{a b i j }D^{ie}_{cb}<jl||ma>T^{ab}_{ij}E^{le}_{cm}\\ 
--0.25\sum_{a b i j }D^{il}_{mb}<je||ca>T^{ab}_{ij}E^{le}_{cm}\\ 
-0.25\sum_{a b i j }D^{ie}_{mb}<jl||ca>T^{ab}_{ij}E^{le}_{cm}\\ 
-0.25\sum_{k d a j }D^{kl}_{cd}<jd||ka>T^{ab}_{ij}E^{lb}_{ci}\\ 
--0.25\sum_{k d a j }D^{kb}_{cd}<jd||ka>T^{al}_{ij}E^{lb}_{ci}\\ 
--0.25\sum_{k d a j }D^{kl}_{id}<jd||ka>T^{ab}_{cj}E^{lb}_{ci}\\ 
-0.25\sum_{k d a j }D^{kb}_{id}<jd||ka>T^{al}_{cj}E^{lb}_{ci}\\ 
--0.25\sum_{k a b j }D^{kl}_{cb}<je||ka>T^{ab}_{ij}E^{le}_{ci}\\ 
-0.25\sum_{k a b j }D^{ke}_{cb}<jl||ka>T^{ab}_{ij}E^{le}_{ci}\\ 
-0.25\sum_{k a b j }D^{kl}_{ib}<je||ka>T^{ab}_{cj}E^{le}_{ci}\\ 
--0.25\sum_{k a b j }D^{ke}_{ib}<jl||ka>T^{ab}_{cj}E^{le}_{ci}\\ 
-0.125\sum_{d a b j }D^{jl}_{cd}<de||ba>T^{ab}_{ij}E^{le}_{ci}\\ 
--0.125\sum_{d a b j }D^{je}_{cd}<dl||ba>T^{ab}_{ij}E^{le}_{ci}\\ 
--0.125\sum_{d a b j }D^{jl}_{id}<de||ba>T^{ab}_{cj}E^{le}_{ci}\\ 
-0.125\sum_{d a b j }D^{je}_{id}<dl||ba>T^{ab}_{cj}E^{le}_{ci}\\ 
+2.0\sum_{b i }D^{j}_{b}D^{i}_{a}<bc||ki>E^{jc}_{ak}\\ 
+------------\\ 
+0.5\sum_{j i }D^{j}_{b}D^{i}_{a}<kl||ji>E^{kl}_{ba}\\ 
+0.5\sum_{j i }D^{j}_{b}D^{i}_{a}<kc||ji>E^{kc}_{ba}\\ 
+0.5\sum_{j i }D^{j}_{b}D^{i}_{a}<ck||ji>E^{ck}_{ba}\\ 
+0.5\sum_{j i }D^{j}_{b}D^{i}_{a}<cd||ji>E^{cd}_{ba}\\ 
+2.0\sum_{b i }D^{j}_{b}D^{i}_{a}<bk||li>E^{jk}_{al}\\ 
+2.0\sum_{b i }D^{j}_{b}D^{i}_{a}<bk||ci>E^{jk}_{ac}\\ 
+2.0\sum_{b i }D^{j}_{b}D^{i}_{a}<bc||ki>E^{jc}_{ak}\\ 
+2.0\sum_{b i }D^{j}_{b}D^{i}_{a}<bc||di>E^{jc}_{ad}\\ 
+-2.0\sum_{j b i }D^{j}_{b}D^{i}_{a}<bk||ji>E^{k}_{a}\\ 
+-2.0\sum_{j b i }D^{j}_{b}D^{i}_{a}<bc||ji>E^{c}_{a}\\ 
+-0.5\sum_{b a }D^{j}_{b}D^{i}_{a}<ab||kl>E^{ji}_{kl}\\ 
+-0.5\sum_{b a }D^{j}_{b}D^{i}_{a}<ab||kc>E^{ji}_{kc}\\ 
+-0.5\sum_{b a }D^{j}_{b}D^{i}_{a}<ab||ck>E^{ji}_{ck}\\ 
+-0.5\sum_{b a }D^{j}_{b}D^{i}_{a}<ab||cd>E^{ji}_{cd}\\ 
+2.0\sum_{j b a }D^{j}_{b}D^{i}_{a}<ab||kj>E^{i}_{k}\\ 
+2.0\sum_{j b a }D^{j}_{b}D^{i}_{a}<ab||cj>E^{i}_{c}\\ 
+-1.0\sum_{j b i a }D^{j}_{b}D^{i}_{a}<ab||ji>\\ 
+------------\\ 
+2.0\sum_{j b a }D^{j}_{b}D^{i}_{a}<ab||kj>E^{i}_{k}\\ 
+------------\\ 
+-2.0\sum_{j b i }D^{j}_{b}D^{i}_{a}<bc||ji>E^{c}_{a}\\ 
+------------\\ 
+-0.25\sum_{b a }D^{j}_{b}D^{i}_{a}<ab||kl>E^{ji}_{kl}\\ 
+0.25\sum_{b a }D^{i}_{b}D^{j}_{a}<ab||kl>E^{ji}_{kl}\\ 
+------------\\ 
+0.25\sum_{j i }D^{j}_{b}D^{i}_{a}<cd||ji>E^{cd}_{ba}\\ 
+-0.25\sum_{j i }D^{j}_{a}D^{i}_{b}<cd||ji>E^{cd}_{ba}\\ 
+------------\\ 
+2.0\sum_{b i }D^{j}_{b}D^{i}_{a}<bc||ki>E^{jc}_{ak}\\ 
+------------\\ 
+0.25\sum_{a b i j }<ji||ba>T^{ab}_{ij}\\ 
+------------\\ 
+-1.0\sum_{a i b j }<ij||ba>T^{a}_{i}T^{b}_{j}\\ 
+------------\\ 
+-1.0\sum_{i a q r b j }D^{i}_{a}<jq||ri>T^{b}_{j}E^{qb}_{ar}\\ 
+-0.5\sum_{i a p q b j }D^{i}_{a}<pq||bi>T^{b}_{j}E^{pq}_{aj}\\ 
+0.5\sum_{i a p q r j }D^{i}_{a}<pq||ri>T^{a}_{j}E^{pq}_{rj}\\ 
+1.0\sum_{i a q b j }D^{i}_{a}<jq||bi>T^{b}_{j}E^{q}_{a}\\ 
+-1.0\sum_{i a q r j }D^{i}_{a}<jq||ri>T^{a}_{j}E^{q}_{r}\\ 
+-0.5\sum_{i a q r s b }D^{i}_{a}<aq||rs>T^{b}_{i}E^{qb}_{rs}\\ 
+0.5\sum_{i a r s b j }D^{i}_{a}<aj||rs>T^{b}_{j}E^{ib}_{rs}\\ 
+-1.0\sum_{i a q r b j }D^{i}_{a}<aq||rb>T^{b}_{j}E^{iq}_{rj}\\ 
+1.0\sum_{i a q r b }D^{i}_{a}<aq||rb>T^{b}_{i}E^{q}_{r}\\ 
+-1.0\sum_{i a r b j }D^{i}_{a}<aj||rb>T^{b}_{j}E^{i}_{r}\\ 
+-1.0\sum_{i a r b j }D^{i}_{a}<aj||ri>T^{b}_{j}E^{b}_{r}\\ 
+1.0\sum_{i a q b j }D^{i}_{a}<aq||bi>T^{b}_{j}E^{q}_{j}\\ 
+1.0\sum_{i a b j }D^{i}_{a}<aj||bi>T^{b}_{j}\\ 
 ------------\\ 
