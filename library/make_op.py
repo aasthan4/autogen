@@ -82,7 +82,7 @@ def make_op(list_op, dict_ind):
             opp.upper=[next_op('p',list_type,0)]
 
             opp.lower=[next_op('p',list_type,1)]
-
+            print opp
             dict_ind[next_op('p',list_type,0)]=lop
             dict_ind[next_op('p',list_type,1)]=lop
             stp=[[opp]]

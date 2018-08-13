@@ -15,6 +15,7 @@ class operator(object):
     def __repr__(self):
         return self.name
 
+
 class contractedobj(object):
     def __init__(self, kind, sign, const):
         self.kind = kind
@@ -26,9 +27,12 @@ class contractedobj(object):
         self.matrix = []
         self.strings=[1,2]
     def __repr__(self):
-        return self.upper
+        return str.upper(self.kind)+ '^'+str(self.upper)+'_'+str(self.lower)
     def value(self, mat):
         return 1
+    def __str__(self):
+        return str.upper(self.kind)+ '^'+str(self.upper)+'_'+str(self.lower)
+
 
 class matrix_con(object):
     def __init__(self):
