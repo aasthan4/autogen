@@ -15,6 +15,7 @@ import library as lib
 import library. compare as cpre
 import multi_cont
 import library.compare_envelope as cpre_env
+import time 
 removed=0
 '''
 class list_op_term:
@@ -180,9 +181,10 @@ def comm(a,b,last):
 	item.compress()
 	item.build_map_org()
 	#item.cond_cont(item.dict_ind) only for CCSD noy for general case
-
+    start_time=time.time()
     #pt.print_terms(list_terms)
-    cpre_env.compare_envelope(list_terms, fc, last)    
+    cpre_env.compare_envelope(list_terms, fc, last) 
+    print "time taken by compare function in total is = ", time.time()-start_time
     list_terms=pt.clean_list(list_terms)
     #pt.print_terms(list_terms)
 

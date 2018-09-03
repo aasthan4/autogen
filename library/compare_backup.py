@@ -1,8 +1,6 @@
 import copy
-import time
 import class_term
 import functions
-import compare_level5
 from pkg import parity
 class ind(object):
     def __init__(self, name, seen, parent):
@@ -378,8 +376,8 @@ def arrowwork(term1,term2,coeff1, coeff2):
 
 
 def level5(term1, term2, final_terms):
-    #map_org becomes immaterial for t2 terms    
-    start_time1=time.time()
+    #map_org becomes immaterial for t2 terms
+
     #---Algorithm -
     #
     #
@@ -403,7 +401,6 @@ def level5(term1, term2, final_terms):
     tmp2=[]
     term2_coeffs=[]
     final_coeffs=[]
-    print "seconds in making objects0",time.time()-start_time1
     #print '---------------------coeff1 length', len(coeff1)
     #build class ind for term2 in final terms
     for termx in final_terms:
@@ -422,8 +419,6 @@ def level5(term1, term2, final_terms):
         term2_coeffs.append(copy.deepcopy(tmp2))
     final_coeffs=copy.deepcopy(term2_coeffs)
     #pair the pairs
-    print "seconds in making objects1",time.time()-start_time1
-
     for c1 in coeff1:
         #for i1 in c1:
         #    print i1.name
@@ -474,8 +469,6 @@ def level5(term1, term2, final_terms):
         print '\n'
     print '------'
     '''
-
-    print "seconds in making objects2",time.time()-start_time1
     for c2,termx in zip(final_coeffs,final_terms):
         unsee(coeff1)
         unsee(c2)
@@ -490,44 +483,30 @@ def level5(term1, term2, final_terms):
 def compare(term1, term2):
     flag=1
     ret=[]
-
-
-    start_time=time.time()
-
     if flag==1:
         flag=level1(term1,term2)
-        print "seconds in level1",time.time()-start_time
 
 	#print 'flag level 1 :', flag
     if flag!=0:
         flag=level2(term1,term2)
 	#print 'flag level 2 :', flag
-        print "seconds in level2",time.time()-start_time
 
     if flag!=0:
         flag, final_terms=level3(term1,term2)
 	#print 'flag level 3 :', flag
-        print "seconds in level3",time.time()-start_time
 
         #print len(final_terms)
-    start_time=time.time()
     if flag!=0:
         flag=level4(term1,term2, final_terms)
 	#print 'flag level 4 :', flag
-        print "seconds in level4",time.time()-start_time
-
 
         #print len(final_terms)
         #1.include the sign in the face
-    start_time=time.time()
-
     if flag!=0:
         #2.return not only 1 but the sign of the face as well.
-        flag=compare_level5.level5(term1,term2, final_terms)
+        flag=level5(term1,term2, final_terms)
 	#print 'flag level 5 :', flag
         #print len(final_terms)
-
-        print "seconds in level5",time.time()-start_time
     final_terms=[]
     return flag
 
