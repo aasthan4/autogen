@@ -512,7 +512,7 @@ def compare(term1, term2):
         #print len(final_terms)
     start_time=time.time()
     if flag!=0:
-        flag=level4(term1,term2, final_terms)
+        #flag=level4(term1,term2, final_terms)
 	#print 'flag level 4 :', flag
         print "seconds in level4",time.time()-start_time
 

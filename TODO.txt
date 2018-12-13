@@ -10,3 +10,6 @@ R and S commutator ->
 include Active States
 Extended Wicks Theorem
 
+
+Problem :
+l. finish writing second part of arrowwork function(pick other partners)

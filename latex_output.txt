@@ -7,3 +7,52 @@
 0.5\sum_{q a b i j }<jq||ba>T^{ab}_{ij}E^{q}_{i}\\ 
 0.25\sum_{a b i j }<ji||ba>T^{ab}_{ij}\\ 
 ------------\\ 
+-0.0625\sum_{q r s a b i j }<jq||rs>T^{ab}_{ij}E^{qab}_{rsi}\\ 
+0.0625\sum_{q r s a b i j }<iq||rs>T^{ab}_{ij}E^{qab}_{rsj}\\ 
+0.0625\sum_{p r s a b i j }<pj||rs>T^{ab}_{ij}E^{pab}_{rsi}\\ 
+-0.0625\sum_{p r s a b i j }<pi||rs>T^{ab}_{ij}E^{pab}_{rsj}\\ 
+0.0625\sum_{p q r a b i j }<pq||ra>T^{ab}_{ij}E^{pqb}_{rij}\\ 
+-0.0625\sum_{p q r a b i j }<pq||rb>T^{ab}_{ij}E^{pqa}_{rij}\\ 
+-0.0625\sum_{p q s a b i j }<pq||as>T^{ab}_{ij}E^{pqb}_{sij}\\ 
+0.0625\sum_{p q s a b i j }<pq||bs>T^{ab}_{ij}E^{pqa}_{sij}\\ 
+-0.0625\sum_{r s a b i j }<ji||rs>T^{ab}_{ij}E^{ab}_{rs}\\ 
+0.0625\sum_{q r a b i j }<jq||ra>T^{ab}_{ij}E^{qb}_{ri}\\ 
+-0.0625\sum_{q r a b i j }<jq||rb>T^{ab}_{ij}E^{qa}_{ri}\\ 
+-0.0625\sum_{q s a b i j }<jq||as>T^{ab}_{ij}E^{qb}_{si}\\ 
+0.0625\sum_{q s a b i j }<jq||bs>T^{ab}_{ij}E^{qa}_{si}\\ 
+0.0625\sum_{r s a b i j }<ij||rs>T^{ab}_{ij}E^{ab}_{rs}\\ 
+-0.0625\sum_{q r a b i j }<iq||ra>T^{ab}_{ij}E^{qb}_{rj}\\ 
+0.0625\sum_{q r a b i j }<iq||rb>T^{ab}_{ij}E^{qa}_{rj}\\ 
+0.0625\sum_{q s a b i j }<iq||as>T^{ab}_{ij}E^{qb}_{sj}\\ 
+-0.0625\sum_{q s a b i j }<iq||bs>T^{ab}_{ij}E^{qa}_{sj}\\ 
+-0.0625\sum_{p r a b i j }<pj||ra>T^{ab}_{ij}E^{pb}_{ri}\\ 
+0.0625\sum_{p r a b i j }<pj||rb>T^{ab}_{ij}E^{pa}_{ri}\\ 
+0.0625\sum_{p s a b i j }<pj||as>T^{ab}_{ij}E^{pb}_{si}\\ 
+-0.0625\sum_{p s a b i j }<pj||bs>T^{ab}_{ij}E^{pa}_{si}\\ 
+0.0625\sum_{p r a b i j }<pi||ra>T^{ab}_{ij}E^{pb}_{rj}\\ 
+-0.0625\sum_{p r a b i j }<pi||rb>T^{ab}_{ij}E^{pa}_{rj}\\ 
+-0.0625\sum_{p s a b i j }<pi||as>T^{ab}_{ij}E^{pb}_{sj}\\ 
+0.0625\sum_{p s a b i j }<pi||bs>T^{ab}_{ij}E^{pa}_{sj}\\ 
+-0.0625\sum_{p q a b i j }<pq||ba>T^{ab}_{ij}E^{pq}_{ij}\\ 
+0.0625\sum_{p q a b i j }<pq||ab>T^{ab}_{ij}E^{pq}_{ij}\\ 
+-0.0625\sum_{r a b i j }<ji||ra>T^{ab}_{ij}E^{b}_{r}\\ 
+0.0625\sum_{r a b i j }<ji||rb>T^{ab}_{ij}E^{a}_{r}\\ 
+0.0625\sum_{s a b i j }<ji||as>T^{ab}_{ij}E^{b}_{s}\\ 
+-0.0625\sum_{s a b i j }<ji||bs>T^{ab}_{ij}E^{a}_{s}\\ 
+0.0625\sum_{q a b i j }<jq||ba>T^{ab}_{ij}E^{q}_{i}\\ 
+-0.0625\sum_{q a b i j }<jq||ab>T^{ab}_{ij}E^{q}_{i}\\ 
+0.0625\sum_{r a b i j }<ij||ra>T^{ab}_{ij}E^{b}_{r}\\ 
+-0.0625\sum_{r a b i j }<ij||rb>T^{ab}_{ij}E^{a}_{r}\\ 
+-0.0625\sum_{s a b i j }<ij||as>T^{ab}_{ij}E^{b}_{s}\\ 
+0.0625\sum_{s a b i j }<ij||bs>T^{ab}_{ij}E^{a}_{s}\\ 
+-0.0625\sum_{q a b i j }<iq||ba>T^{ab}_{ij}E^{q}_{j}\\ 
+0.0625\sum_{q a b i j }<iq||ab>T^{ab}_{ij}E^{q}_{j}\\ 
+-0.0625\sum_{p a b i j }<pj||ba>T^{ab}_{ij}E^{p}_{i}\\ 
+0.0625\sum_{p a b i j }<pj||ab>T^{ab}_{ij}E^{p}_{i}\\ 
+0.0625\sum_{p a b i j }<pi||ba>T^{ab}_{ij}E^{p}_{j}\\ 
+-0.0625\sum_{p a b i j }<pi||ab>T^{ab}_{ij}E^{p}_{j}\\ 
+0.0625\sum_{a b i j }<ji||ba>T^{ab}_{ij}\\ 
+-0.0625\sum_{a b i j }<ji||ab>T^{ab}_{ij}\\ 
+-0.0625\sum_{a b i j }<ij||ba>T^{ab}_{ij}\\ 
+0.0625\sum_{a b i j }<ij||ab>T^{ab}_{ij}\\ 
+------------\\ 

@@ -1,3 +1,7 @@
+#Development : adding operators Tiu,Tua,T(ij->ua),T(ij->uv),T(uv->ab),T(ui->va),T(ui->ab),T(uv->wx)
+#Think about how F and V functions will be edited to incorporate active orbitals. 
+#Progress : added nextop,and t1i->u.
+#TO DO next: change operator naming system from T1 to Z1i->u and add others. 
 from pkg import func_ewt 
 import class_large_operator as class1
 from next_op import next_op
@@ -5,6 +9,7 @@ def count_list(dict_ind):
     a=0
     p=0
     i=0
+    u=0
     for key, value in dict_ind.items():
 
 	if key>='a' and key<='h':
@@ -13,6 +18,8 @@ def count_list(dict_ind):
 	    p=p+1
 	elif key>='i' and key<='n':
 	    i=i+1
+        elif key>='u' and key<='z':
+            u=u+1
 	elif len(key)==2:
 	    if key[0]>='a' and key[0]<='h':
 	        a=a+1
@@ -20,8 +27,10 @@ def count_list(dict_ind):
 	        p=p+1
 	    elif key[0]>='i' and key[0]<='n':
 	        i=i+1
+	    elif key[0]>='u' and key[0]<='z':
+	        u=u+1
 	
-    return [i,a,p]
+    return [i,a,p,u]
 def make_op(list_op, dict_ind):
     #dict_ind={}
     list_main=[]
@@ -29,51 +38,6 @@ def make_op(list_op, dict_ind):
     #list_type=[0,0,0]
     for lop in list_op:
 	#deactivate U operators
-	'''
-	if lop[0]=='U':
-	    ilist =[]
-	    alist=[]
-            numi=ord('i')+list_type[0]
-            numa=ord('a')+list_type[1]
-	    ilist=['i','j','k','l','m','n']
-	    alist=['a','b','c','d','e','f','g','h']
-            opp=func_ewt.contractedobj('op', 1, 1)
-	    summ=[]
-	    coeff=[]
-            fac=1.0
-	    for pos in range(2*int(lop[1])):
-		if lop[pos+2] in ilist:
-		    print lop
-		    if pos<int(lop[1]):
-			opp.upper.append(chr(numi))
-            		dict_ind[chr(numi)]=lop
-			numi=numi+1
-		    else:
-			opp.lower.append(chr(numi))
-            		dict_ind[chr(numi)]=lop
-			numi=numi+1
-		elif lop[pos+2] in alist:
-		    if pos<int(lop[1]):
-			opp.upper.append(chr(numa))
-            		dict_ind[chr(numa)]=lop
-			numa=numa+1
-		    else:
-			opp.lower.append(chr(numa))
-            		dict_ind[chr(numa)]=lop
-			numa=numa+1
-		
-
-	    print 'upper',opp.upper
-	    print 'lower',opp.lower
-            stp=[[opp]]
-            co=[[1,1]]
-
-            F = class1.large_operator(lop,fac, summ, coeff, stp, co)
-
-	
-            list_main.append(F)
-            list_type[2]+=2
-	'''
         if lop[0]=='F':
             fac=1.0
             summ=[next_op('p',list_type,0),next_op('p',list_type,1)]
@@ -252,6 +216,7 @@ def make_op(list_op, dict_ind):
 
 	    print summ,opp.upper,opp.lower
 
+
         elif lop[0]=='T' and lop[1]=='1':
             #num1=ord('i')+list_type[0]
             #num2=ord('a')+list_type[1]
@@ -265,6 +230,25 @@ def make_op(list_op, dict_ind):
             stt=[[opp]]
             co=[[1,1]]
             dict_ind[next_op('a',list_type,0)]=lop
+            dict_ind[next_op('i',list_type,0)]=lop
+            T1 = class1.large_operator(lop,fac, summ, coeff, stt, co)
+            list_main.append(T1)
+            list_type[0]+=1
+            list_type[1]+=1
+	    print summ,opp.upper,opp.lower
+        elif lop[0]=='Z' and lop[1]=='1':
+            #num1=ord('i')+list_type[0]
+            #num2=ord('a')+list_type[1]
+            fac=1.0
+            summ=[next_op('u',list_type,0),next_op('i',list_type,0)]
+            coeff=[next_op('u',list_type,0),next_op('i',list_type,0)]
+            #coeff=[chr(num2),chr(num1)]
+            opp=func_ewt.contractedobj('op', 1, 1)
+            opp.upper=[next_op('u',list_type,0)]
+            opp.lower=[next_op('i',list_type,0)]
+            stt=[[opp]]
+            co=[[1,1]]
+            dict_ind[next_op('u',list_type,0)]=lop
             dict_ind[next_op('i',list_type,0)]=lop
             T1 = class1.large_operator(lop,fac, summ, coeff, stt, co)
             list_main.append(T1)
