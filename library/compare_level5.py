@@ -3,14 +3,16 @@ import time
 import class_term
 import functions
 import function_small
-class pos(object):
-    def __init__(self, i1, i2):
-        self.i1=i1
-        self.i2=i2
+import class_pos as pos
+#class pos(object):
+#    def __init__(self, i1, i2):
+#        self.i1=i1
+#        self.i2=i2
+
 def pick(sign, term2, seen_list):
     #start from leftmost, pick leftmost unseen from daggered part
     #if all_seen(term2,seen_list)!=1
-        pos1=pos(0,0)
+        pos1=pos.pos(0,0)
         for coeff in term2.coeff_list:
                 if len(coeff)==4:
                     pos1.i1=term2.coeff_list.index(coeff)
@@ -52,7 +54,7 @@ def seen(seen_list, pos):
 def go_find(sign,term1,term2,seen_list1,seen_list2,pos1,pos2):
     flag1=0
     flag2=0
-    pos_tmp=pos(0,0)
+    pos_tmp=pos.pos(0,0)
     #print "inside ifind"
     #print term1.coeff_list,pos1.i1,pos1.i2
     for coeff in term1.coeff_list:
@@ -171,8 +173,9 @@ def arrowwork(term1,term2,coeff1,coeff2):
     while all_seen(term1,seen_list1)==0 and sign !=0:
         print "inside arrowowrk"
         sign=1  #note : if sign is always 1 then no use right? debug
-        pos1=pick(1, term1, seen_list1)
-        pos2=pick(sign, term2, seen_list2)
+        #pos1=pick(1, term1, seen_list1)#appends in seen_list
+        #pos2=pick(sign, term2, seen_list2)
+        function_small.pick(sign,term1,term2,seen_list1,seen_list2,1)
         #2.if match ==1
 
         print "after pick",term1.coeff_list[pos1.i1][pos1.i2],term2.coeff_list[pos2.i1][pos2.i2]
@@ -184,7 +187,7 @@ def arrowwork(term1,term2,coeff1,coeff2):
                 seen_list2=seen_listc2
             #print pos1.i1,pos1.i2,complete
         if not all_seen(term1,seen_list1) and not all_seen(term2,seen_list2):
-            pos1=pick(sign,term1,seen_list1)
+            pos1=pick(sign,term1,seen_list1,)
             pos2=pick(sign,term2,seen_list2)
             print "after pick 2",term1.coeff_list[pos1.i1][pos1.i2],term2.coeff_list[pos2.i1][pos2.i2]
             exit()
