@@ -1,2 +1,7 @@
-import pkg.fewt as fewt
-print fewt(['a'],['i'],['j'],['b'])
+from pkg.fewt import ewt
+from library.print_op import print_op
+
+
+#a,b=ewt(['p0','q0'],['r0','s0'],['a0','b0'],['i0','j0'])
+a,b=ewt(['i0'],['a0'],['p0','q0'],['r0','s0'])
+print_op(a,b)
