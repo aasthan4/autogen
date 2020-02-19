@@ -16,14 +16,6 @@ import library. compare as cpre
 import multi_cont
 import library.compare_envelope as cpre_env
 removed=0
-'''
-class list_op_term:
-    def __init__(self, sign,list_op):
-        self.sign=sign
-        self.list=list_op
-    def print1(self):
-         print self.sign,self.list
-'''
 #comm should accept a list of terms/Alphabet operator and list of terms/Alphabet operator.
 #1-> commutator on 2-> commutator off so only 1 term on-> whether commutator is on or it is just a product
 # last-> if its the outside last commutator or not (for taking the fully contracted terms)
@@ -61,17 +53,6 @@ def prod(a,b,last):
     st1=[]
     co2=[]
     co1=[]
-    '''
-    if on==1:
-        print 'terms in b', len(b)
-    	for item in b:
-	    #item.print_term()
-	    for op in item.st:
-		print 'op kind', op[0].upper
-	    print 'coeff of item',item.co
-	    #lib.print_op.print_op(item.st,item.co)
-    '''
-
     print 'doing contraction through multi_cont'
     for t1 in a:
 	for t2 in b:
@@ -80,9 +61,6 @@ def prod(a,b,last):
 	    #length of output operator string
 	    for (term,termco) in zip(stt,cot):
 		#lib.print_op.print_op(term,termco)
-		
-
-
 		present_op=0
 		present_op1=0
 		present_op2=0
@@ -95,8 +73,6 @@ def prod(a,b,last):
 				removed=1
 				stt.remove(term)
 				cot.remove(termco)
-
-
 			    if op2.kind=='op':
 				present_op2=1
 			if op1.kind=='op':
@@ -108,12 +84,9 @@ def prod(a,b,last):
 		        #print 'here in fully contracted'
 		        stt.remove(term)
     		        cot.remove(termco)
-				
-		
 	    #print 'length of output string', len(stt)
 	    st1.extend(stt)
 	    co1.extend(cot)
-
     #contract b,a and store in list_terms if on is 1 (commutator working)
     if on ==1:
         for t1 in b:
@@ -160,10 +133,7 @@ def prod(a,b,last):
     	if on==1:
     	    st2,co2=lib.full_con.full_con(st2,co2)  
     '''
-    
     #print_op(st2,co2)
-    
-       
     #if last!=0:
 	#fc=last
     #make terms of st and co and list of terms
@@ -171,7 +141,6 @@ def prod(a,b,last):
     #print len(list_terms)
     if on==1:
 	terms_tmp=ct.change_terms1(st2,co2,last,dict_add, b[0].map_org+a[0].map_org)
-
         for item in terms_tmp:
 	    item.fac=item.fac*-1.0
 	    item.co[0][0]=item.co[0][0]*-1.0
@@ -180,12 +149,12 @@ def prod(a,b,last):
 	item.compress()
 	item.build_map_org()
 	#item.cond_cont(item.dict_ind) only for CCSD noy for general case
-
-    #pt.print_terms(list_terms)
     cpre_env.compare_envelope(list_terms, fc, last)    
+    #for terms in list_terms:
+    #if terms.fac!=0:
+    #print "HEREEEE"
     list_terms=pt.clean_list(list_terms)
     #pt.print_terms(list_terms)
-
     for term in list_terms:
 	term.co[0][0]=term.fac
     #print 'at the end of comm', len(list_terms)

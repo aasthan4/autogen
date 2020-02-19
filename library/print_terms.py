@@ -4,8 +4,8 @@ def clean_list(list_terms):
 	if term.fac!=0.0:
 	    final_terms.append(term)
     return final_terms
-def print_terms(list_terms):
-    pfile=open('latex_output.txt','a')
+def print_terms(list_terms,filename):
+    pfile=open(filename,'a')
     for term in list_terms:
         if term.fac!=0.0:
             term.print_term()

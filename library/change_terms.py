@@ -27,7 +27,7 @@ def change_terms1(a, b, fac,dict_ind, list_op_used):
     for (t,c)  in zip(a,b):
 	t=[t]#as t is a list of terms and each term has operators like delta and op
 	c=[c]
-	#to make coeff list of the operator so that it can be compared in the comaprer funciton
+	#to make coeff list of the operator so that it can be compared in the compare function
 	'''
 	if t[0][-1].kind='op':
 	    make_coeff=[]
@@ -44,7 +44,7 @@ def change_terms1(a, b, fac,dict_ind, list_op_used):
 	        flag=1
 	        temp.extend(item.upper)
 	        temp.extend(item.lower)
-	if flag==1:
+	if flag==1:#if there is an operator
 	    coeff.append(temp)
         x=class_term.term(copy.copy(fac*c[0][0]), copy.copy(sum_ind), copy.copy(coeff), list_op_used,t, c)
 	x.dict_ind=dict_ind
@@ -52,7 +52,7 @@ def change_terms1(a, b, fac,dict_ind, list_op_used):
 	    coeff.pop()
 	#print c
 	#print_op.print_op(t,c)
-        #print c,fac, sum_ind, coeff,temp
+        #print c,fac, sum_ind, coeff
         list_terms.append(x)
 	
     return list_terms

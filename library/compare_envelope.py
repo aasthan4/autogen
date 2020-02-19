@@ -1,6 +1,6 @@
 import compare as cpre
 import print_terms as pt
-
+#arguments: list of terms, face factor, last means whether this is the last commutator or not (0,1)
 def compare_envelope(list_terms, fc,last):
     #compare terms based on 5 levels of check all in cpre.compare()
     #for i in range(1):
@@ -8,16 +8,15 @@ def compare_envelope(list_terms, fc,last):
     for i in range(len(list_terms)):
         for  j in range(i+1,len(list_terms)):
             if list_terms[i].fac!=0 and list_terms[j].fac!=0:
-                #print "comparing inside drive -------:", i,j,list_terms[i].coeff_list, list_terms[j].coeff_list
-                flo= cpre.compare(list_terms[i],list_terms[j])
-                #print flo
+                flo= cpre.compare(list_terms[i],list_terms[j])  
                 if flo!=0:
-
-                    print 'result in the comparision',i,j,flo
+                    #print "comparing:", list_terms[i].fac,list_terms[i].coeff_list,list_terms[j].fac,list_terms[j].coeff_list, flo
+                    #print 'in result in the comparision',i,j,flo
+                    #why? (on below statement- 18Feb2020)
                     #print 'this should be 0 always = ',list_terms[i].fac+list_terms[j].fac*flo
                     list_terms[i].fac=list_terms[i].fac+list_terms[j].fac * flo
                     list_terms[j].fac=0.0
-                #print 'result in the comparision',i,j,flo
+                    #print 'result in compare when matched',list_terms[i].fac,list_terms[j].fac,flo
 
     #muliply with the prefactor of the expression from the Housdoff Expression
     #for item in list_terms:

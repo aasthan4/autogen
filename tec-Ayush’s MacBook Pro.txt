@@ -1,0 +1,427 @@
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{pq}_{rs} ,  E^{a}_{i}\]\\
+Answer :
+$$+1.0\{E^{pqa}_{isr}\}\\$$
+$$+1.0\delta_{pi}\{E^{qa}_{sr}\}\\$$
+$$-1.0\delta_{qi}\{E^{pa}_{sr}\}\\$$
+$$+1.0\delta_{sa}\{E^{pq}_{ir}\}\\$$
+$$-1.0\delta_{ra}\{E^{pq}_{is}\}\\$$
+$$-1.0\delta_{pi}\delta_{sa}\{E^{q}_{r}\}\\$$
+$$+2.0\delta_{pi}\delta_{ra}\{E^{q}_{s}\}\\$$
+$$+2.0\delta_{qi}\delta_{sa}\{E^{p}_{r}\}\\$$
+$$-1.0\delta_{qi}\delta_{ra}\{E^{p}_{s}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{a}_{i} ,  E^{pq}_{rs}\]\\
+Answer :
+$$+1.0\{E^{apq}_{sri}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{qa}_{rs} ,  E^{b}_{j}\]\\
+Answer :
+$$+1.0\{E^{qab}_{jsr}\}\\$$
+$$+1.0\delta_{qj}\{E^{ab}_{sr}\}\\$$
+$$+1.0\delta_{sb}\{E^{qa}_{jr}\}\\$$
+$$-1.0\delta_{rb}\{E^{qa}_{js}\}\\$$
+$$-1.0\delta_{qj}\delta_{sb}\{E^{a}_{r}\}\\$$
+$$+2.0\delta_{qj}\delta_{rb}\{E^{a}_{s}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{pq}_{ri} ,  E^{b}_{j}\]\\
+Answer :
+$$+1.0\{E^{pqb}_{jir}\}\\$$
+$$+1.0\delta_{pj}\{E^{qb}_{ir}\}\\$$
+$$-1.0\delta_{qj}\{E^{pb}_{ir}\}\\$$
+$$-1.0\delta_{rb}\{E^{pq}_{ji}\}\\$$
+$$+2.0\delta_{pj}\delta_{rb}\{E^{q}_{i}\}\\$$
+$$-1.0\delta_{qj}\delta_{rb}\{E^{p}_{i}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{q}_{r} ,  E^{b}_{j}\]\\
+Answer :
+$$+1.0\{E^{qb}_{jr}\}\\$$
+$$-1.0\delta_{qj}\{E^{b}_{r}\}\\$$
+$$+1.0\delta_{rb}\{E^{q}_{j}\}\\$$
+$$+2.0\delta_{qj}\delta_{rb}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{b}_{j} ,  E^{qa}_{rs}\]\\
+Answer :
+$$+1.0\{E^{bqa}_{srj}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{b}_{j} ,  E^{pq}_{ri}\]\\
+Answer :
+$$+1.0\{E^{bpq}_{irj}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{b}_{j} ,  E^{q}_{r}\]\\
+Answer :
+$$+1.0\{E^{bq}_{rj}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{ab}_{rs}\]\\
+Answer :
+$$+1.0\{E^{kab}_{src}\}\\$$
+$$+1.0\delta_{ks}\{E^{ab}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{ab}_{sc}\}\\$$
+$$+1.0\delta_{ca}\{E^{kb}_{sr}\}\\$$
+$$-1.0\delta_{cb}\{E^{ka}_{sr}\}\\$$
+$$-1.0\delta_{ks}\delta_{ca}\{E^{b}_{r}\}\\$$
+$$+2.0\delta_{ks}\delta_{cb}\{E^{a}_{r}\}\\$$
+$$+2.0\delta_{kr}\delta_{ca}\{E^{b}_{s}\}\\$$
+$$-1.0\delta_{kr}\delta_{cb}\{E^{a}_{s}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{qa}_{rj}\]\\
+Answer :
+$$+1.0\{E^{kqa}_{jrc}\}\\$$
+$$+1.0\delta_{kj}\{E^{qa}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{qa}_{jc}\}\\$$
+$$+1.0\delta_{cq}\{E^{ka}_{jr}\}\\$$
+$$-1.0\delta_{ca}\{E^{kq}_{jr}\}\\$$
+$$-1.0\delta_{kj}\delta_{cq}\{E^{a}_{r}\}\\$$
+$$+2.0\delta_{kj}\delta_{ca}\{E^{q}_{r}\}\\$$
+$$+2.0\delta_{kr}\delta_{cq}\{E^{a}_{j}\}\\$$
+$$-1.0\delta_{kr}\delta_{ca}\{E^{q}_{j}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{a}_{r}\]\\
+Answer :
+$$+1.0\{E^{ka}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{a}_{c}\}\\$$
+$$+1.0\delta_{ca}\{E^{k}_{r}\}\\$$
+$$+2.0\delta_{kr}\delta_{ca}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{pq}_{ij}\]\\
+Answer :
+$$+1.0\{E^{kpq}_{jic}\}\\$$
+$$+1.0\delta_{kj}\{E^{pq}_{ic}\}\\$$
+$$-1.0\delta_{ki}\{E^{pq}_{jc}\}\\$$
+$$+1.0\delta_{cp}\{E^{kq}_{ji}\}\\$$
+$$-1.0\delta_{cq}\{E^{kp}_{ji}\}\\$$
+$$-1.0\delta_{kj}\delta_{cp}\{E^{q}_{i}\}\\$$
+$$+2.0\delta_{kj}\delta_{cq}\{E^{p}_{i}\}\\$$
+$$+2.0\delta_{ki}\delta_{cp}\{E^{q}_{j}\}\\$$
+$$-1.0\delta_{ki}\delta_{cq}\{E^{p}_{j}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{q}_{i}\]\\
+Answer :
+$$+1.0\{E^{kq}_{ic}\}\\$$
+$$-1.0\delta_{ki}\{E^{q}_{c}\}\\$$
+$$+1.0\delta_{cq}\{E^{k}_{i}\}\\$$
+$$+2.0\delta_{ki}\delta_{cq}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{pq}_{rs} ,  E^{a}_{i}\]\\
+Answer :
+$$+1.0\{E^{pqa}_{isr}\}\\$$
+$$+1.0\delta_{pi}\{E^{qa}_{sr}\}\\$$
+$$-1.0\delta_{qi}\{E^{pa}_{sr}\}\\$$
+$$+1.0\delta_{sa}\{E^{pq}_{ir}\}\\$$
+$$-1.0\delta_{ra}\{E^{pq}_{is}\}\\$$
+$$-1.0\delta_{pi}\delta_{sa}\{E^{q}_{r}\}\\$$
+$$+2.0\delta_{pi}\delta_{ra}\{E^{q}_{s}\}\\$$
+$$+2.0\delta_{qi}\delta_{sa}\{E^{p}_{r}\}\\$$
+$$-1.0\delta_{qi}\delta_{ra}\{E^{p}_{s}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{a}_{i} ,  E^{pq}_{rs}\]\\
+Answer :
+$$+1.0\{E^{apq}_{sri}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{qa}_{rs} ,  E^{j}_{b}\]\\
+Answer :
+$$+1.0\{E^{qaj}_{bsr}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{pq}_{ri} ,  E^{j}_{b}\]\\
+Answer :
+$$+1.0\{E^{pqj}_{bir}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{q}_{r} ,  E^{j}_{b}\]\\
+Answer :
+$$+1.0\{E^{qj}_{br}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{j}_{b} ,  E^{qa}_{rs}\]\\
+Answer :
+$$+1.0\{E^{jqa}_{srb}\}\\$$
+$$+1.0\delta_{js}\{E^{qa}_{rb}\}\\$$
+$$-1.0\delta_{jr}\{E^{qa}_{sb}\}\\$$
+$$+1.0\delta_{bq}\{E^{ja}_{sr}\}\\$$
+$$-1.0\delta_{ba}\{E^{jq}_{sr}\}\\$$
+$$-1.0\delta_{js}\delta_{bq}\{E^{a}_{r}\}\\$$
+$$+2.0\delta_{js}\delta_{ba}\{E^{q}_{r}\}\\$$
+$$+2.0\delta_{jr}\delta_{bq}\{E^{a}_{s}\}\\$$
+$$-1.0\delta_{jr}\delta_{ba}\{E^{q}_{s}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{j}_{b} ,  E^{pq}_{ri}\]\\
+Answer :
+$$+1.0\{E^{jpq}_{irb}\}\\$$
+$$+1.0\delta_{ji}\{E^{pq}_{rb}\}\\$$
+$$-1.0\delta_{jr}\{E^{pq}_{ib}\}\\$$
+$$+1.0\delta_{bp}\{E^{jq}_{ir}\}\\$$
+$$-1.0\delta_{bq}\{E^{jp}_{ir}\}\\$$
+$$-1.0\delta_{ji}\delta_{bp}\{E^{q}_{r}\}\\$$
+$$+2.0\delta_{ji}\delta_{bq}\{E^{p}_{r}\}\\$$
+$$+2.0\delta_{jr}\delta_{bp}\{E^{q}_{i}\}\\$$
+$$-1.0\delta_{jr}\delta_{bq}\{E^{p}_{i}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{j}_{b} ,  E^{q}_{r}\]\\
+Answer :
+$$+1.0\{E^{jq}_{rb}\}\\$$
+$$-1.0\delta_{jr}\{E^{q}_{b}\}\\$$
+$$+1.0\delta_{bq}\{E^{j}_{r}\}\\$$
+$$+2.0\delta_{jr}\delta_{bq}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{qa}_{br}\]\\
+Answer :
+$$+1.0\{E^{kqa}_{rbc}\}\\$$
+$$+1.0\delta_{kr}\{E^{qa}_{bc}\}\\$$
+$$+1.0\delta_{cq}\{E^{ka}_{rb}\}\\$$
+$$-1.0\delta_{ca}\{E^{kq}_{rb}\}\\$$
+$$-1.0\delta_{kr}\delta_{cq}\{E^{a}_{b}\}\\$$
+$$+2.0\delta_{kr}\delta_{ca}\{E^{q}_{b}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{ja}_{rs}\]\\
+Answer :
+$$+1.0\{E^{kja}_{src}\}\\$$
+$$+1.0\delta_{ks}\{E^{ja}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{ja}_{sc}\}\\$$
+$$-1.0\delta_{ca}\{E^{kj}_{sr}\}\\$$
+$$+2.0\delta_{ks}\delta_{ca}\{E^{j}_{r}\}\\$$
+$$-1.0\delta_{kr}\delta_{ca}\{E^{j}_{s}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{jq}_{rs}\]\\
+Answer :
+$$+1.0\{E^{kjq}_{src}\}\\$$
+$$+1.0\delta_{ks}\{E^{jq}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{jq}_{sc}\}\\$$
+$$-1.0\delta_{cq}\{E^{kj}_{sr}\}\\$$
+$$+2.0\delta_{ks}\delta_{cq}\{E^{j}_{r}\}\\$$
+$$-1.0\delta_{kr}\delta_{cq}\{E^{j}_{s}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{a}_{r}\]\\
+Answer :
+$$+1.0\{E^{ka}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{a}_{c}\}\\$$
+$$+1.0\delta_{ca}\{E^{k}_{r}\}\\$$
+$$+2.0\delta_{kr}\delta_{ca}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{q}_{r}\]\\
+Answer :
+$$+1.0\{E^{kq}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{q}_{c}\}\\$$
+$$+1.0\delta_{cq}\{E^{k}_{r}\}\\$$
+$$+2.0\delta_{kr}\delta_{cq}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{pq}_{br}\]\\
+Answer :
+$$+1.0\{E^{kpq}_{rbc}\}\\$$
+$$+1.0\delta_{kr}\{E^{pq}_{bc}\}\\$$
+$$+1.0\delta_{cp}\{E^{kq}_{rb}\}\\$$
+$$-1.0\delta_{cq}\{E^{kp}_{rb}\}\\$$
+$$-1.0\delta_{kr}\delta_{cp}\{E^{q}_{b}\}\\$$
+$$+2.0\delta_{kr}\delta_{cq}\{E^{p}_{b}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{pq}_{bi}\]\\
+Answer :
+$$+1.0\{E^{kpq}_{ibc}\}\\$$
+$$+1.0\delta_{ki}\{E^{pq}_{bc}\}\\$$
+$$+1.0\delta_{cp}\{E^{kq}_{ib}\}\\$$
+$$-1.0\delta_{cq}\{E^{kp}_{ib}\}\\$$
+$$-1.0\delta_{ki}\delta_{cp}\{E^{q}_{b}\}\\$$
+$$+2.0\delta_{ki}\delta_{cq}\{E^{p}_{b}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{jq}_{ri}\]\\
+Answer :
+$$+1.0\{E^{kjq}_{irc}\}\\$$
+$$+1.0\delta_{ki}\{E^{jq}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{jq}_{ic}\}\\$$
+$$-1.0\delta_{cq}\{E^{kj}_{ir}\}\\$$
+$$+2.0\delta_{ki}\delta_{cq}\{E^{j}_{r}\}\\$$
+$$-1.0\delta_{kr}\delta_{cq}\{E^{j}_{i}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{q}_{r}\]\\
+Answer :
+$$+1.0\{E^{kq}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{q}_{c}\}\\$$
+$$+1.0\delta_{cq}\{E^{k}_{r}\}\\$$
+$$+2.0\delta_{kr}\delta_{cq}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{q}_{i}\]\\
+Answer :
+$$+1.0\{E^{kq}_{ic}\}\\$$
+$$-1.0\delta_{ki}\{E^{q}_{c}\}\\$$
+$$+1.0\delta_{cq}\{E^{k}_{i}\}\\$$
+$$+2.0\delta_{ki}\delta_{cq}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{q}_{b}\]\\
+Answer :
+$$+1.0\{E^{kq}_{bc}\}\\$$
+$$+1.0\delta_{cq}\{E^{k}_{b}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{j}_{r}\]\\
+Answer :
+$$+1.0\{E^{kj}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{j}_{c}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{pq}_{rs} ,  E^{i}_{a}\]\\
+Answer :
+$$+1.0\{E^{pqi}_{asr}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{i}_{a} ,  E^{pq}_{rs}\]\\
+Answer :
+$$+1.0\{E^{ipq}_{sra}\}\\$$
+$$+1.0\delta_{is}\{E^{pq}_{ra}\}\\$$
+$$-1.0\delta_{ir}\{E^{pq}_{sa}\}\\$$
+$$+1.0\delta_{ap}\{E^{iq}_{sr}\}\\$$
+$$-1.0\delta_{aq}\{E^{ip}_{sr}\}\\$$
+$$-1.0\delta_{is}\delta_{ap}\{E^{q}_{r}\}\\$$
+$$+2.0\delta_{is}\delta_{aq}\{E^{p}_{r}\}\\$$
+$$+2.0\delta_{ir}\delta_{ap}\{E^{q}_{s}\}\\$$
+$$-1.0\delta_{ir}\delta_{aq}\{E^{p}_{s}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{pq}_{ar} ,  E^{b}_{j}\]\\
+Answer :
+$$+1.0\{E^{pqb}_{jra}\}\\$$
+$$+1.0\delta_{pj}\{E^{qb}_{ra}\}\\$$
+$$-1.0\delta_{qj}\{E^{pb}_{ra}\}\\$$
+$$+1.0\delta_{rb}\{E^{pq}_{ja}\}\\$$
+$$-1.0\delta_{ab}\{E^{pq}_{jr}\}\\$$
+$$-1.0\delta_{pj}\delta_{rb}\{E^{q}_{a}\}\\$$
+$$+2.0\delta_{pj}\delta_{ab}\{E^{q}_{r}\}\\$$
+$$+2.0\delta_{qj}\delta_{rb}\{E^{p}_{a}\}\\$$
+$$-1.0\delta_{qj}\delta_{ab}\{E^{p}_{r}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{iq}_{rs} ,  E^{b}_{j}\]\\
+Answer :
+$$+1.0\{E^{iqb}_{jsr}\}\\$$
+$$+1.0\delta_{ij}\{E^{qb}_{sr}\}\\$$
+$$-1.0\delta_{qj}\{E^{ib}_{sr}\}\\$$
+$$+1.0\delta_{sb}\{E^{iq}_{jr}\}\\$$
+$$-1.0\delta_{rb}\{E^{iq}_{js}\}\\$$
+$$-1.0\delta_{ij}\delta_{sb}\{E^{q}_{r}\}\\$$
+$$+2.0\delta_{ij}\delta_{rb}\{E^{q}_{s}\}\\$$
+$$+2.0\delta_{qj}\delta_{sb}\{E^{i}_{r}\}\\$$
+$$-1.0\delta_{qj}\delta_{rb}\{E^{i}_{s}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{q}_{r} ,  E^{b}_{j}\]\\
+Answer :
+$$+1.0\{E^{qb}_{jr}\}\\$$
+$$-1.0\delta_{qj}\{E^{b}_{r}\}\\$$
+$$+1.0\delta_{rb}\{E^{q}_{j}\}\\$$
+$$+2.0\delta_{qj}\delta_{rb}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{b}_{j} ,  E^{pq}_{ar}\]\\
+Answer :
+$$+1.0\{E^{bpq}_{raj}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{b}_{j} ,  E^{iq}_{rs}\]\\
+Answer :
+$$+1.0\{E^{biq}_{srj}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{b}_{j} ,  E^{q}_{r}\]\\
+Answer :
+$$+1.0\{E^{bq}_{rj}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{qb}_{ar}\]\\
+Answer :
+$$+1.0\{E^{kqb}_{rac}\}\\$$
+$$+1.0\delta_{kr}\{E^{qb}_{ac}\}\\$$
+$$+1.0\delta_{cq}\{E^{kb}_{ra}\}\\$$
+$$-1.0\delta_{cb}\{E^{kq}_{ra}\}\\$$
+$$-1.0\delta_{kr}\delta_{cq}\{E^{b}_{a}\}\\$$
+$$+2.0\delta_{kr}\delta_{cb}\{E^{q}_{a}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{pq}_{aj}\]\\
+Answer :
+$$+1.0\{E^{kpq}_{jac}\}\\$$
+$$+1.0\delta_{kj}\{E^{pq}_{ac}\}\\$$
+$$+1.0\delta_{cp}\{E^{kq}_{ja}\}\\$$
+$$-1.0\delta_{cq}\{E^{kp}_{ja}\}\\$$
+$$-1.0\delta_{kj}\delta_{cp}\{E^{q}_{a}\}\\$$
+$$+2.0\delta_{kj}\delta_{cq}\{E^{p}_{a}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{pq}_{rj}\]\\
+Answer :
+$$+1.0\{E^{kpq}_{jrc}\}\\$$
+$$+1.0\delta_{kj}\{E^{pq}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{pq}_{jc}\}\\$$
+$$+1.0\delta_{cp}\{E^{kq}_{jr}\}\\$$
+$$-1.0\delta_{cq}\{E^{kp}_{jr}\}\\$$
+$$-1.0\delta_{kj}\delta_{cp}\{E^{q}_{r}\}\\$$
+$$+2.0\delta_{kj}\delta_{cq}\{E^{p}_{r}\}\\$$
+$$+2.0\delta_{kr}\delta_{cp}\{E^{q}_{j}\}\\$$
+$$-1.0\delta_{kr}\delta_{cq}\{E^{p}_{j}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{q}_{a}\]\\
+Answer :
+$$+1.0\{E^{kq}_{ac}\}\\$$
+$$+1.0\delta_{cq}\{E^{k}_{a}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{q}_{r}\]\\
+Answer :
+$$+1.0\{E^{kq}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{q}_{c}\}\\$$
+$$+1.0\delta_{cq}\{E^{k}_{r}\}\\$$
+$$+2.0\delta_{kr}\delta_{cq}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{qb}_{rs}\]\\
+Answer :
+$$+1.0\{E^{kqb}_{src}\}\\$$
+$$+1.0\delta_{ks}\{E^{qb}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{qb}_{sc}\}\\$$
+$$+1.0\delta_{cq}\{E^{kb}_{sr}\}\\$$
+$$-1.0\delta_{cb}\{E^{kq}_{sr}\}\\$$
+$$-1.0\delta_{ks}\delta_{cq}\{E^{b}_{r}\}\\$$
+$$+2.0\delta_{ks}\delta_{cb}\{E^{q}_{r}\}\\$$
+$$+2.0\delta_{kr}\delta_{cq}\{E^{b}_{s}\}\\$$
+$$-1.0\delta_{kr}\delta_{cb}\{E^{q}_{s}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{ib}_{rs}\]\\
+Answer :
+$$+1.0\{E^{kib}_{src}\}\\$$
+$$+1.0\delta_{ks}\{E^{ib}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{ib}_{sc}\}\\$$
+$$-1.0\delta_{cb}\{E^{ki}_{sr}\}\\$$
+$$+2.0\delta_{ks}\delta_{cb}\{E^{i}_{r}\}\\$$
+$$-1.0\delta_{kr}\delta_{cb}\{E^{i}_{s}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{iq}_{rj}\]\\
+Answer :
+$$+1.0\{E^{kiq}_{jrc}\}\\$$
+$$+1.0\delta_{kj}\{E^{iq}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{iq}_{jc}\}\\$$
+$$-1.0\delta_{cq}\{E^{ki}_{jr}\}\\$$
+$$+2.0\delta_{kj}\delta_{cq}\{E^{i}_{r}\}\\$$
+$$-1.0\delta_{kr}\delta_{cq}\{E^{i}_{j}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{q}_{r}\]\\
+Answer :
+$$+1.0\{E^{kq}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{q}_{c}\}\\$$
+$$+1.0\delta_{cq}\{E^{k}_{r}\}\\$$
+$$+2.0\delta_{kr}\delta_{cq}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{i}_{r}\]\\
+Answer :
+$$+1.0\{E^{ki}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{i}_{c}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{b}_{r}\]\\
+Answer :
+$$+1.0\{E^{kb}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{b}_{c}\}\\$$
+$$+1.0\delta_{cb}\{E^{k}_{r}\}\\$$
+$$+2.0\delta_{kr}\delta_{cb}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{q}_{j}\]\\
+Answer :
+$$+1.0\{E^{kq}_{jc}\}\\$$
+$$-1.0\delta_{kj}\{E^{q}_{c}\}\\$$
+$$+1.0\delta_{cq}\{E^{k}_{j}\}\\$$
+$$+2.0\delta_{kj}\delta_{cq}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{pq}_{rs} ,  E^{i}_{a}\]\\
+Answer :
+$$+1.0\{E^{pqi}_{asr}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{i}_{a} ,  E^{pq}_{rs}\]\\
+Answer :
+$$+1.0\{E^{ipq}_{sra}\}\\$$
+$$+1.0\delta_{is}\{E^{pq}_{ra}\}\\$$
+$$-1.0\delta_{ir}\{E^{pq}_{sa}\}\\$$
+$$+1.0\delta_{ap}\{E^{iq}_{sr}\}\\$$
+$$-1.0\delta_{aq}\{E^{ip}_{sr}\}\\$$
+$$-1.0\delta_{is}\delta_{ap}\{E^{q}_{r}\}\\$$
+$$+2.0\delta_{is}\delta_{aq}\{E^{p}_{r}\}\\$$
+$$+2.0\delta_{ir}\delta_{ap}\{E^{q}_{s}\}\\$$
+$$-1.0\delta_{ir}\delta_{aq}\{E^{p}_{s}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{pq}_{ar} ,  E^{j}_{b}\]\\
+Answer :
+$$+1.0\{E^{pqj}_{bra}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{iq}_{rs} ,  E^{j}_{b}\]\\
+Answer :
+$$+1.0\{E^{iqj}_{bsr}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{q}_{r} ,  E^{j}_{b}\]\\
+Answer :
+$$+1.0\{E^{qj}_{br}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{j}_{b} ,  E^{pq}_{ar}\]\\
+Answer :
+$$+1.0\{E^{jpq}_{rab}\}\\$$
+$$+1.0\delta_{jr}\{E^{pq}_{ab}\}\\$$
+$$+1.0\delta_{bp}\{E^{jq}_{ra}\}\\$$
+$$-1.0\delta_{bq}\{E^{jp}_{ra}\}\\$$
+$$-1.0\delta_{jr}\delta_{bp}\{E^{q}_{a}\}\\$$
+$$+2.0\delta_{jr}\delta_{bq}\{E^{p}_{a}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{j}_{b} ,  E^{iq}_{rs}\]\\
+Answer :
+$$+1.0\{E^{jiq}_{srb}\}\\$$
+$$+1.0\delta_{js}\{E^{iq}_{rb}\}\\$$
+$$-1.0\delta_{jr}\{E^{iq}_{sb}\}\\$$
+$$-1.0\delta_{bq}\{E^{ji}_{sr}\}\\$$
+$$+2.0\delta_{js}\delta_{bq}\{E^{i}_{r}\}\\$$
+$$-1.0\delta_{jr}\delta_{bq}\{E^{i}_{s}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{j}_{b} ,  E^{q}_{r}\]\\
+Answer :
+$$+1.0\{E^{jq}_{rb}\}\\$$
+$$-1.0\delta_{jr}\{E^{q}_{b}\}\\$$
+$$+1.0\delta_{bq}\{E^{j}_{r}\}\\$$
+$$+2.0\delta_{jr}\delta_{bq}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{pq}_{ba}\]\\
+Answer :
+$$+1.0\{E^{kpq}_{abc}\}\\$$
+$$+1.0\delta_{cp}\{E^{kq}_{ab}\}\\$$
+$$-1.0\delta_{cq}\{E^{kp}_{ab}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{jq}_{ar}\]\\
+Answer :
+$$+1.0\{E^{kjq}_{rac}\}\\$$
+$$+1.0\delta_{kr}\{E^{jq}_{ac}\}\\$$
+$$-1.0\delta_{cq}\{E^{kj}_{ra}\}\\$$
+$$+2.0\delta_{kr}\delta_{cq}\{E^{j}_{a}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{q}_{a}\]\\
+Answer :
+$$+1.0\{E^{kq}_{ac}\}\\$$
+$$+1.0\delta_{cq}\{E^{k}_{a}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{ji}_{rs}\]\\
+Answer :
+$$+1.0\{E^{kji}_{src}\}\\$$
+$$+1.0\delta_{ks}\{E^{ji}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{ji}_{sc}\}\\$$
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{k}_{c} ,  E^{i}_{r}\]\\
+Answer :
+$$+1.0\{E^{ki}_{rc}\}\\$$
+$$-1.0\delta_{kr}\{E^{i}_{c}\}\\$$
