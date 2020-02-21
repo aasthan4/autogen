@@ -80,9 +80,7 @@ def driver(fc,list_char_op):
         for  j in range(i+1,len(list_terms)):
             if list_terms[i].fac!=0 and list_terms[j].fac!=0:
                 #print "comparing inside drive -------:", i,j,list_terms[i].coeff_list, list_terms[j].coeff_list
-                #-----Bug 19Feb2020 identified here
                 flo= cpre.compare(list_terms[i],list_terms[j])
-                #-----Bug 19Feb2020 identified here
                 if flo!=0:
                     #print 'in result in the comparision',i,j,flo
                     #print 'this should be 0 always = ',list_terms[i].fac+list_terms[j].fac*flo
