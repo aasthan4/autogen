@@ -15,6 +15,7 @@ import library as lib
 import library. compare as cpre
 import multi_cont
 import library.compare_envelope as cpre_env
+import library.special_conditions as cond
 removed=0
 '''
 class list_op_term:
@@ -35,6 +36,9 @@ def comm(a,b,last):
     #develop dict_ind
     if type(a[0])==str and type(b[0])==str:
 	dict_add={}
+        #This is to store the information that this is the first contraction. (used in special_conditions.py library)
+	b[0]=b[0]+'Z'
+	a[0]=a[0]+'Z'
     elif type(a[0]) ==str or type(b[0])==str:
 
 	if type(a[0])==str:
@@ -44,6 +48,7 @@ def comm(a,b,last):
     else :
         dict_add=dict(a[0].dict_ind.items()+b[0].dict_ind.items())
     #intelligently check input
+    first_cont=0
     if type(a[0])==str:
 	#build operator
 	a,a_dict_add=make_op.make_op(a, dict_add)
@@ -54,8 +59,10 @@ def comm(a,b,last):
 	name2=b
 	b,b_dict_add=make_op.make_op(b,dict_add)
 	#b=b[0]
+
 	b[0].map_org=b
-    #????so aop is a list of operators not just an operator how to deal with it on the same footing as the result of a cont
+
+
     #contract a,b and store in list_terms
     st2=[]
     st1=[]
@@ -171,7 +178,6 @@ def comm(a,b,last):
     #print len(list_terms)
     if on==1:
 	terms_tmp=ct.change_terms1(st2,co2,last,dict_add, b[0].map_org+a[0].map_org)
-
         for item in terms_tmp:
 	    item.fac=item.fac*-1.0
 	    item.co[0][0]=item.co[0][0]*-1.0
@@ -181,10 +187,15 @@ def comm(a,b,last):
 	item.build_map_org()
 	#item.cond_cont(item.dict_ind) only for CCSD noy for general case
 
-    #pt.print_terms(list_terms)
+    if last!=0:
+        print 'here'
+        #Special condition- when there are atlaest three operators, atleast two are equivalent and one of them is not contracting with a previous
+        #..chunk of operators (H in the case of 3 commutators.
+        list_terms=cond.startequiv_cond(list_terms)
+
     cpre_env.compare_envelope(list_terms, fc, last)    
     list_terms=pt.clean_list(list_terms)
-    #pt.print_terms(list_terms)
+
 
     for term in list_terms:
 	term.co[0][0]=term.fac
