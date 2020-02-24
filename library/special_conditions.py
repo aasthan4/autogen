@@ -80,13 +80,14 @@ def non_equivop(term,map_out,equivop):
                     found_pos=1
             else:
                 pos1=0
+                print op.name[2],pos1
                 found_pos=1
     #if each equiv op is connected to a arm which is created before pos1, it is equiv. is one of the arms in one is created after the first pos, it is non-eq
     for opeq in map_out:
         inner_comm=0
         for op1 in opeq:
             if len(op1)>2:#case when the opeartor can be in outer comm
-                pos2=op1[2]
+                pos2=int(op1[2])
                 if pos2<pos1:
                     inner_comm=1
             else:

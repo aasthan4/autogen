@@ -314,3 +314,19 @@
 2.0\sum_{k a i b }D^{k}_{a}<id||kb>T^{a}_{i}T^{b}_{l}\\ 
 -2.0\sum_{c a b j }D^{j}_{c}<cd||ba>T^{a}_{l}T^{b}_{j}\\ 
 ------------\\ 
+-2.0\sum_{i a j k }D^{i}_{a}<jk||li>T^{d}_{j}T^{a}_{k}\\ 
+-2.0\sum_{i a b k }D^{i}_{a}<kd||bi>T^{b}_{l}T^{a}_{k}\\ 
+4.0\sum_{i a c k }D^{i}_{a}<kd||ci>T^{a}_{l}T^{c}_{k}\\ 
+4.0\sum_{i a c k }D^{i}_{a}<ak||lc>T^{d}_{i}T^{c}_{k}\\ 
+-2.0\sum_{i a j c }D^{i}_{a}<aj||lc>T^{d}_{j}T^{c}_{i}\\ 
+-2.0\sum_{i a b c }D^{i}_{a}<ad||cb>T^{b}_{l}T^{c}_{i}\\ 
+-2.0\sum_{i a j c }D^{i}_{a}<aj||ci>T^{d}_{j}T^{c}_{l}\\ 
+------------\\ 
+-2.0\sum_{i a j k }D^{i}_{a}<jk||li>T^{d}_{j}T^{a}_{k}\\ 
+-2.0\sum_{i a b k }D^{i}_{a}<kd||bi>T^{b}_{l}T^{a}_{k}\\ 
+2.0\sum_{i a c k }D^{i}_{a}<kd||ci>T^{a}_{l}T^{c}_{k}\\ 
+2.0\sum_{i a c k }D^{i}_{a}<ak||lc>T^{d}_{i}T^{c}_{k}\\ 
+-2.0\sum_{i a j c }D^{i}_{a}<aj||lc>T^{d}_{j}T^{c}_{i}\\ 
+-2.0\sum_{i a b c }D^{i}_{a}<ad||cb>T^{b}_{l}T^{c}_{i}\\ 
+-2.0\sum_{i a j c }D^{i}_{a}<aj||ci>T^{d}_{j}T^{c}_{l}\\ 
+------------\\ 

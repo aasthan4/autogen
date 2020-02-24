@@ -13,7 +13,7 @@ list_terms1=[]
 
 
 
-list_terms=prod(['X1'],comm(comm(comm(['V2'],['T11'],0),['T12'],0),['D13'],0),1.0)
+list_terms=prod(['X1'],comm(comm(comm(['V2'],['D11'],0),['T12'],0),['T13'],0),1.0)
 #list_terms=prod(['X1'],comm(comm(['V2'],['D11'],0),['D12'],0),1.0)
 list_terms=full_con.full_terms(list_terms)
 print_terms.print_terms(list_terms,'latex_output.txt')
