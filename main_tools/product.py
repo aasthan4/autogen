@@ -16,6 +16,7 @@ import library. compare as cpre
 import multi_cont
 import library.compare_envelope as cpre_env
 import library.special_conditions as cond
+import library.full_con as full_con
 removed=0
 #comm should accept a list of terms/Alphabet operator and list of terms/Alphabet operator.
 #1-> commutator on 2-> commutator off so only 1 term on-> whether commutator is on or it is just a product
@@ -155,11 +156,13 @@ def prod(a,b,last):
     cpre_env.compare_envelope(list_terms, fc, last)    
     #Special condition- when there are atlaest three operators, atleast two are equivalent and one of them is not contracting with a previous
     #..chunk of operators (H in the case of 3 commutators.
+    list_terms=pt.clean_list(list_terms)
+    list_terms=full_con.full_terms(list_terms)
     list_terms=cond.startequiv_cond(list_terms)
     #for terms in list_terms:
     #if terms.fac!=0:
     #print "HEREEEE"
-    list_terms=pt.clean_list(list_terms)
+
     #pt.print_terms(list_terms)
     for term in list_terms:
 	term.co[0][0]=term.fac

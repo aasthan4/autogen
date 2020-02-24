@@ -1,3 +1,15 @@
+#Algorithm:
+#This file has the subrooutine for a problem of doing contraction two operators at a time. 
+#When there is a commutator of operators, there can be a reduced factor of the term.
+#This can happen when there are two operators of the same kind and equivallent, but the commutator type contraction structure in this program
+#does not count a part of the possible contractions. 
+#The solution is based on two cases:
+#1. Case1: when one of the two commutators do not have a connection with one operator with order (commutator number) less than the
+#lower of the two equivalent operators.
+#2. Case 2: when there are operators in the middle of the two equivalent operators, and any of those operators have a connection to an 
+#operator with lower order which is not among the equivalent operators.
+#If any of the case is truw, multiply the term with two corresponding to the missing part. 
+
 def create_map(term,equivop):
             #for op in term.map_org:
             #atleast 2 equivalent operators present with one of them as the first contraction.
@@ -21,6 +33,38 @@ def create_map(term,equivop):
                             mapping.append(op.name)
                     map_out.append(mapping)
             return map_out
+def create_map2(term,equivop):
+    posop1=1000
+    posop2=1000
+    for op in term.large_op_list:
+        if equivop in op.name:
+            if posop1>(len(term.large_op_list)+1):
+                if len(op.name)>2:
+                    posop1=int(op.name[2])
+                else:
+                    posop1=1
+                    #print 'the operator name doesnt have a position'
+                    exit()
+            elif posop2>(len(term.large_op_list)+1):
+                if len(op.name)>2:
+                    posop2=int(op.name[2])
+                else:
+                   posop2=1
+                   #print 'the operator name doesnt have a position'
+                   exit()
+    oplistmiddle=[]
+    #print 'position of two equiv operators',posop1,posop2
+    for op in term.large_op_list:
+        if len(op.name)>2:
+            if int(op.name[2])>posop1 and  int(op.name[2])<posop2:
+               oplistmiddle.append(op.name)
+            elif int(op.name[2])<posop1 and int(op.name[2])>posop2:
+                oplistmiddle.append(op.name)
+    output=[]
+    for op in oplistmiddle:
+        output.extend(create_map(term,op))
+    return output,oplistmiddle
+
 
 def non_equivop(term,map_out,equivop):
     pos1=10000 #stores position of the first occuring equivop
@@ -37,7 +81,7 @@ def non_equivop(term,map_out,equivop):
             else:
                 pos1=0
                 found_pos=1
-    #print 'minimum position is', pos1
+    #if each equiv op is connected to a arm which is created before pos1, it is equiv. is one of the arms in one is created after the first pos, it is non-eq
     for opeq in map_out:
         inner_comm=0
         for op1 in opeq:
@@ -52,33 +96,32 @@ def non_equivop(term,map_out,equivop):
             #print 'found non equivalent operators: one operator has both connection to outer comm'
             return 1
     return 0    
-'''
-def non_equivop(term,map_out,equivop):
-    for i1 in range(len(map_out)):
-        for i2 in range(len(map_out)):
-            if i1!=i2:
-                for item1 in map_out[i1]:
-                    if item1 not in map_out[i2]:
-                        if equivop not in item1:#different (closed) line in two operators. 
-                            # note that an operator except H cannot contract with other of the same type.
-                            #print 'found a unique connection'
-                            #non equiv if the different line forms before the other equivop comes in  
-                            pos1=10000 #stores position of the first occuring equivop
-                            pos2=1
-                            for op in term.large_op_list:
-                                if equivop in op.name and len(op.name)>2:
-                                    if op.name[2]<pos1:
-                                        pos1=op.name[2]
-                            for op in map_out[i1]
-                            if len(item1)>2:
-                                pos2=item1[2]
-                            if pos1>pos2:
-                                return 1
-    return 0
-'''
+def non_equivop2(term,map_out2,equivop,opmiddle):
+    #case2: if the there is one connection in the middle operator which is not an equivalent operator and has comm position less than middle operator, it returns 0
+    for opi in range(len(map_out2)):
+        for c in map_out2[opi]:
+
+            #print c, opmiddle[opi]
+            if len(c)>2 and len(opmiddle[opi])>2:
+                if (int(c[2])<int(opmiddle[opi][2])) and (equivop not in c):
+                    return 0
+            else:
+                return 0
+        #if it connects to two equivalent operators its fine
+        first=0
+        for c in map_out2[opi]:
+            if equivop in c and len(c)>2 and first==0:
+                first=c[2]
+            elif equivop in c and len(c)>2 and first!=0:
+                if c[2]!=first:
+                    return 0
+            
+
+    return 1
+
 def startequiv_cond(list_terms):
     for term in list_terms:
-        print  term.map_org
+        #print  term.large_op_list
         d1=0
         t1=0
         d2=0
@@ -97,26 +140,42 @@ def startequiv_cond(list_terms):
         if d1>1:
             equivop='D1'
             map_out=create_map(term,equivop)
-            if non_equivop(term,map_out,equivop):
-                #print 'found nonequivalent operator case'
+            case1=0
+            case2=0
+            case1=non_equivop(term,map_out,equivop)
+            map_out2,oplistmiddle=create_map2(term,equivop)
+            case2=non_equivop2(term,map_out2,equivop,oplistmiddle)
+            if case1==1.0 or case2==1.0:
                 term.fac=term.fac*2.0
+            
         if d2>1:
             equivop='D2'
             map_out=create_map(term,equivop)
-            if non_equivop(term,map_out,equivop):
-                #print 'found nonequivalent operator case'
+            case1=0
+            case2=0
+            case1=non_equivop(term,map_out,equivop)
+            map_out2,oplistmiddle=create_map2(term,equivop)
+            case2=non_equivop2(term,map_out2,equivop,oplistmiddle)
+            if case1==1.0 or case2==1.0:
                 term.fac=term.fac*2.0
         if t1>1:
             equivop='T1'
             map_out=create_map(term,equivop)
-            #print map_out
-            if non_equivop(term,map_out,equivop):
-                #print 'found nonequivalent operator case'
+            case1=0
+            case2=0
+            case1=non_equivop(term,map_out,equivop)
+            map_out2,oplistmiddle=create_map2(term,equivop)
+            case2=non_equivop2(term,map_out2,equivop,oplistmiddle)
+            if case1==1.0 or case2==1.0:
                 term.fac=term.fac*2.0
         if t2>1:
             equivop='T2'
             map_out=create_map(term,equivop)
-            if non_equivop(term,map_out,equivop):
-                #print 'found nonequivalent operator case'
+            case1=0
+            case2=0
+            case1=non_equivop(term,map_out,equivop)
+            map_out2,oplistmiddle=create_map2(term,equivop)
+            case2=non_equivop2(term,map_out2,equivop,oplistmiddle)
+            if case1==1.0 or case2==1.0:
                 term.fac=term.fac*2.0
     return list_terms
