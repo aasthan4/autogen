@@ -72,7 +72,7 @@ def startequiv_cond(list_terms):
                 #print 'found nonequivalent operator case'
                 term.fac=term.fac*2.0
         if t1>1:
-            equivop'=T1'
+            equivop='T1'
             map_out=create_map(term,equivop)
             if non_equivop(term,map_out,equivop):
                 #print 'found nonequivalent operator case'
