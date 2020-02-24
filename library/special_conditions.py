@@ -21,29 +21,64 @@ def create_map(term,equivop):
                             mapping.append(op.name)
                     map_out.append(mapping)
             return map_out
+
+def non_equivop(term,map_out,equivop):
+    pos1=10000 #stores position of the first occuring equivop
+    found_pos=0
+    for op in term.large_op_list:
+        if equivop in op.name:
+            #print equivop, op.name
+            if len(op.name)>2:
+                #print 'op.name >2',op.name,pos1
+                if int(op.name[2])<pos1:
+                    #print op.name[2],pos1
+                    pos1=int(op.name[2])
+                    found_pos=1
+            else:
+                pos1=0
+                found_pos=1
+    #print 'minimum position is', pos1
+    for opeq in map_out:
+        inner_comm=0
+        for op1 in opeq:
+            if len(op1)>2:#case when the opeartor can be in outer comm
+                pos2=op1[2]
+                if pos2<pos1:
+                    inner_comm=1
+            else:
+                inner_comm=1
+        #print 'opeq',inner_comm,opeq
+        if inner_comm==0:
+            #print 'found non equivalent operators: one operator has both connection to outer comm'
+            return 1
+    return 0    
+'''
 def non_equivop(term,map_out,equivop):
     for i1 in range(len(map_out)):
         for i2 in range(len(map_out)):
             if i1!=i2:
                 for item1 in map_out[i1]:
-                    if item1 not in map_out[i2] and equivop not in item1:#different (closed) line in two operators. 
-                        # note that an operator except H cannot contract with other of the same type.
-                        #print 'found a unique connection'
-                        #non equiv if the different line forms before the other equivop comes in  
-                        pos1=1
-                        pos2=1
-                        for op in term.large_op_list:
-                            if equivop in op.name and len(op.name)>2:
-                                if op.name[2]>pos1:
-                                    pos1=op.name[2]
-                        if len(item1)>2:
-                            pos2=item1[2]
-                        if pos1>pos2:
-                            return 1
+                    if item1 not in map_out[i2]:
+                        if equivop not in item1:#different (closed) line in two operators. 
+                            # note that an operator except H cannot contract with other of the same type.
+                            #print 'found a unique connection'
+                            #non equiv if the different line forms before the other equivop comes in  
+                            pos1=10000 #stores position of the first occuring equivop
+                            pos2=1
+                            for op in term.large_op_list:
+                                if equivop in op.name and len(op.name)>2:
+                                    if op.name[2]<pos1:
+                                        pos1=op.name[2]
+                            for op in map_out[i1]
+                            if len(item1)>2:
+                                pos2=item1[2]
+                            if pos1>pos2:
+                                return 1
     return 0
+'''
 def startequiv_cond(list_terms):
     for term in list_terms:
-        #print  term.map_org 
+        print  term.map_org
         d1=0
         t1=0
         d2=0
@@ -74,6 +109,7 @@ def startequiv_cond(list_terms):
         if t1>1:
             equivop='T1'
             map_out=create_map(term,equivop)
+            #print map_out
             if non_equivop(term,map_out,equivop):
                 #print 'found nonequivalent operator case'
                 term.fac=term.fac*2.0
