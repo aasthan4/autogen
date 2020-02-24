@@ -37,8 +37,8 @@ def comm(a,b,last):
     if type(a[0])==str and type(b[0])==str:
 	dict_add={}
         #This is to store the information that this is the first contraction. (used in special_conditions.py library)
-	b[0]=b[0]+'Z'
-	a[0]=a[0]+'Z'
+	#b[0]=b[0]+'Z'
+	#a[0]=a[0]+'Z'
     elif type(a[0]) ==str or type(b[0])==str:
 
 	if type(a[0])==str:

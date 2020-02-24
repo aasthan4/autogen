@@ -26,8 +26,8 @@ list_terms=[]
 list_terms=prod(['X1'],comm(comm(comm(['V2'],['T1'],0),['T11'],0),['T12'],0),1.0/6.0)
 list_terms=full_con.full_terms(list_terms)
 print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
-'''
-'''
+
+
 #driver(1.0/6.0,['X1','D13','V2','T1','T12'])
 #driver(1.0/6.0,['X1','D13','T12','V2','T1'])
 
@@ -44,31 +44,31 @@ list_terms=full_con.full_terms(list_terms)
 print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
 '''
 
-'''
-list_terms=prod(['X1'],comm(comm(comm(['V2'],['T1'],0),['T12'],0),['T13'],0),1.0/6.0)
+
+list_terms=prod(['X1'],comm(comm(comm(['V2'],['T11'],0),['T12'],0),['T13'],0),1.0/6.0)
 list_terms=full_con.full_terms(list_terms)
 print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
-list_terms=prod(['X1'],comm(comm(comm(['V2'],['T1'],0),['T12'],0),['D13'],0),-1.0/3.0)
+list_terms=prod(['X1'],comm(comm(comm(['V2'],['T11'],0),['T12'],0),['D13'],0),-1.0/6.0)
 list_terms=full_con.full_terms(list_terms)
 print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
-list_terms=prod(['X1'],comm(comm(comm(['V2'],['T1'],0),['D12'],0),['T13'],0),-1.0/3.0)
+list_terms=prod(['X1'],comm(comm(comm(['V2'],['T11'],0),['D12'],0),['T13'],0),-1.0/6.0)
 list_terms=full_con.full_terms(list_terms)
 print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
-list_terms=prod(['X1'],comm(comm(comm(['V2'],['T1'],0),['D12'],0),['D13'],0),1.0/3.0)
+list_terms=prod(['X1'],comm(comm(comm(['V2'],['T11'],0),['D12'],0),['D13'],0),1.0/6.0)
 list_terms=full_con.full_terms(list_terms)
 print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
-list_terms=prod(['X1'],comm(comm(comm(['V2'],['D1'],0),['T12'],0),['T13'],0),-1.0/3.0)
+list_terms=prod(['X1'],comm(comm(comm(['V2'],['D11'],0),['T12'],0),['T13'],0),-1.0/6.0)
 list_terms=full_con.full_terms(list_terms)
 print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
-list_terms=prod(['X1'],comm(comm(comm(['V2'],['D1'],0),['T12'],0),['D13'],0),1.0/3.0)
+list_terms=prod(['X1'],comm(comm(comm(['V2'],['D11'],0),['T12'],0),['D13'],0),1.0/6.0)
 list_terms=full_con.full_terms(list_terms)
 print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
-list_terms=prod(['X1'],comm(comm(comm(['V2'],['D1'],0),['D12'],0),['T13'],0),1.0/3.0)
+list_terms=prod(['X1'],comm(comm(comm(['V2'],['D11'],0),['D12'],0),['T13'],0),1.0/6.0)
 list_terms=full_con.full_terms(list_terms)
 print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
-list_terms=prod(['X1'],comm(comm(comm(['V2'],['D1'],0),['D12'],0),['D13'],0),-1.0/6.0)
+list_terms=prod(['X1'],comm(comm(comm(['V2'],['D11'],0),['D12'],0),['D13'],0),-1.0/6.0)
 list_terms=full_con.full_terms(list_terms)
 print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
 
 #The following function selects only the fully contracted terms from the above list_terms
-'''
+

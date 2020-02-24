@@ -100,3 +100,15 @@
 -2.0\sum_{j b a i }D^{j}_{b}<id||ja>T^{a}_{i}T^{b}_{l}\\ 
 -2.0\sum_{j b a i }D^{j}_{b}<ib||la>T^{a}_{i}T^{d}_{j}\\ 
 ------------\\ 
+2.0\sum_{c i a j }D^{j}_{c}D^{i}_{a}<cd||li>T^{a}_{j}\\ 
+-1.0\sum_{k c i a }D^{k}_{c}D^{i}_{a}<cd||ki>T^{a}_{l}\\ 
+-1.0\sum_{k c i a }D^{k}_{c}D^{i}_{a}<ac||lk>T^{d}_{i}\\ 
+------------\\ 
+2.0\sum_{c i a j }D^{j}_{c}D^{i}_{a}<cd||li>T^{a}_{j}\\ 
+-2.0\sum_{k c i a }D^{k}_{c}D^{i}_{a}<cd||ki>T^{a}_{l}\\ 
+-2.0\sum_{k c i a }D^{k}_{c}D^{i}_{a}<ac||lk>T^{d}_{i}\\ 
+------------\\ 
+2.0\sum_{c i a j }D^{j}_{c}D^{i}_{a}<cd||li>T^{a}_{j}\\ 
+-2.0\sum_{k c i a }D^{k}_{c}D^{i}_{a}<cd||ki>T^{a}_{l}\\ 
+-2.0\sum_{k c i a }D^{k}_{c}D^{i}_{a}<ac||lk>T^{d}_{i}\\ 
+------------\\ 

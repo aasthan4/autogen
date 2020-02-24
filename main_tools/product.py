@@ -153,12 +153,9 @@ def prod(a,b,last):
 
 
     cpre_env.compare_envelope(list_terms, fc, last)    
-    if last!=0:
-        print 'here'
-        #Special condition- when there are atlaest three operators, atleast two are equivalent and one of them is not contracting with a previous
-        #..chunk of operators (H in the case of 3 commutators.
-        list_terms=cond.startequiv_cond(list_terms)
-        #exit()
+    #Special condition- when there are atlaest three operators, atleast two are equivalent and one of them is not contracting with a previous
+    #..chunk of operators (H in the case of 3 commutators.
+    list_terms=cond.startequiv_cond(list_terms)
     #for terms in list_terms:
     #if terms.fac!=0:
     #print "HEREEEE"
