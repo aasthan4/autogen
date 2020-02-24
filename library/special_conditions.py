@@ -98,10 +98,11 @@ def non_equivop(term,map_out,equivop):
     return 0    
 def non_equivop2(term,map_out2,equivop,opmiddle):
     #case2: if the there is one connection in the middle operator which is not an equivalent operator and has comm position less than middle operator, it returns 0
+    #print 'inside two'
     for opi in range(len(map_out2)):
         for c in map_out2[opi]:
 
-            #print c, opmiddle[opi]
+            print c, opmiddle[opi]
             if len(c)>2 and len(opmiddle[opi])>2:
                 if (int(c[2])<int(opmiddle[opi][2])) and (equivop not in c):
                     return 0
@@ -115,7 +116,8 @@ def non_equivop2(term,map_out2,equivop,opmiddle):
             elif equivop in c and len(c)>2 and first!=0:
                 if c[2]!=first:
                     return 0
-            
+    if not opmiddle:
+        return 0
 
     return 1
 
@@ -166,6 +168,7 @@ def startequiv_cond(list_terms):
             case1=non_equivop(term,map_out,equivop)
             map_out2,oplistmiddle=create_map2(term,equivop)
             case2=non_equivop2(term,map_out2,equivop,oplistmiddle)
+            #print 'case 1 and 2', case1, case2
             if case1==1.0 or case2==1.0:
                 term.fac=term.fac*2.0
         if t2>1:
