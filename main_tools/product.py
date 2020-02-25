@@ -157,7 +157,7 @@ def prod(a,b,last):
     #Special condition- when there are atlaest three operators, atleast two are equivalent and one of them is not contracting with a previous
     #..chunk of operators (H in the case of 3 commutators.
     list_terms=pt.clean_list(list_terms)
-    list_terms=full_con.full_terms(list_terms)
+    #list_terms=full_con.full_terms(list_terms)
     list_terms=cond.startequiv_cond(list_terms)
     #for terms in list_terms:
     #if terms.fac!=0:
