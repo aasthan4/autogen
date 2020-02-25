@@ -156,7 +156,7 @@ def level1(term1,term2):
     for item1 in term1.map_org:
         flag1=0
         for item2 in term2.map_org:
-            if item1.name[0]==item2.name[0] and item1.name[1]==item2.name[1]:
+            if item1.name==item2.name:
                 flag1=1
         if flag1!=1:
             return 0

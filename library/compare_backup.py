@@ -40,7 +40,7 @@ def swap(c1):
 def match(term1,term2,i1,i2,nondummy_map):
     #same type:if not dummy, samename: if dummy ok
     if term1.type(i1.name)==term2.type(i2.name):
-        '''
+
         if not term1.is_dummy(i1.name) and not term2.is_dummy(i2.name) and i1.name==i2.name:
 	    if i1.name not in nondummy_map:
                 #pushing non dummy in dict
@@ -56,7 +56,6 @@ def match(term1,term2,i1,i2,nondummy_map):
 		return 1
 	    else:
 		return 0
-        '''
         if not term1.is_dummy(i1.name) and not term2.is_dummy(i2.name) and i1.name==i2.name:
             #they are same move forward
             return 1
@@ -140,7 +139,7 @@ def juggle(term,pos):
 	    tmp_term.fac=term.fac*-1
 	else :
 	    tmp_term.fac=term.fac
-	#print 'check the sign of terms in juggle', c1,term.coeff_list[pos], parity.parity(c1,term.coeff_list[pos]),"(",tmp_term.fac,term.fac,")"
+	#print 'check the sign of terms in juggle', c1,term.coeff_list[pos], parity.parity(c1,term.coeff_list[pos])
 
         ret_terms.append(copy.deepcopy(tmp_term))
     #print ' length og list terms after juggle is :', len(ret_terms)
@@ -156,7 +155,7 @@ def level1(term1,term2):
     for item1 in term1.map_org:
         flag1=0
         for item2 in term2.map_org:
-            if item1.name[0]==item2.name[0] and item1.name[1]==item2.name[1]:
+            if item1.name==item2.name:
                 flag1=1
         if flag1!=1:
             return 0
@@ -301,7 +300,6 @@ def level4(term1, term2, final_terms):
 
 def go_find(term1,term2,coeff1,coeff2,i1,i2,nondummy_map):
     if match(term1,term2,i1,i2,nondummy_map):
-	#print 'in go forward going to find ',i1.name, i2.name
         j1,c1,d1=find_ind(coeff1,i1)
         j2,c2,d2=find_ind(coeff2,i2)
         if j1==0 and j2==0:#both are non dummy
@@ -333,7 +331,6 @@ def go_forward(term1,term2,coeff1,coeff2,i1,i2,nondummy_map):
     if match(term1,term2,i1,i2,nondummy_map):
         i1=i1.pair
         i2=i2.pair
-
 	#print 'in go forward going to find ',i1.name, i2.name
         if i1.seen==0:
             i1.seen=1
@@ -347,10 +344,6 @@ def go_forward(term1,term2,coeff1,coeff2,i1,i2,nondummy_map):
 
     else:
         return 0
-#Algorithm:
-#
-#
-#
 def arrowwork(term1,term2,coeff1, coeff2):
     '''
     print '---e'
@@ -384,10 +377,11 @@ def arrowwork(term1,term2,coeff1, coeff2):
 
 def level5(term1, term2, final_terms):
     #map_org becomes immaterial for t2 terms
+
     #---Algorithm -
-    #create indices class objects for each indices in operator such as 'a' in T1(a,k)
-    #pair the coefficients to their partners in the indices class of all terms (main terms and copies of term2)
-    #arrowwork decides if the two terms are the same and the sign is given by the fac of the term2 copy.
+    #
+    #
+    #build alterntive terms because of antisymmetry condition of 4 indeces operators.
     tmp1=[]
     tmp2=[]
     #build class ind
@@ -433,6 +427,16 @@ def level5(term1, term2, final_terms):
 	    	c1[ij].pair=c1[ij+len(c1)/2]
 	    else :
 		c1[ij].pair=c1[ij-len(c1)/2]
+	'''
+        if len(c1)==2:
+            c1[0].pair=c1[1]
+            c1[1].pair=c1[0]
+        elif len(c1)==4:
+            c1[0].pair=c1[2]
+            c1[1].pair=c1[3]
+            c1[2].pair=c1[0]
+            c1[3].pair=c1[1]
+	'''
     for term2_coeffs in final_coeffs:
         for c1 in term2_coeffs:
             #for i1 in c1:
@@ -442,6 +446,21 @@ def level5(term1, term2, final_terms):
 	    	    c1[ij].pair=c1[ij+len(c1)/2]
 	    	else :
 		    c1[ij].pair=c1[ij-len(c1)/2]
+            '''
+	    if len(c1)==2:
+                c1[0].pair=c1[1]
+                c1[1].pair=c1[0]
+            elif len(c1)==4:
+                c1[0].pair=c1[2]
+                c1[1].pair=c1[3]
+                c1[2].pair=c1[0]
+                c1[3].pair=c1[1]
+            elif len(c1)==4:
+                c1[0].pair=c1[2]
+                c1[1].pair=c1[3]
+                c1[2].pair=c1[0]
+                c1[3].pair=c1[1]
+	    '''
     flag=0
     '''
     for item in coeff1:
@@ -466,16 +485,19 @@ def compare(term1, term2):
     ret=[]
     if flag==1:
         flag=level1(term1,term2)
+
 	#print 'flag level 1 :', flag
     if flag!=0:
         flag=level2(term1,term2)
 	#print 'flag level 2 :', flag
+
     if flag!=0:
         flag, final_terms=level3(term1,term2)
 	#print 'flag level 3 :', flag
+
         #print len(final_terms)
     if flag!=0:
-        level4(term1,term2, final_terms)
+        flag=level4(term1,term2, final_terms)
 	#print 'flag level 4 :', flag
 
         #print len(final_terms)

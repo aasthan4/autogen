@@ -40,7 +40,7 @@ def swap(c1):
 def match(term1,term2,i1,i2,nondummy_map):
     #same type:if not dummy, samename: if dummy ok
     if term1.type(i1.name)==term2.type(i2.name):
-        '''
+
         if not term1.is_dummy(i1.name) and not term2.is_dummy(i2.name) and i1.name==i2.name:
 	    if i1.name not in nondummy_map:
                 #pushing non dummy in dict
@@ -56,7 +56,6 @@ def match(term1,term2,i1,i2,nondummy_map):
 		return 1
 	    else:
 		return 0
-        '''
         if not term1.is_dummy(i1.name) and not term2.is_dummy(i2.name) and i1.name==i2.name:
             #they are same move forward
             return 1
@@ -140,7 +139,7 @@ def juggle(term,pos):
 	    tmp_term.fac=term.fac*-1
 	else :
 	    tmp_term.fac=term.fac
-	#print 'check the sign of terms in juggle', c1,term.coeff_list[pos], parity.parity(c1,term.coeff_list[pos]),"(",tmp_term.fac,term.fac,")"
+	print 'check the sign of terms in juggle', c1,term.coeff_list[pos], parity.parity(c1,term.coeff_list[pos]),"(",tmp_term.fac,term.fac,")"
 
         ret_terms.append(copy.deepcopy(tmp_term))
     #print ' length og list terms after juggle is :', len(ret_terms)
@@ -156,7 +155,7 @@ def level1(term1,term2):
     for item1 in term1.map_org:
         flag1=0
         for item2 in term2.map_org:
-            if item1.name[0]==item2.name[0] and item1.name[1]==item2.name[1]:
+            if item1.name==item2.name:
                 flag1=1
         if flag1!=1:
             return 0
@@ -334,7 +333,7 @@ def go_forward(term1,term2,coeff1,coeff2,i1,i2,nondummy_map):
         i1=i1.pair
         i2=i2.pair
 
-	#print 'in go forward going to find ',i1.name, i2.name
+	print 'in go forward going to find ',i1.name, i2.name
         if i1.seen==0:
             i1.seen=1
         else:
@@ -352,7 +351,7 @@ def go_forward(term1,term2,coeff1,coeff2,i1,i2,nondummy_map):
 #
 #
 def arrowwork(term1,term2,coeff1, coeff2):
-    '''
+    
     print '---e'
     for item1,item2 in zip(coeff1,coeff2):
         for item3 in item1:
@@ -362,12 +361,12 @@ def arrowwork(term1,term2,coeff1, coeff2):
             print item4.name,
         print '\n'
     print '---e'
-    '''
+    
     nondummy_map={}
     while not coeff_seen(coeff1):
 	#print len(coeff1),len(coeff2)
         c1,i1, i2 =pick(coeff1, coeff2)
-	#print 'picked',i1.name, i2.name
+	print 'picked',i1.name, i2.name
         if c1==-1:#case when the 2 coeff are of unequal length
             #print 'cant pick'
             return 0
@@ -456,7 +455,7 @@ def level5(term1, term2, final_terms):
         #print 'comparing for arrow',term1.coeff_list, termx.coeff_list
         if arrowwork(term1, termx,coeff1, c2)==1:
             flag=termx.fac
-            #print 'match', term1.coeff_list, '"',term2.coeff_list,',',termx.coeff_list,',',termx.fac
+            print 'match', term1.coeff_list, '"',term2.coeff_list,',',termx.coeff_list,',',termx.fac
             break
     return flag
 
@@ -483,7 +482,7 @@ def compare(term1, term2):
     if flag!=0:
         #2.return not only 1 but the sign of the face as well.
         flag=level5(term1,term2, final_terms)
-	#print 'flag level 5 :', flag
+	print 'flag level 5 :', flag
         #print len(final_terms)
     final_terms=[]
     return flag

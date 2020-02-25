@@ -34,8 +34,7 @@ def driver(fc,list_char_op):
     a,b=lib.full_con.full_con(a,b)
     #lib.print_op.print_op(a,b)
 
-
-    #change to terms
+    #Changing t,c to object terms.(bug 19Feb2020 comes into already int,c) 
     list_terms=ct.change_terms1(a,b,fc,dict_ind, lou)
 
     #compress terms eliminating deltas
@@ -83,15 +82,16 @@ def driver(fc,list_char_op):
                 #print "comparing inside drive -------:", i,j,list_terms[i].coeff_list, list_terms[j].coeff_list
                 flo= cpre.compare(list_terms[i],list_terms[j])
                 if flo!=0:
-                    print 'result in the comparision',i,j,flo
+                    #print 'in result in the comparision',i,j,flo
                     #print 'this should be 0 always = ',list_terms[i].fac+list_terms[j].fac*flo
                     list_terms[i].fac=list_terms[i].fac+list_terms[j].fac * flo
                     list_terms[j].fac=0.0
+                #print 'out result in the comparision',i,j,list_terms[i].coeff_list,list_terms[j].coeff_list,flo
 
-    #muliply with the prefactor of the expression from the Housdoff Expression
-    for item in list_terms:
-        if item.fac!=0.0:
-            item.fac=item.fac*fc
+    #muliply with the prefactor of the expression from the Housdoff Expression(No need to do this now)
+    #for item in list_terms:
+    #    if item.fac!=0.0:
+    #        item.fac=item.fac*fc
 
     #print list_terms[i].fac, list_terms[j].fac
 
@@ -101,5 +101,5 @@ def driver(fc,list_char_op):
             #print term.fac, term.sum_list, term.coeff_list
 
     #print terms properly
-    pt.print_terms(list_terms)
+    pt.print_terms(list_terms,'latex_output.txt')
 #driver(1.0)
