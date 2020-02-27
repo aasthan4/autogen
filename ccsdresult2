@@ -1,4 +1,8 @@
 ------------\\ 
+1.0\sum_{j }F^{j}_{l}T^{dc}_{kj}\\ 
+-1.0\sum_{j }F^{j}_{k}T^{dc}_{lj}\\ 
+1.0\sum_{a }F^{d}_{a}T^{ac}_{lk}\\ 
+-1.0\sum_{a }F^{c}_{a}T^{ad}_{lk}\\ 
 ------------\\ 
 -1.0\sum_{i b }F^{i}_{b}T^{e}_{i}T^{bd}_{ml}\\ 
 1.0\sum_{i b }F^{i}_{b}T^{d}_{i}T^{be}_{ml}\\ 
@@ -27,4 +31,39 @@
 1.0\sum_{a j }<jc||ka>T^{ad}_{lj}\\ 
 -0.5\sum_{a b }<dc||ba>T^{ab}_{lk}\\ 
 ------------\\ 
+0.5\sum_{j c d l }<jl||dc>T^{fe}_{nj}T^{cd}_{ml}\\ 
+-0.5\sum_{j c d l }<jl||dc>T^{fe}_{mj}T^{cd}_{nl}\\ 
+-0.5\sum_{a c k l }<lk||ca>T^{af}_{nm}T^{ce}_{kl}\\ 
+0.5\sum_{a c k l }<lk||ca>T^{ae}_{nm}T^{cf}_{kl}\\ 
+0.25\sum_{i j c d }<ji||dc>T^{fe}_{ij}T^{cd}_{nm}\\ 
+-2.0\sum_{a j c l }<jl||ca>T^{af}_{nj}T^{ce}_{ml}\\ 
+------------\\ 
+1.0\sum_{i b k }<ik||mb>T^{e}_{i}T^{bd}_{lk}\\ 
+-1.0\sum_{i b k }<ik||mb>T^{d}_{i}T^{be}_{lk}\\ 
+-1.0\sum_{i b k }<ik||lb>T^{e}_{i}T^{bd}_{mk}\\ 
+1.0\sum_{i b k }<ik||lb>T^{d}_{i}T^{be}_{mk}\\ 
+-0.5\sum_{i b c }<ie||cb>T^{d}_{i}T^{bc}_{ml}\\ 
+0.5\sum_{i b c }<id||cb>T^{e}_{i}T^{bc}_{ml}\\ 
+-0.5\sum_{a j k }<kj||ma>T^{a}_{l}T^{ed}_{jk}\\ 
+0.5\sum_{a j k }<kj||la>T^{a}_{m}T^{ed}_{jk}\\ 
+-1.0\sum_{a b k }<ke||ba>T^{a}_{m}T^{bd}_{lk}\\ 
+1.0\sum_{a b k }<kd||ba>T^{a}_{m}T^{be}_{lk}\\ 
+1.0\sum_{a b k }<ke||ba>T^{a}_{l}T^{bd}_{mk}\\ 
+-1.0\sum_{a b k }<kd||ba>T^{a}_{l}T^{be}_{mk}\\ 
+-1.0\sum_{a i k }<ik||ma>T^{a}_{i}T^{ed}_{lk}\\ 
+1.0\sum_{a i k }<ik||la>T^{a}_{i}T^{ed}_{mk}\\ 
+-1.0\sum_{a i b }<ie||ba>T^{a}_{i}T^{bd}_{ml}\\ 
+1.0\sum_{a i b }<id||ba>T^{a}_{i}T^{be}_{ml}\\ 
+-0.5\sum_{i j c d }<ij||dc>T^{f}_{i}T^{e}_{j}T^{cd}_{nm}\\ 
+-1.0\sum_{i b c l }<il||cb>T^{f}_{i}T^{b}_{n}T^{ce}_{ml}\\ 
+1.0\sum_{i b c l }<il||cb>T^{e}_{i}T^{b}_{n}T^{cf}_{ml}\\ 
+1.0\sum_{i b c l }<il||cb>T^{f}_{i}T^{b}_{m}T^{ce}_{nl}\\ 
+-1.0\sum_{i b c l }<il||cb>T^{e}_{i}T^{b}_{m}T^{cf}_{nl}\\ 
+-1.0\sum_{i b j c }<ij||cb>T^{f}_{i}T^{b}_{j}T^{ce}_{nm}\\ 
+1.0\sum_{i b j c }<ij||cb>T^{e}_{i}T^{b}_{j}T^{cf}_{nm}\\ 
+0.5\sum_{a b k l }<lk||ba>T^{a}_{n}T^{b}_{m}T^{fe}_{kl}\\ 
+1.0\sum_{a b j l }<jl||ba>T^{a}_{n}T^{b}_{j}T^{fe}_{ml}\\ 
+-1.0\sum_{a b j l }<jl||ba>T^{a}_{m}T^{b}_{j}T^{fe}_{nl}\\ 
+------------\\ 
+-1.0\sum_{i j c d }<ij||dc>T^{f}_{i}T^{e}_{j}T^{c}_{n}T^{d}_{m}\\ 
 ------------\\ 

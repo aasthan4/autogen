@@ -195,6 +195,7 @@ def level2(term1,term2):
             return 0
     return 1
 
+
 def swap(a,b,c):
     tmp=[]
     tmp = a[c]

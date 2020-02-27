@@ -12,10 +12,12 @@ import library.make_op as make_op
 import library.change_terms as ct
 import library.class_term as class_terms
 import library as lib
-import library. compare as cpre
+import library.compare as cpre
 import multi_cont
 import library.compare_envelope as cpre_env
+import library.compare_overall as cpre_env2
 import library.special_conditions as cond
+from library.compare_test import create_matrices
 removed=0
 '''
 class list_op_term:
@@ -34,6 +36,11 @@ def comm(a,b,last):
     fc=1.0
     #print a,b
     #develop dict_ind
+    if a and b:
+        print 'there are contractions in this commutator'
+    else:
+        print 'there are no contractions in this commutator'
+        return []
     if type(a[0])==str and type(b[0])==str:
 	dict_add={}
         #This is to store the information that this is the first contraction. (used in special_conditions.py library)
@@ -188,18 +195,22 @@ def comm(a,b,last):
 	#item.cond_cont(item.dict_ind) only for CCSD noy for general case
 
     if last!=0:
-        print 'here'
         #Special condition- when there are atlaest three operators, atleast two are equivalent and one of them is not contracting with a previous
         #..chunk of operators (H in the case of 3 commutators.
         list_terms=cond.startequiv_cond(list_terms)
 
-    cpre_env.compare_envelope(list_terms, fc, last)    
+    for term in list_terms:
+            create_matrices(term)
+    cpre_env2.compare_envelope(list_terms, fc, last)    
     list_terms=pt.clean_list(list_terms)
+
 
 
     for term in list_terms:
 	term.co[0][0]=term.fac
-    #print 'at the end of comm', len(list_terms)
+    #print 'length of list_terms passed', len(list_terms)
+    #pt.print_terms(list_terms,'latex_terms.txt')
+    #print 'length of list_terms passed', len(list_terms)
     return list_terms
 
 

@@ -6,7 +6,8 @@ from library import print_terms
 from library import full_con
 from library import pick
 from library import convert_pqr
-from library import compare_envelope as ce
+from library import compare_envelope as ce1
+from library import compare_overall as ce
 print 'case of '
 list_terms=[]
 

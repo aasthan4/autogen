@@ -1,5 +1,6 @@
 import eq8
 import string
+import numpy as np
 class term(object):
     def __init__(self, fac, sum_list, coeff_list,lol, st, co):
         self.fac=fac
@@ -10,6 +11,8 @@ class term(object):
         self.co=co
         self.map_org=[]
 	self.dict_ind={}
+        self.imatrix=np.zeros((len(coeff_list),len(coeff_list)))
+        self.amatrix=np.zeros((len(coeff_list),len(coeff_list)))
     def compress(self):
 	for term in self.st:
             for op in term:
@@ -207,9 +210,9 @@ class term(object):
     def print_term(self):
         print self.fac,
         print 'Sum', self.sum_list,
-        for i in range(len(self.map_org)):
-	    if self.map_org[i].name[0]!='X':
-                print self.map_org[i].name[0],self.coeff_list[i],
+        for i in range(len(self.large_op_list)):
+	    if self.large_op_list[i].name[0]!='X':
+                print self.large_op_list[i].name[0],self.coeff_list[i],
 	if self.st[0][-1].kind=='op':
 
 	    print 'E^',self.st[0][-1].upper,'_',self.st[0][-1].lower,
@@ -222,27 +225,29 @@ class term(object):
             for item in self.sum_list:
                 f.write(item+' ')
             f.write("}")
-        for i in range(0,len(self.map_org)):
-            if self.map_org[i].name[0]!='V' and self.map_org[i].name[0]!='X':
-                f.write(self.map_org[i].name[0])
+        for i in range(0,len(self.large_op_list)):
+            if self.large_op_list[i].name[0]!='V' and self.large_op_list[i].name[0]!='X':
+                f.write(self.large_op_list[i].name[0])
                 f.write("^{")
 
-            elif self.map_org[i].name[0]=='V':
+            elif self.large_op_list[i].name[0]=='V':
                 f.write("<")
 
-            for it1 in range(0,len(self.coeff_list[i])/2):
-                f.write(self.coeff_list[i][it1])
+            if self.large_op_list[i].name[0]!='X':
+                for it1 in range(0,len(self.coeff_list[i])/2):
+                    f.write(self.coeff_list[i][it1])
 
-            if self.map_org[i].name[0]!='V' and self.map_org[i].name[0]!='X':
+            if self.large_op_list[i].name[0]!='V' and self.large_op_list[i].name[0]!='X':
                 f.write("}_{")
-            elif self.map_org[i].name[0]=='V':
+            elif self.large_op_list[i].name[0]=='V':
                 f.write("||")
 
-            for it2 in range(len(self.coeff_list[i])/2, len(self.coeff_list[i])):
-                f.write(self.coeff_list[i][it2])
-            if self.map_org[i].name[0]!='V' and self.map_org[i].name[0]!='X':
+            if self.large_op_list[i].name[0]!='X':
+                for it2 in range(len(self.coeff_list[i])/2, len(self.coeff_list[i])):
+                    f.write(self.coeff_list[i][it2])
+            if self.large_op_list[i].name[0]!='V' and self.large_op_list[i].name[0]!='X':
                 f.write("}")
-            elif self.map_org[i].name[0]=='V':
+            elif self.large_op_list[i].name[0]=='V':
                 f.write(">")
 	if self.st[0][-1].kind=='op':
 	    f.write("E^{")
