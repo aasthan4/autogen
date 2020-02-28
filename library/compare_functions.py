@@ -44,13 +44,29 @@ def permutation_check(term1,term2):
 
         
         eq12=1
-        #case when the connections are to the same operator
+        #case when the connections are to the same operator or same operators with different names
         if map1_open==map2_open:
             return 1
+        else:
+            flag=1
+            for i in range(len(map1_open)):
+                if map1_open[i]!=map2_open[i]:
+                    flag=0
+                    for opi in range(len(term1.large_op_list)):
+                        if term1.large_op_list[opi].name==map1_open[i]:
+                            first=opi
+                        if term2.large_op_list[opi].name==map2_open[i]:
+                            second=opi
+                    if np.array_equal(term1.imatrix[first,:],term2.imatrix[second,:]) and np.array_equal(term1.amatrix[first,:],term2.amatrix[second,:]):
+                        #print 'found a case of same oper with different names'
+                        flag=1
+            if flag==1:
+                return 1
         #Two terms are permutations when the two same type of operators are not equivalent
         if len(map1_open[0])>2 and len(map2_open[1])>2 :
             eq12=0
-            #print 'case indices',int(map1_open[0][2]),int(map2_open[0][2]),int(map1_open[1][2]),int(map2_open[1][2])
+
+            #print 'case indices12',int(map1_open[0][2]),int(map2_open[0][2]),int(map1_open[1][2]),int(map2_open[1][2])
             if int(map1_open[0][2])==int(map2_open[0][2]) and  int(map1_open[1][2])==int(map2_open[1][2]):
                 eq12=1
             else:
@@ -65,11 +81,13 @@ def permutation_check(term1,term2):
                 #print np.array_equal(term1.imatrix[first,:],term1.imatrix[second,:])
                 #exit()
 
+
                 if np.array_equal(term1.imatrix[first,:],term1.imatrix[second,:]) and np.array_equal(term1.amatrix[first,:],term1.amatrix[second,:]):
                     eq12=1
         eq34=1
         if len(map1_open[2])>2 and len(map2_open[3])>2 :
             eq34=0
+            #print 'case indices34',int(map1_open[2][2]),int(map2_open[2][2]),int(map1_open[3][2]),int(map2_open[3][2])
             if int(map1_open[2][2])==int(map2_open[2][2]) and  int(map1_open[3][2])==int(map2_open[3][2]):
                 eq34=1
             else:
