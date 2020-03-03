@@ -208,7 +208,6 @@ def comm(a,b,last):
 
     for term in list_terms:
 	term.co[0][0]=term.fac
-    #print 'length of list_terms passed', len(list_terms)
     #pt.print_terms(list_terms,'latex_terms.txt')
     #print 'length of list_terms passed', len(list_terms)
     return list_terms

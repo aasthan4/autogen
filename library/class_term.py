@@ -1,12 +1,13 @@
 import eq8
 import string
 import numpy as np
+import copy
 class term(object):
     def __init__(self, fac, sum_list, coeff_list,lol, st, co):
         self.fac=fac
         self.sum_list=sum_list
-        self.coeff_list=coeff_list
-        self.large_op_list=lol
+        self.coeff_list=copy.deepcopy(coeff_list)
+        self.large_op_list=copy.deepcopy(lol)
         self.st=st
         self.co=co
         self.map_org=[]

@@ -78,7 +78,7 @@ def create_map2(term,equivop):
 def non_equivop(term,map_out,equivop):
     pos1=10000 #stores position of the first occuring equivop
     found_pos=0
-    print 'map_out case1', map_out
+    #print 'map_out case1', map_out
     for op in term.large_op_list:
         if equivop in op.name:
             #print equivop, op.name
@@ -92,7 +92,7 @@ def non_equivop(term,map_out,equivop):
                 pos1=0
                 #print op.name[2],pos1
                 found_pos=1
-    #if each equiv op is connected to a arm which is created before pos1, it is equiv. is one of the arms in one is created after the first pos, it is non-eq
+    ##if each equiv op is connected to a arm which is created before pos1, it is equiv. is one of the arms in one is created after the first pos, it is non-eq
     for opeq in map_out:
         inner_comm=0
         for op1 in opeq:
@@ -102,9 +102,9 @@ def non_equivop(term,map_out,equivop):
                     inner_comm=1
             elif op1[0]=='V':
                 inner_comm=1
-        print 'opeq',inner_comm,opeq
+        #print 'opeq',inner_comm,opeq
         if inner_comm==0:
-            print 'found non equivalent operators: one operator has both connection to outer comm'
+            #print 'found non equivalent operators: one operator has both connection to outer comm'
             return 1
     return 0    
 def non_equivop2(term,map_out2,equivop,opmiddle):
@@ -184,9 +184,9 @@ def startequiv_cond(list_terms):
             case1=non_equivop(term,map_out,equivop)
             map_out2,oplistmiddle=create_map2(term,equivop)
             case2=non_equivop2(term,map_out2,equivop,oplistmiddle)
-            print 'case 1 and 2', case1, case2
+            #print 'case 1 and 2', case1, case2
             if case1==1.0 or case2==1.0:
-                print 'special condition involked'
+                #print 'special condition involked'
                 term.fac=term.fac*2.0
         if t2>1:
             equivop='T2'

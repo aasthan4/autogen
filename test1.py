@@ -35,9 +35,9 @@ list_terms.extend(prod(['X1'],comm(comm(comm(['V2'],['T11'],0),['T12'],0),['D13'
 '''
 
 #test3
-list_terms=prod(['X2'],comm(comm(comm(['V2'],['T11'],0),['T12'],0),['T13'],0),1.0/6.0)
-list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T11'],0),['D12'],0),['T13'],0),-1.0/6.0))
-list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['D11'],0),['T12'],0),['T13'],0),-1.0/6.0))
+list_terms=prod(['X2'],comm(comm(comm(['V2'],['T21'],0),['T12'],0),['T13'],0),-1.0/6.0)
+#list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T11'],0),['D12'],0),['T13'],0),-1.0/6.0))
+#list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['D11'],0),['T12'],0),['T13'],0),-1.0/6.0))
 
 
 
@@ -50,7 +50,7 @@ list_terms=full_con.full_terms(list_terms)
 #print_terms.print_terms(list_terms,'latex_output.txt')
 list_terms=ce.compare_envelope(list_terms,1.0,1)
 
-print_terms.print_terms(list_terms,'ucc_X2VS1S1S1')
+print_terms.print_terms(list_terms,'latex_output.txt')
 
 #driver(1.0/6.0,['X1','V2','T1','T12','T13'])
 

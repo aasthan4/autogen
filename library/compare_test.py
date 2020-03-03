@@ -1,6 +1,7 @@
 import numpy as np
 import copy
 import compare_functions as cf
+import compare_functions2 as cf2
 #from sign_function import level3_sign
 def create_matrices(term):
     term.imatrix=np.zeros((len(term.large_op_list),len(term.large_op_list)))
@@ -62,11 +63,16 @@ def compare(term1, term2):
                 #print 'the two terms are equal', term1.coeff_list, term2.coeff_list, term1.amatrix, term2.amatrix
                 flag=1
             #else:
-            #    print 'two terms found are permutations',term1.coeff_list, term2.coeff_list,
+                #print 'two terms found are permutations',term1.coeff_list, term2.coeff_list,
         else:
             #permutation case: contraction pattern of permuted operators compared
             #print 'terms are not equal', term1.coeff_list,term2.coeff_list
-            term1,term2,flag=cf.level2(term1,term2)
+            #case when the position of type of operators is not the same VT1T2T1 VT2T1T1
+            term1,term2,flag=cf2.positionchange(term1,term2)
+            #print 'flag of position change', flag
+            if flag!=1:
+                #permuting equivalent operators
+                term1,term2,flag=cf.level2(term1,term2)
     if flag==1:
         #print 'Starting to compute sign of equivalent term2'
         #sign=level3_sign(term1,term2)
