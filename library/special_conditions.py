@@ -13,7 +13,6 @@
 def create_map(term,equivop):
             #for op in term.map_org:
             #atleast 2 equivalent operators present with one of them as the first contraction.
-            #If one of them has no connections with V, multiply with two.
             map_out=[]
             for op in term.large_op_list:
                 if equivop in op.name:
@@ -21,13 +20,23 @@ def create_map(term,equivop):
                     ind=term.large_op_list.index(op)#find the index of operator to work on coeff_list
                     for c in term.coeff_list[ind]:
                         found=0
-                        for i in range(len(term.coeff_list)):
-                            for j in range(len(term.coeff_list[i])):
-                                if term.coeff_list[i][j]==c and i!=ind:
-                                    mapping.append(term.large_op_list[i].name)
-                                    found=1
-                                    #print 'contraction found'
-                                    break
+                        if len(term.coeff_list)==len(term.large_op_list)+1:
+                            for i in range(len(term.coeff_list)-1):
+                                for j in range(len(term.coeff_list[i])-1):
+                                    if term.coeff_list[i][j]==c and i!=ind:
+                                        mapping.append(term.large_op_list[i].name)
+                                        found=1
+                                        #print 'contraction found'
+                                        break
+                        else:
+                            for i in range(len(term.coeff_list)):
+                                for j in range(len(term.coeff_list[i])):
+                                    if term.coeff_list[i][j]==c and i!=ind:
+                                        mapping.append(term.large_op_list[i].name)
+                                        found=1
+                                        #print 'contraction found'
+                                        break
+
                         if found==0:
                             #print 'open index'
                             mapping.append(op.name)
@@ -43,14 +52,14 @@ def create_map2(term,equivop):
                     posop1=int(op.name[2])
                 else:
                     posop1=1
-                    #print 'the operator name doesnt have a position'
+                    print 'the operator name doesnt have a position in special condition'
                     exit()
             elif posop2>(len(term.large_op_list)+1):
                 if len(op.name)>2:
                     posop2=int(op.name[2])
                 else:
                    posop2=1
-                   #print 'the operator name doesnt have a position'
+                   print 'the operator name doesnt have a position in special condition'
                    exit()
     oplistmiddle=[]
     #print 'position of two equiv operators',posop1,posop2
@@ -69,6 +78,7 @@ def create_map2(term,equivop):
 def non_equivop(term,map_out,equivop):
     pos1=10000 #stores position of the first occuring equivop
     found_pos=0
+    #print 'map_out case1', map_out
     for op in term.large_op_list:
         if equivop in op.name:
             #print equivop, op.name
@@ -82,7 +92,7 @@ def non_equivop(term,map_out,equivop):
                 pos1=0
                 #print op.name[2],pos1
                 found_pos=1
-    #if each equiv op is connected to a arm which is created before pos1, it is equiv. is one of the arms in one is created after the first pos, it is non-eq
+    ##if each equiv op is connected to a arm which is created before pos1, it is equiv. is one of the arms in one is created after the first pos, it is non-eq
     for opeq in map_out:
         inner_comm=0
         for op1 in opeq:
@@ -90,7 +100,7 @@ def non_equivop(term,map_out,equivop):
                 pos2=int(op1[2])
                 if pos2<pos1:
                     inner_comm=1
-            else:
+            elif op1[0]=='V':
                 inner_comm=1
         #print 'opeq',inner_comm,opeq
         if inner_comm==0:
@@ -103,7 +113,7 @@ def non_equivop2(term,map_out2,equivop,opmiddle):
     for opi in range(len(map_out2)):
         for c in map_out2[opi]:
 
-            print c, opmiddle[opi]
+            #print c, opmiddle[opi]
             if len(c)>2 and len(opmiddle[opi])>2:
                 if (int(c[2])<int(opmiddle[opi][2])) and (equivop not in c):
                     return 0
@@ -123,6 +133,11 @@ def non_equivop2(term,map_out2,equivop,opmiddle):
     return 1
 
 def startequiv_cond(list_terms):
+    #if list_terms:
+    #    #print list_terms
+    #else:
+    #    print 'doesnt'
+    #    return []
     for term in list_terms:
         #print  term.large_op_list
         d1=0
@@ -171,6 +186,7 @@ def startequiv_cond(list_terms):
             case2=non_equivop2(term,map_out2,equivop,oplistmiddle)
             #print 'case 1 and 2', case1, case2
             if case1==1.0 or case2==1.0:
+                #print 'special condition involked'
                 term.fac=term.fac*2.0
         if t2>1:
             equivop='T2'
@@ -181,5 +197,6 @@ def startequiv_cond(list_terms):
             map_out2,oplistmiddle=create_map2(term,equivop)
             case2=non_equivop2(term,map_out2,equivop,oplistmiddle)
             if case1==1.0 or case2==1.0:
+
                 term.fac=term.fac*2.0
     return list_terms

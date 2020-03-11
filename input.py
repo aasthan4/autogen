@@ -6,7 +6,8 @@ from library import print_terms
 from library import full_con
 from library import pick
 from library import convert_pqr
-from library import compare_envelope as ce
+from library import compare_envelope as ce1
+from library import compare_overall as ce
 print 'case of '
 list_terms=[]
 
@@ -45,30 +46,95 @@ print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
 '''
 
 
-list_terms=prod(['X2'],comm(comm(comm(['V2'],['T11'],0),['T12'],0),['T13'],0),1.0/6.0)
+
+'''
+list_terms=prod(['X2'],comm(comm(comm(['V2'],['T21'],0),['T12'],0),['T13'],0),1.0/2.0)
+list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T11'],0),['T22'],0),['T13'],0),1.0/2.0))
+list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T21'],0),['T12'],0),['T13'],0),1.0/2.0))
+list_terms=full_con.full_terms(list_terms)
+list_terms=ce.compare_envelope(list_terms,1.0,1)
+print_terms.print_terms(list_terms,'ucc_X2VS1S1S2')
+'''
+'''
+list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T11'],0),['T12'],0),['T23'],0),-1.0/6.0))
+list_terms=full_con.full_terms(list_terms)
+list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T11'],0),['T22'],0),['T13'],0),-1.0/6.0))
+list_terms=full_con.full_terms(list_terms)
+list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T21'],0),['T12'],0),['T13'],0),-1.0/6.0))
+list_terms=full_con.full_terms(list_terms)
+'''
+
+
+
+
+'''
+list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T11'],0),['D12'],0),['T23'],0),-1.0/6.0))
+list_terms=full_con.full_terms(list_terms)
+
+list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['D11'],0),['T12'],0),['T23'],0),-1.0/6.0))
+list_terms=full_con.full_terms(list_terms)
+
+list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['D11'],0),['T22'],0),['T13'],0),-1.0/6.0))
+list_terms=full_con.full_terms(list_terms)
+
+list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T11'],0),['T22'],0),['D13'],0),-1.0/6.0))
+list_terms=full_con.full_terms(list_terms)
+
+list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T21'],0),['D12'],0),['T13'],0),-1.0/6.0))
+list_terms=full_con.full_terms(list_terms)
+list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T21'],0),['T12'],0),['D13'],0),-1.0/6.0))
+list_terms=full_con.full_terms(list_terms)
+'''
+
+
+'''
+list_terms=prod(['X2'],comm(comm(comm(['V2'],['D11'],0),['D12'],0),['T23'],0),1.0/6.0)
+list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['D11'],0),['T22'],0),['D13'],0),1.0/6.0))
+list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T21'],0),['D12'],0),['D13'],0),1.0/6.0))
+'''
+
+'''
+
+list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['D11'],0),['T22'],0),['T23'],0),-1.0/6.0))
+list_terms=full_con.full_terms(list_terms)
+list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T21'],0),['D12'],0),['T23'],0),-1.0/6.0))
+list_terms=full_con.full_terms(list_terms)
+list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T21'],0),['T22'],0),['D13'],0),-1.0/6.0))
+list_terms=full_con.full_terms(list_terms)
+'''
+
+
+list_terms.extend(prod(['X1'],comm(comm(comm(['V2'],['T11'],0),['D22'],0),['T23'],0),-1.0/6.0))
+list_terms.extend(prod(['X1'],comm(comm(comm(['V2'],['D21'],0),['T12'],0),['T23'],0),-1.0/6.0))
+list_terms=full_con.full_terms(list_terms)
+list_terms.extend(prod(['X1'],comm(comm(comm(['V2'],['T11'],0),['T22'],0),['D23'],0),-1.0/6.0))
+list_terms.extend(prod(['X1'],comm(comm(comm(['V2'],['T21'],0),['T12'],0),['D23'],0),-1.0/6.0))
+list_terms=full_con.full_terms(list_terms)
+list_terms.extend(prod(['X1'],comm(comm(comm(['V2'],['T21'],0),['D22'],0),['T13'],0),-1.0/6.0))
+list_terms.extend(prod(['X1'],comm(comm(comm(['V2'],['D21'],0),['T22'],0),['T13'],0),-1.0/6.0))
+list_terms=full_con.full_terms(list_terms)
+
+
+list_terms=ce.compare_envelope(list_terms,1.0,1)
+print_terms.print_terms(list_terms,'latex_output.txt')
+#print_terms.print_terms(list_terms,'ucc_X2VD1T2T2')
+
+'''
+list_terms.extend(prod(['X1'],comm(comm(comm(['V2'],['T11'],0),['D12'],0),['D13'],0),1.0/6.0))
 list_terms=full_con.full_terms(list_terms)
 #print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
-list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T11'],0),['T12'],0),['D13'],0),-1.0/6.0))
+list_terms.extend(prod(['X1'],comm(comm(comm(['V2'],['D11'],0),['T12'],0),['T13'],0),-1.0/6.0))
 list_terms=full_con.full_terms(list_terms)
 #print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
-list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T11'],0),['D12'],0),['T13'],0),-1.0/6.0))
+list_terms.extend(prod(['X1'],comm(comm(comm(['V2'],['D11'],0),['T12'],0),['D13'],0),1.0/6.0))
 list_terms=full_con.full_terms(list_terms)
 #print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
-list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T11'],0),['D12'],0),['D13'],0),1.0/6.0))
+list_terms.extend(prod(['X1'],comm(comm(comm(['V2'],['D11'],0),['D12'],0),['T13'],0),1.0/6.0))
 list_terms=full_con.full_terms(list_terms)
 #print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
-list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['D11'],0),['T12'],0),['T13'],0),-1.0/6.0))
-list_terms=full_con.full_terms(list_terms)
-#print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
-list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['D11'],0),['T12'],0),['D13'],0),1.0/6.0))
-list_terms=full_con.full_terms(list_terms)
-#print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
-list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['D11'],0),['D12'],0),['T13'],0),1.0/6.0))
-list_terms=full_con.full_terms(list_terms)
-#print_terms.print_terms(list_terms,'ucc_X1VS1S1S1')
-list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['D11'],0),['D12'],0),['D13'],0),-1.0/6.0))
+list_terms.extend(prod(['X1'],comm(comm(comm(['V2'],['D11'],0),['D12'],0),['D13'],0),-1.0/6.0))
 list_terms=full_con.full_terms(list_terms)
 list_terms=ce.compare_envelope(list_terms,1.0,1)
 print_terms.print_terms(list_terms,'ucc_X2VS1S1S1')
 #The following function selects only the fully contracted terms from the above list_terms
-
+'''

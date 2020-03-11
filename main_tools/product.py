@@ -15,8 +15,10 @@ import library as lib
 import library. compare as cpre
 import multi_cont
 import library.compare_envelope as cpre_env
+import library.compare_overall as cpre_env2
 import library.special_conditions as cond
 import library.full_con as full_con
+from library.compare_test import create_matrices
 removed=0
 #comm should accept a list of terms/Alphabet operator and list of terms/Alphabet operator.
 #1-> commutator on 2-> commutator off so only 1 term on-> whether commutator is on or it is just a product
@@ -27,6 +29,11 @@ def prod(a,b,last):
     fc=1.0
     #print a,b
     #develop dict_ind
+    if a and b:
+        print 'there are contractions in this commutator'
+    else:
+        print 'there are no contractions in this commutator'
+        return []
     if type(a[0])==str and type(b[0])==str:
 	dict_add={}
     elif type(a[0]) ==str or type(b[0])==str:
@@ -147,18 +154,29 @@ def prod(a,b,last):
 	    item.fac=item.fac*-1.0
 	    item.co[0][0]=item.co[0][0]*-1.0
 	list_terms.extend(terms_tmp)
+
     for item in list_terms:
 	item.compress()
 	item.build_map_org()
 	#item.cond_cont(item.dict_ind) only for CCSD noy for general case
 
-
-    cpre_env.compare_envelope(list_terms, fc, last)    
+    list_terms=full_con.full_terms(list_terms)
+    for term in list_terms:
+        create_matrices(term)
+    print 'matrices of all terms created'
+    cpre_env2.compare_envelope(list_terms, fc, last)    
+    #cpre_env.compare_envelope(list_terms, fc, last)    
     #Special condition- when there are atlaest three operators, atleast two are equivalent and one of them is not contracting with a previous
     #..chunk of operators (H in the case of 3 commutators.
+
     list_terms=pt.clean_list(list_terms)
-    #list_terms=full_con.full_terms(list_terms)
+
+
+    #print 'product', len(list_terms)
+    #for item in list_terms:
+    #    print item.coeff_list,item.large_op_list
     list_terms=cond.startequiv_cond(list_terms)
+
     #for terms in list_terms:
     #if terms.fac!=0:
     #print "HEREEEE"

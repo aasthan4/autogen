@@ -1,46 +1,69 @@
 import eq8
 import string
+import numpy as np
+import copy
 class term(object):
     def __init__(self, fac, sum_list, coeff_list,lol, st, co):
         self.fac=fac
         self.sum_list=sum_list
-        self.coeff_list=coeff_list
-        self.large_op_list=lol
+        self.coeff_list=copy.deepcopy(coeff_list)
+        self.large_op_list=copy.deepcopy(lol)
         self.st=st
         self.co=co
         self.map_org=[]
 	self.dict_ind={}
+        self.imatrix=np.zeros((len(coeff_list),len(coeff_list)))
+        self.amatrix=np.zeros((len(coeff_list),len(coeff_list)))
     def compress(self):
 	for term in self.st:
             for op in term:
+                #print op
                 if op.kind=='d':
-                    if op.upper[0].name>='p' and op.upper[0].name<='s':
+                    if op.upper[0].name[0]>='p' and op.upper[0].name[0]<='s':
                         #find name in coeff
-                        self.coeff_list=[[w.replace(op.upper[0].name, op.lower[0].name) for w in l] for l in self.coeff_list]
+                        #self.coeff_list=[[w.replace(op.upper[0].name, op.lower[0].name) for w in l] for l in self.coeff_list]
+                        for c1 in self.coeff_list:
+                            for n,i in enumerate(c1):
+                                if i==op.upper[0].name:
+                                    c1[n]=op.lower[0].name
                         self.sum_list.remove(op.upper[0].name)
-
-                    elif op.lower[0].name>='p' and op.lower[0].name<='s':
-
-
-                        self.coeff_list=[[w.replace(op.lower[0].name, op.upper[0].name) for w in l] for l in self.coeff_list]
+                    elif op.lower[0].name[0]>='p' and op.lower[0].name[0]<='s':
+                        #self.coeff_list=[[w.replace(op.lower[0].name, op.upper[0].name) for w in l] for l in self.coeff_list]
+                        for c1 in self.coeff_list:
+                            for n,i in enumerate(c1):
+                                if i==op.lower[0].name:
+                                    c1[n]=op.upper[0].name
                         self.sum_list.remove(op.lower[0].name)
                     elif (op.upper[0].name in self.sum_list) and (op.lower[0].name in self.sum_list):
-
-                        if op.upper[0].name>=op.lower[0].name:
-                            self.coeff_list=[[w.replace(op.upper[0].name, op.lower[0].name) for w in l] for l in self.coeff_list]
+                        if op.upper[0].name[0]>=op.lower[0].name[0]:
+                            #self.coeff_list=[[w.replace(op.upper[0].name, op.lower[0].name) for w in l] for l in self.coeff_list]
+                            for c1 in self.coeff_list:
+                                for n,i in enumerate(c1):
+                                    if i==op.upper[0].name:
+                                        c1[n]=op.lower[0].name
                             self.sum_list.remove(op.upper[0].name)
-                        elif op.upper[0].name<op.lower[0].name:
-                            self.coeff_list=[[w.replace(op.lower[0].name, op.upper[0].name) for w in l] for l in self.coeff_list]
+                        elif op.upper[0].name[0]<op.lower[0].name[0]:
+                            #self.coeff_list=[[w.replace(op.lower[0].name, op.upper[0].name) for w in l] for l in self.coeff_list]
+                            for c1 in self.coeff_list:
+                                for n,i in enumerate(c1):
+                                    if i==op.lower[0].name:
+                                        c1[n]=op.upper[0].name
                             self.sum_list.remove(op.lower[0].name)
 
                     elif op.lower[0].name in self.sum_list:
-                        self.coeff_list=[[w.replace(op.lower[0].name, op.upper[0].name) for w in l] for l in self.coeff_list]
+                        #self.coeff_list=[[w.replace(op.lower[0].name, op.upper[0].name) for w in l] for l in self.coeff_list]
+                        for c1 in self.coeff_list:
+                            for n,i in enumerate(c1):
+                                if i==op.lower[0].name:
+                                    c1[n]=op.upper[0].name
                         self.sum_list.remove(op.lower[0].name)
                     elif op.upper[0].name in self.sum_list:
-                        self.coeff_list=[[w.replace(op.upper[0].name, op.lower[0].name) for w in l] for l in self.coeff_list]
+                        #self.coeff_list=[[w.replace(op.upper[0].name, op.lower[0].name) for w in l] for l in self.coeff_list]
+                        for c1 in self.coeff_list:
+                            for n,i in enumerate(c1):
+                                if i==op.upper[0].name:
+                                    c1[n]=op.lower[0].name
                         self.sum_list.remove(op.upper[0].name)
-
-
     def compare(self, term2):
         '''
         for (c1,c2, t) in zip(self.coeff_list, term2.coeff_list, self.map_org):
@@ -207,9 +230,9 @@ class term(object):
     def print_term(self):
         print self.fac,
         print 'Sum', self.sum_list,
-        for i in range(len(self.map_org)):
-	    if self.map_org[i].name[0]!='X':
-                print self.map_org[i].name[0],self.coeff_list[i],
+        for i in range(len(self.large_op_list)):
+	    if self.large_op_list[i].name[0]!='X':
+                print self.large_op_list[i].name[0],self.coeff_list[i],
 	if self.st[0][-1].kind=='op':
 
 	    print 'E^',self.st[0][-1].upper,'_',self.st[0][-1].lower,
@@ -222,27 +245,29 @@ class term(object):
             for item in self.sum_list:
                 f.write(item+' ')
             f.write("}")
-        for i in range(0,len(self.map_org)):
-            if self.map_org[i].name[0]!='V' and self.map_org[i].name[0]!='X':
-                f.write(self.map_org[i].name[0])
+        for i in range(0,len(self.large_op_list)):
+            if self.large_op_list[i].name[0]!='V' and self.large_op_list[i].name[0]!='X':
+                f.write(self.large_op_list[i].name[0])
                 f.write("^{")
 
-            elif self.map_org[i].name[0]=='V':
+            elif self.large_op_list[i].name[0]=='V':
                 f.write("<")
 
-            for it1 in range(0,len(self.coeff_list[i])/2):
-                f.write(self.coeff_list[i][it1])
+            if self.large_op_list[i].name[0]!='X':
+                for it1 in range(0,len(self.coeff_list[i])/2):
+                    f.write(self.coeff_list[i][it1])
 
-            if self.map_org[i].name[0]!='V' and self.map_org[i].name[0]!='X':
+            if self.large_op_list[i].name[0]!='V' and self.large_op_list[i].name[0]!='X':
                 f.write("}_{")
-            elif self.map_org[i].name[0]=='V':
+            elif self.large_op_list[i].name[0]=='V':
                 f.write("||")
 
-            for it2 in range(len(self.coeff_list[i])/2, len(self.coeff_list[i])):
-                f.write(self.coeff_list[i][it2])
-            if self.map_org[i].name[0]!='V' and self.map_org[i].name[0]!='X':
+            if self.large_op_list[i].name[0]!='X':
+                for it2 in range(len(self.coeff_list[i])/2, len(self.coeff_list[i])):
+                    f.write(self.coeff_list[i][it2])
+            if self.large_op_list[i].name[0]!='V' and self.large_op_list[i].name[0]!='X':
                 f.write("}")
-            elif self.map_org[i].name[0]=='V':
+            elif self.large_op_list[i].name[0]=='V':
                 f.write(">")
 	if self.st[0][-1].kind=='op':
 	    f.write("E^{")

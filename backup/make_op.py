@@ -232,7 +232,7 @@ def make_op(list_op, dict_ind):
             #summ=['i','j','a','b']
             summ=[]
             #coeff=['i','j','a','b']
-            coeff=[next_op('i',list_type,0),next_op('i',list_type,1),next_op('a',list_type,0),next_op('a',list_type,1)]
+            coeff=[]
             opp=func_ewt.contractedobj('op', 1, 1)
             opp.upper=[next_op('i',list_type,0),next_op('i',list_type,1)]
             opp.lower=[next_op('a',list_type,0),next_op('a',list_type,1)]
@@ -250,7 +250,7 @@ def make_op(list_op, dict_ind):
             list_type[0]+=2
             list_type[1]+=2
 
-	    print summ,opp.upper,opp.lower,coeff
+	    print summ,opp.upper,opp.lower
 
         elif lop[0]=='T' and lop[1]=='1':
             #num1=ord('i')+list_type[0]

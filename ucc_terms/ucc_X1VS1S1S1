@@ -1,36 +1,13 @@
 1.0\sum_{i b c k }<ik||cb>T^{d}_{i}T^{b}_{l}T^{c}_{k}\\ 
-------------\\ 
--0.333333333333\sum_{k a i j }D^{k}_{a}<ij||lk>T^{a}_{i}T^{d}_{j}\\ 
--0.333333333333\sum_{c i b j }D^{j}_{c}<ic||lb>T^{d}_{i}T^{b}_{j}\\ 
-0.333333333333\sum_{a i b j }D^{j}_{a}<id||lb>T^{a}_{i}T^{b}_{j}\\ 
-0.333333333333\sum_{k c i b }D^{k}_{c}<ic||kb>T^{d}_{i}T^{b}_{l}\\ 
--0.333333333333\sum_{k a i b }D^{k}_{a}<id||kb>T^{a}_{i}T^{b}_{l}\\ 
-0.333333333333\sum_{c a b j }D^{j}_{c}<cd||ba>T^{a}_{l}T^{b}_{j}\\ 
-------------\\ 
-0.333333333333\sum_{j b i k }D^{j}_{b}<ik||lj>T^{d}_{i}T^{b}_{k}\\ 
--0.333333333333\sum_{j b i c }D^{j}_{b}<ib||lc>T^{d}_{i}T^{c}_{j}\\ 
-0.333333333333\sum_{j a i c }D^{j}_{a}<id||lc>T^{a}_{i}T^{c}_{j}\\ 
--0.333333333333\sum_{j b i c }D^{j}_{b}<ib||cj>T^{d}_{i}T^{c}_{l}\\ 
-0.333333333333\sum_{j a i c }D^{j}_{a}<id||cj>T^{a}_{i}T^{c}_{l}\\ 
-0.333333333333\sum_{j b a c }D^{j}_{b}<bd||ca>T^{a}_{l}T^{c}_{j}\\ 
-0.333333333333\sum_{j b a i }D^{j}_{b}<id||ja>T^{a}_{i}T^{b}_{l}\\ 
-0.333333333333\sum_{j b a i }D^{j}_{b}<ib||la>T^{a}_{i}T^{d}_{j}\\ 
-------------\\ 
-------------\\ 
-0.333333333333\sum_{i a j k }D^{i}_{a}<jk||li>T^{d}_{j}T^{a}_{k}\\ 
-0.333333333333\sum_{i a b k }D^{i}_{a}<kd||bi>T^{b}_{l}T^{a}_{k}\\ 
--0.333333333333\sum_{i a c k }D^{i}_{a}<kd||ci>T^{a}_{l}T^{c}_{k}\\ 
--0.333333333333\sum_{i a c k }D^{i}_{a}<ak||lc>T^{d}_{i}T^{c}_{k}\\ 
-0.333333333333\sum_{i a j c }D^{i}_{a}<aj||lc>T^{d}_{j}T^{c}_{i}\\ 
-0.333333333333\sum_{i a b c }D^{i}_{a}<ad||cb>T^{b}_{l}T^{c}_{i}\\ 
-0.333333333333\sum_{i a j c }D^{i}_{a}<aj||ci>T^{d}_{j}T^{c}_{l}\\ 
-------------\\ 
-0.333333333333\sum_{c i a j }D^{j}_{c}D^{i}_{a}<cd||li>T^{a}_{j}\\ 
--0.333333333333\sum_{k c i a }D^{k}_{c}D^{i}_{a}<cd||ki>T^{a}_{l}\\ 
--0.333333333333\sum_{k c i a }D^{k}_{c}D^{i}_{a}<ac||lk>T^{d}_{i}\\ 
-------------\\ 
-0.333333333333\sum_{j b i a }D^{j}_{b}D^{i}_{a}<bd||li>T^{a}_{j}\\ 
--0.333333333333\sum_{j b i a }D^{j}_{b}D^{i}_{a}<bd||ji>T^{a}_{l}\\ 
--0.333333333333\sum_{j b i a }D^{j}_{b}D^{i}_{a}<ab||lj>T^{d}_{i}\\ 
-------------\\ 
+-1.0\sum_{k a i j }D^{k}_{a}<ij||lk>T^{a}_{i}T^{d}_{j}\\ 
+-1.0\sum_{c i b j }D^{j}_{c}<ic||lb>T^{d}_{i}T^{b}_{j}\\ 
+0.666666666667\sum_{a i b j }D^{j}_{a}<id||lb>T^{a}_{i}T^{b}_{j}\\ 
+1.0\sum_{k c i b }D^{k}_{c}<ic||kb>T^{d}_{i}T^{b}_{l}\\ 
+-1.0\sum_{k a i b }D^{k}_{a}<id||kb>T^{a}_{i}T^{b}_{l}\\ 
+1.0\sum_{c a b j }D^{j}_{c}<cd||ba>T^{a}_{l}T^{b}_{j}\\ 
+0.666666666667\sum_{j b a i }D^{j}_{b}<id||ja>T^{a}_{i}T^{b}_{l}\\ 
+0.666666666667\sum_{j b a i }D^{j}_{b}<ib||la>T^{a}_{i}T^{d}_{j}\\ 
+0.666666666667\sum_{c i a j }D^{j}_{c}D^{i}_{a}<cd||li>T^{a}_{j}\\ 
+-0.666666666667\sum_{k c i a }D^{k}_{c}D^{i}_{a}<cd||ki>T^{a}_{l}\\ 
+-0.666666666667\sum_{k c i a }D^{k}_{c}D^{i}_{a}<ac||lk>T^{d}_{i}\\ 
 ------------\\ 

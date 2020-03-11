@@ -1,0 +1,21 @@
+1.0\sum_{j b i c l }D^{j}_{b}<il||cj>T^{e}_{i}T^{cb}_{ml}\\ 
+0.5\sum_{j b i c d }D^{j}_{b}<ib||dc>T^{e}_{i}T^{cd}_{mj}\\ 
+0.666666666667\sum_{j a i c k }D^{j}_{a}<ik||mc>T^{a}_{i}T^{ce}_{kj}\\ 
+-0.333333333333\sum_{j a i c d }D^{j}_{a}<ie||dc>T^{a}_{i}T^{cd}_{mj}\\ 
+-1.0\sum_{j a i c l }D^{j}_{a}<il||cj>T^{a}_{i}T^{ce}_{ml}\\ 
+0.333333333333\sum_{b a i k l }D^{i}_{b}<lk||ma>T^{a}_{i}T^{be}_{kl}\\ 
+0.666666666667\sum_{b a i c l }D^{i}_{b}<le||ca>T^{a}_{i}T^{cb}_{ml}\\ 
+-0.5\sum_{j b a k l }D^{j}_{b}<lk||ja>T^{a}_{m}T^{be}_{kl}\\ 
+1.0\sum_{j b a c k }D^{j}_{b}<bk||ca>T^{a}_{m}T^{ce}_{kj}\\ 
+1.0\sum_{b a i c l }D^{i}_{b}<bl||ca>T^{a}_{i}T^{ce}_{ml}\\ 
+-1.0\sum_{j b a i l }D^{j}_{b}<il||ja>T^{a}_{i}T^{be}_{ml}\\ 
+1.0\sum_{j b a i c }D^{j}_{b}<ib||ca>T^{a}_{i}T^{ce}_{mj}\\ 
+-0.25\sum_{i a c k l }D^{i}_{a}<lk||ci>T^{a}_{m}T^{ce}_{kl}\\ 
+0.25\sum_{i a c d l }D^{i}_{a}<al||dc>T^{e}_{i}T^{cd}_{ml}\\ 
+0.5\sum_{i b c j k }D^{j}_{c}<ik||mb>T^{e}_{i}T^{bc}_{jk}\\ 
+-0.5\sum_{a b c j k }D^{j}_{c}<ke||ba>T^{a}_{m}T^{bc}_{jk}\\ 
+0.5\sum_{a i b j k }D^{j}_{b}<ik||ma>T^{a}_{i}T^{be}_{jk}\\ 
+-0.5\sum_{a i b c k }D^{k}_{c}<ie||ba>T^{a}_{i}T^{bc}_{mk}\\ 
+0.0833333333333\sum_{k a b i j }D^{k}_{b}<ji||ma>T^{e}_{k}T^{ab}_{ij}\\ 
+-0.0833333333333\sum_{c a b i j }D^{i}_{c}<je||ba>T^{c}_{m}T^{ab}_{ij}\\ 
+------------\\ 
