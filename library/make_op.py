@@ -250,7 +250,7 @@ def make_op(list_op, dict_ind):
             list_type[0]+=2
             list_type[1]+=2
 
-	    print summ,opp.upper,opp.lower
+	    print summ,opp.upper,opp.lower,coeff
 
         elif lop[0]=='T' and lop[1]=='1':
             #num1=ord('i')+list_type[0]

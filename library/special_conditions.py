@@ -197,5 +197,6 @@ def startequiv_cond(list_terms):
             map_out2,oplistmiddle=create_map2(term,equivop)
             case2=non_equivop2(term,map_out2,equivop,oplistmiddle)
             if case1==1.0 or case2==1.0:
+
                 term.fac=term.fac*2.0
     return list_terms

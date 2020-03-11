@@ -154,12 +154,11 @@ def prod(a,b,last):
 	    item.fac=item.fac*-1.0
 	    item.co[0][0]=item.co[0][0]*-1.0
 	list_terms.extend(terms_tmp)
+
     for item in list_terms:
 	item.compress()
 	item.build_map_org()
 	#item.cond_cont(item.dict_ind) only for CCSD noy for general case
-
-
 
     list_terms=full_con.full_terms(list_terms)
     for term in list_terms:

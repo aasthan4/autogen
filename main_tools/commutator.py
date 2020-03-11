@@ -199,6 +199,7 @@ def comm(a,b,last):
         #..chunk of operators (H in the case of 3 commutators.
         list_terms=cond.startequiv_cond(list_terms)
 
+
     for term in list_terms:
             create_matrices(term)
     cpre_env2.compare_envelope(list_terms, fc, last)    

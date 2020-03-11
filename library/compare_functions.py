@@ -28,8 +28,8 @@ def permutation_check(term1,term2):
 
     if map1_open and map2_open:
         #Two terms are permutations if the two terms are equal but the open indices are from different types of operators
-
-        '''
+        #print 'maps are', map1_open, map2_open
+        
         if map1_open[0][0]!=map2_open[0][0] or map1_open[0][1]!=map2_open[0][1]:
             equal=0
         if map1_open[1][0]!=map2_open[1][0] or map1_open[1][1]!=map2_open[1][1]:
@@ -51,6 +51,7 @@ def permutation_check(term1,term2):
             equal=0
         if equal==0:
             return 0
+        '''
         #Now all types of operators are the same.
 
 
@@ -70,9 +71,16 @@ def permutation_check(term1,term2):
                         if term2.large_op_list[opi].name==map2_open[i]:
                             second=opi
                     if np.array_equal(term1.imatrix[first,:],term2.imatrix[second,:]) and np.array_equal(term1.amatrix[first,:],term2.amatrix[second,:]):
+                        #case when the name of index in op1 is not the same in op2:permutation
+                        for item1 in term1.coeff_list[first]:
+                            if item1 not in term1.sum_list:
+                                if item1 not in term2.coeff_list[second]:
+                                    return 0 #is a permutation:name of opeen index different in two eq operators
+
                         #print 'found a case of same oper with different names'
                         flag=1
             if flag==1:
+                print 'returning case of same operator different names'
                 return 1
         #Two terms are permutations when the two same type of operators are not equivalent
         if len(map1_open[0])>2 and len(map2_open[1])>2 :
@@ -111,9 +119,10 @@ def permutation_check(term1,term2):
                         second=i
                 if np.array_equal(term1.imatrix[first,:],term1.imatrix[second,:]) and np.array_equal(term1.amatrix[first,:],term1.amatrix[second,:]):
                     eq34=1
-        #print 'equal variables', eq12,eq34,map1_open,map2_open#,map1_op,map2_op,map3_op,map4_op
+        print 'equal variables', eq12,eq34,map1_open,map2_open#,map1_op,map2_op,map3_op,map4_op
         if eq12==1 and eq34==1:
-            return 1
+            print 'return 1 in eq12 and eq34'
+            return 1 
         else:
             return 0
         #if equal34==1 and eq34==1:
