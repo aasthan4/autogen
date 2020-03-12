@@ -80,7 +80,7 @@ def permutation_check(term1,term2):
                         #print 'found a case of same oper with different names'
                         flag=1
             if flag==1:
-                print 'returning case of same operator different names'
+                #print 'returning case of same operator different names'
                 return 1
         #Two terms are permutations when the two same type of operators are not equivalent
         if len(map1_open[0])>2 and len(map2_open[1])>2 :
@@ -119,9 +119,9 @@ def permutation_check(term1,term2):
                         second=i
                 if np.array_equal(term1.imatrix[first,:],term1.imatrix[second,:]) and np.array_equal(term1.amatrix[first,:],term1.amatrix[second,:]):
                     eq34=1
-        print 'equal variables', eq12,eq34,map1_open,map2_open#,map1_op,map2_op,map3_op,map4_op
+        #print 'equal variables', eq12,eq34,map1_open,map2_open#,map1_op,map2_op,map3_op,map4_op
         if eq12==1 and eq34==1:
-            print 'return 1 in eq12 and eq34'
+            #print 'return 1 in eq12 and eq34'
             return 1 
         else:
             return 0

@@ -1,3 +1,6 @@
+'''
+suggestion1: in case there is an error in sign function, do not use compare_overall2. instead use compare_overall in input file. It will not work with R,N functions.
+'''
 import numpy as np
 import copy
 import compare_functions as cf
@@ -74,8 +77,8 @@ def compare(term1, term2):
                 #permuting equivalent operators
                 term1,term2,flag=cf.level2(term1,term2)
     if flag==1:
-        #print 'Starting to compute sign of equivalent term2'
-        #sign=level3_sign(term1,term2)
-        sign=1
+        print 'Starting to compute sign of equivalent term2'
+        sign=level3_sign(term1,term2)
+        #sign=1
         return 1.0
     return 0

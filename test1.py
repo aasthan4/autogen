@@ -6,7 +6,7 @@ from library import print_terms
 from library import full_con
 from library import pick
 from library import convert_pqr
-from library import compare_overall as ce
+from library import compare_overall2 as ce
 from library import compare_test as ctest
 
 print 'case of '
@@ -21,24 +21,24 @@ list_terms.extend(prod(['X1'],comm(comm(['V2'],['T11'],0.0),['D12'],0),-0.5))
 list_terms.extend(prod(['X1'],comm(comm(['V2'],['D11'],0.0),['D12'],0),0.5))
 '''
 '''
-test1
+#test1
 list_terms=prod(['X2'],comm(comm(['V2'],['T11'],0.0),['T12'],0),0.5)
 list_terms.extend(prod(['X2'],comm(comm(['V2'],['D11'],0.0),['T12'],0),-0.5))
 list_terms.extend(prod(['X2'],comm(comm(['V2'],['T11'],0.0),['D12'],0),-0.5))
 list_terms.extend(prod(['X2'],comm(comm(['V2'],['D11'],0.0),['D12'],0),0.5))
 '''
-'''
+
 #test2
 list_terms=prod(['X1'],comm(comm(comm(['V2'],['D11'],0),['T12'],0),['T13'],0),1.0/6.0)
 list_terms.extend(prod(['X1'],comm(comm(comm(['V2'],['T11'],0),['D12'],0),['T13'],0),1.0/6.0))
 list_terms.extend(prod(['X1'],comm(comm(comm(['V2'],['T11'],0),['T12'],0),['D13'],0),1.0/6.0))
-'''
+
 
 #test3
 
 
-'''
 
+'''
 list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['D21'],0),['T12'],0),['T23'],0),-1.0/6.0))
 list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T11'],0),['D22'],0),['T23'],0),-1.0/6.0))
 list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['D21'],0),['T22'],0),['T13'],0),-1.0/6.0))
@@ -59,8 +59,12 @@ list_terms=full_con.full_terms(list_terms)
 '''
 #list_terms.extend(prod(['X1'],comm(comm(['V2'],['T11'],0),['T12'],0),1.0))
 
-list_terms=prod(['X1'],comm(['V2'],['T11'],0),1.0)
-list_terms.extend(prod(['X1'],comm(['V2'],['T11'],0),1.0))
+
+
+#list_terms=prod(['X2'],comm(['V2'],['T21'],0),1.0)
+#list_terms.extend(prod(['X2'],comm(['V2'],['T21'],0),1.0))
+#list_terms=prod(['X2'],comm(comm(['V2'],['T21'],0),['T22'],0),1.0)
+#list_terms.extend(prod(['X2'],comm(comm(['V2'],['T21'],0),['T22'],0),1.0))
 list_terms=full_con.full_terms(list_terms)
 
 print 'inside main compare'
