@@ -8,7 +8,7 @@ from library import pick
 from library import convert_pqr
 from library import compare_overall2 as ce
 from library import compare_test as ctest
-
+from library import h_third as ht
 print 'case of '
 list_terms=[]
 list_terms1=[]
@@ -29,10 +29,15 @@ list_terms.extend(prod(['X2'],comm(comm(['V2'],['D11'],0.0),['D12'],0),0.5))
 '''
 
 #test2
-list_terms=prod(['X1'],comm(comm(comm(['V2'],['D11'],0),['T12'],0),['T13'],0),1.0/6.0)
-list_terms.extend(prod(['X1'],comm(comm(comm(['V2'],['T11'],0),['D12'],0),['T13'],0),1.0/6.0))
-list_terms.extend(prod(['X1'],comm(comm(comm(['V2'],['T11'],0),['T12'],0),['D13'],0),1.0/6.0))
+list_terms1=prod(['X2'],comm(comm(comm(['V2'],['D11'],0),['T12'],0),['T13'],0),-1.0)
+list_terms1=ht.select_hthird(list_terms1)
+list_terms2=prod(['X2'],comm(comm(comm(['V2'],['T11'],0),['D12'],0),['T13'],0),-1.0)
+list_terms2=ht.select_hthird(list_terms2)
+list_terms3=prod(['X2'],comm(comm(comm(['V2'],['T11'],0),['T12'],0),['D13'],0),-1.0)
+list_terms3=ht.select_hthird(list_terms3)
 
+list_terms=list_terms1+list_terms2+list_terms3
+#list_terms=list_terms1
 
 #test3
 
@@ -72,7 +77,8 @@ print 'inside main compare'
 list_terms=ce.compare_envelope(list_terms,1.0,1)
 
 
-print_terms.print_terms(list_terms,'latex_output.txt')
+
+print_terms.print_terms(list_terms,'factorcheck.txt')
 #print_terms.print_terms(list_terms,'ucc_X1VD2T2T2.txt')
 
 #driver(1.0/6.0,['X1','V2','T1','T12','T13'])
