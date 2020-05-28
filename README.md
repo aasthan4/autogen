@@ -1,5 +1,5 @@
 # Autogen
-This is an automatic expression generator code using Wicks Thoerem for Quantum Chemical Theories. It produces expressions for electronic structure theories in the same form as derived by diagrams. This program can be used for unitary coupled cluster formalism.
+This is an automatic expression generator program using wick's thoerem for quantum chemical theories. It produces expressions for electronic structure theories in the same form as derived by diagrams. This program can be used for unitary coupled cluster formalism.
 # Input/Output
 All input are written in input.py and all latex form outtput expressions are generated in the latex.output.txt
 
