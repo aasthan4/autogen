@@ -58,9 +58,19 @@ def permutation_check(term1,term2):
         
         eq12=1
         #case when the connections are to the same operator or same operators with different names
+        f=1
         if map1_open==map2_open:
-            return 1
-        else:
+            f=1
+            #missing case when the name of operators are same but they are different operators. 
+            if np.array_equal(term1.imatrix,term2.imatrix) and np.array_equal(term1.amatrix,term2.amatrix):
+                f=0
+                return 1
+            else:
+                f=1
+                #print term1.imatrix,term2.imatrix,map1_open,map2_open
+                #exit()
+                #return 0
+        elif f==1:#happens in all cases except when we return 1
             flag=1
             for i in range(len(map1_open)):
                 if map1_open[i]!=map2_open[i]:
@@ -70,6 +80,7 @@ def permutation_check(term1,term2):
                             first=opi
                         if term2.large_op_list[opi].name==map2_open[i]:
                             second=opi
+
                     if np.array_equal(term1.imatrix[first,:],term2.imatrix[second,:]) and np.array_equal(term1.amatrix[first,:],term2.amatrix[second,:]):
                         #case when the name of index in op1 is not the same in op2:permutation
                         for item1 in term1.coeff_list[first]:
@@ -138,6 +149,7 @@ def permute_matrix_check(term1,term2,after_permute):
             imat=np.copy(term2.imatrix)
             amat=np.copy(term2.amatrix)
             tmp_set=copy.copy(set_p)
+
             for i in range(len(tmp_set)):
                 for j in range(i+1,len(tmp_set)):
                     if tmp_set[i]>tmp_set[j]:
@@ -149,8 +161,9 @@ def permute_matrix_check(term1,term2,after_permute):
                         tmp=tmp_set[i]
                         tmp_set[i]=tmp_set[j]
                         tmp_set[j]=tmp
-                    #print 'permuted matrices',imat#,term1.imatrix
+                    #print 'permuted matrices',imat,term1.imatrix
             if np.array_equal(imat,term1.imatrix) and np.array_equal(amat,term1.amatrix):
+                #print 'same connection check'
                 if permutation_check(term1,term2):
                     #print 'this matrix was found equal:',term1.coeff_list,term2.coeff_list,term1.imatrix,imat,after_permute
                     tmp_set=copy.copy(set_p)
@@ -170,8 +183,8 @@ def permute_matrix_check(term1,term2,after_permute):
                                 tmp_set[j]=tmp
                     return term1,term2,1
                 #else:
-                    #print 'found permutation in permute equivalent function'
-                    #exit()
+                #    print 'found permutation in permute equivalent function'
+                #    #exit()
     return term1,term2,0 
 
 def swap(a,b,c):

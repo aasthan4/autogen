@@ -63,18 +63,18 @@ def compare(term1, term2):
         #simple case: contraction pattern identical in two terms
         if np.array_equal(term1.imatrix,term2.imatrix) and np.array_equal(term1.amatrix,term2.amatrix):
             if cf.permutation_check(term1,term2):
-                #print 'the two terms are equal', term1.coeff_list, term2.coeff_list, term1.amatrix, term2.amatrix
+                #print 'the two terms are equal'#, term1.coeff_list, term2.coeff_list, term1.amatrix, term2.amatrix
                 flag=1
             #else:
-                #print 'two terms found are permutations',term1.coeff_list, term2.coeff_list,
+            #    #print 'two terms found are permutations'#,term1.coeff_list, term2.coeff_list
         else:
             #permutation case: contraction pattern of permuted operators compared
             #print 'terms are not equal', term1.coeff_list,term2.coeff_list
             #case when the position of type of operators is not the same VT1T2T1 VT2T1T1
             term1,term2,flag=cf2.positionchange(term1,term2)
-            #print 'flag of position change', flag
+            #print 'flag of position change', term1.coeff_list,term2.coeff_list,flag
             if flag!=1:
-                #permuting equivalent operators
+                #print 'permuting equivalent operators'
                 term1,term2,flag=cf.level2(term1,term2)
     if flag==1:
         #print 'Starting to compute sign of equivalent term2'

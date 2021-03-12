@@ -2,6 +2,7 @@ import copy
 import print_terms as pt
 import compare_overall2 as ce
 import full_con
+import case_select
 def calrank(term,oplist):
 
     coefflist=[]
@@ -29,7 +30,7 @@ def calrank(term,oplist):
                 else:
                     #print 'rank -'
                     rank=rank-0.5
-        print 'rank', rank
+        #print 'rank', rank
     return rank
 def present(l, coefflist):
     flag=0
@@ -43,8 +44,28 @@ def present(l, coefflist):
     elif flag==2 :
         return 1
     else:
-        print 'l not found in preseent'
+        print 'l not found in present'
         exit()
+
+def no_connection(term,oplist):
+    coeff_list=[]
+    for i in oplist:
+        newcoeff=copy.deepcopy(term.coeff_list[i])
+        flag=0
+        for j in newcoeff:
+            if coeff_list:
+                for coeff in coeff_list:
+                    #print 'this is what is being compared in no_connection', j, coeff
+                    if j in coeff:
+                        flag=1
+                        break
+            else:
+                flag=1
+        if flag==0:
+            return 1
+        coeff_list.append(copy.deepcopy(newcoeff))
+    return 0
+        
 def issingleex(term,oplist):
 
     coefflist=[]
@@ -52,6 +73,7 @@ def issingleex(term,oplist):
         coefflist.append(term.coeff_list[z])
     a=0
     i=0
+    
     for coeff in coefflist:
         for c in coeff:
             if term.isi(c) and not present(c,coefflist):
@@ -59,7 +81,17 @@ def issingleex(term,oplist):
             elif term.isa(c) and not present(c,coefflist):
                 a=a+1
     if i==1 and a==1:
-        print coefflist
+        flag=0
+        #if len(coefflist)==2:
+        #    for i in coefflist[1]:
+        #        if i not in coefflist[0]:
+        #            flag=1
+        #            break
+        #if flag==1:
+        #    print term.coeff_list,term.large_op_list
+        #    exit()
+        #print coefflist
+
         return 1
     else:
         return 0
@@ -89,13 +121,13 @@ def select(list_terms,arg,fac):
         term.fac=term.fac*fac
         for i in arg:
             flag=0
-
-            print 'this is the operation arg',i
+            #print 'this term is ', term.coeff_list,'\n'
+            #print 'this is the operation arg',i
             for op in range(len(term.large_op_list)):
-                print 'flag,op name , len', flag,term.large_op_list[op].name,len(oplist)
+                #print 'flag,op name , len', flag,term.large_op_list[op].name,len(oplist)
                 if len(oplist)==0:
                     if term.large_op_list[op].name[0]=='V':
-                        print 'appended this in oplist',term.large_op_list[op].name
+                        #print 'appended this in oplist',term.large_op_list[op].name
                         oplist.append(op)
                         flag=1
                         break
@@ -105,35 +137,40 @@ def select(list_terms,arg,fac):
 
                     if int(term.large_op_list[op].name[2])==len(oplist):
 
-                        print 'appended this in oplist',term.large_op_list[op].name
+                        #print 'appended this in oplist',term.large_op_list[op].name
                         oplist.append(op)
                         flag=1
                         break
             if flag==0:
                 print 'ERROR: flag=0 in h_third function'
                 exit()
-            print 'for rank in ', oplist
+            #print 'for rank in ', oplist
             rank=calrank(term,oplist)
             singleex=0
             #is the resulting operator a single excitation:
             singleex=issingleex(term,oplist)
             doubleex=isdoubleex(term,oplist,rank)
-            if doubleex or singleex:
-                print 'this term is n------', singleex, doubleex
+            no_conn=no_connection(term,oplist)
+            #if doubleex or singleex:
+            #    print 'this term is n------', singleex, doubleex
             if i=='n':
                 if not doubleex and not singleex:
                     term.fac=0.0
-                    print 'deleted one term'
+                    #print 'deleted this term'
 
             elif i=='r':
+                #print term.coeff_list, term.large_op_list
                 if doubleex or singleex:
                     term.fac=0.0
-                    print 'deleted one term'
+                    #print 'deleted this term'
+            if no_conn:
+                term.fac=0.0
+                #print 'deleted this term'
 
     list_terms_tmp=pt.clean_list(list_terms_tmp)
-    for item in list_terms:
-        if item.fac!=0.0:
-            print term.coeff_list
+    #for item in list_terms:
+    #    if item.fac!=0.0:
+    #        print term.coeff_list
 
     return list_terms_tmp
 
@@ -141,13 +178,19 @@ def select_hthird(list_terms):
     list_terms1=[]
     list_terms=full_con.full_terms(list_terms)
     list_terms=pt.clean_list(list_terms)
+    list_terms=case_select.sameoperatorcase_addterms(list_terms)
+
+    #pt.print_terms(list_terms,'factorcheck.txt')
+
     list_terms1=select(list_terms,['n','a','r','a'],1.0/24.0)
     list_terms1.extend(select(list_terms,['n','r','a','a'],-1.0/24.0))
-    list_terms1.extend(select(list_terms,['n','r','r','a'],1.0))
+    list_terms1.extend(select(list_terms,['n','r','r','a'],1.0/8.0))
     list_terms1.extend(select(list_terms,['r','r','r','a'],1.0/4.0))
     list_terms1.extend(select(list_terms,['r','r','a','a'],-1.0/12.0))
 
-    #list_terms=ce.compare_envelope(list_terms1,1.0,1.0)
+    list_terms=ce.compare_envelope(list_terms1,1.0,1.0)
+    #pt.print_terms(list_terms,'factorcheck.txt')
+    #exit()
     return list_terms1
         
         

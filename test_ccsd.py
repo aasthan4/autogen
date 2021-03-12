@@ -5,4 +5,4 @@ from main_tools import commutator as c
 #ccsd1.amplitude()
 ccsd2.amplitude()
 
-#vimdiff compare latex_output.txt and ccsdresult2 with the files with the same name in tests/ccsdresult
+#vimdiff compare latex_output.txt and ccsdresult_resultfile2 with the files in tests/ccsdresult
