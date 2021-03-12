@@ -1,10 +1,4 @@
-automatically add the third character to the input operator name. such as T1 should be changed to T1x where x is the commutator order. 
-
-Edit permutation check to include the case of creating permutations when two open indexes are from equivalent operators. Problem is that if you compare the third place of operator name, the case of comparing two different terms completely fails. 
-
-Edit compare function to enable picking of terms instead of projecting on X1
-
-When making for 4 commutators: 1. edit special conditions in library. It has middle operators in case two. These middle operators might be designed to handle just one middle operator not two. 
+Include use of 4 commutators: 1. edit special conditions in library. It has middle operators in case two. These middle operators might be designed to handle just one middle operator not two. 
 	
 R and S commutator ->
 	change the class large operator to term	so that V can be selected for R and N in the same way as any particualr operator. 
@@ -15,4 +9,6 @@ R and S commutator ->
 *
 include Active States
 Extended Wicks Theorem
+Use of triple excitation
+
 
