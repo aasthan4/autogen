@@ -1,15 +1,15 @@
-'''
-Problems :
-    1. the fully uncontrancted expression has wrong ordering in the lower half.
-    2. look at fewt there is a problem with adding general states in line 298
-
-'''
 import pkg.func_ewt as func_ewt
 import pkg.fewt as fewt
 import copy
 import library.make_op as make_op
 import library.print_op as p_op
 import library.full_con as full_con
+'''
+Problems :
+    1. the fully uncontrancted expression has wrong ordering in the lower half.
+    2. look at fewt there is a problem with adding general states in line 298
+
+'''
 
 #make operators
 #X, V, T1 = make_op.make_op()

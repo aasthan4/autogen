@@ -43,15 +43,13 @@ def driver(fc,list_char_op):
         #print dict_ind
         #condition for atleast 1 contraction with H
         term.cond_cont(dict_ind)
-	term.build_map_org()
-	term.print_term()
-    print 'list terms full con length', len(list_terms)
+        term.build_map_org()
+        term.print_term()
+    print( 'list terms full con length', len(list_terms))
     #---
-
-
     #for term in list_terms:
         #term.print_term()
-    print '-------final below----'
+    print( '-------final below----')
     '''
     #integral symmetry
     for i in range(len(list_terms)):
