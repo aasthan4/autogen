@@ -74,8 +74,8 @@ def compare(term1, term2):
                 #permuting equivalent operators
                 term1,term2,flag=cf.level2(term1,term2)
     if flag==1:
-        print 'Starting to compute sign of equivalent term2'
-        sign=level3_sign(term1,term2)
+        #print 'Starting to compute sign of equivalent term2'
+        #sign=level3_sign(term1,term2)
         sign=1
         return 1.0
     return 0
