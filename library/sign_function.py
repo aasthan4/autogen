@@ -5,7 +5,7 @@ def countholes(term):
     for coeff in term.coeff_list:
         for item in coeff:
             if term.isi(item):
-                holes++
+                holes=holes+1
     return holes
 def level3_sign(term1,term2):
     print 'into sign function'
