@@ -1,0 +1,160 @@
+6.0\sum_{j a i c k }D^{j}_{a}<ik||cj>T^{a}_{i}T^{c}_{k}\\ 
+-6.0\sum_{b a i c k }D^{i}_{b}<bk||ca>T^{a}_{i}T^{c}_{k}\\ 
+------------\\ 
+6.0\sum_{j a i c k }D^{j}_{a}<ik||cj>T^{a}_{i}T^{c}_{k}\\ 
+-6.0\sum_{b a i c k }D^{i}_{b}<bk||ca>T^{a}_{i}T^{c}_{k}\\ 
+------------\\ 
+-0.333333333333\sum_{j a i c k }D^{j}_{a}<ik||cj>T^{a}_{i}T^{c}_{k}\\ 
+0.333333333333\sum_{b a i c k }D^{i}_{b}<bk||ca>T^{a}_{i}T^{c}_{k}\\ 
+------------\\ 
+-0.666666666667\sum_{j a i c k }D^{j}_{a}<ik||cj>T^{a}_{i}T^{c}_{k}\\ 
+0.666666666667\sum_{b a i c k }D^{i}_{b}<bk||ca>T^{a}_{i}T^{c}_{k}\\ 
+------------\\ 
+-0.333333333333\sum_{j a i c k }D^{j}_{a}<ik||cj>T^{a}_{i}T^{c}_{k}\\ 
+0.333333333333\sum_{b a i c k }D^{i}_{b}<bk||ca>T^{a}_{i}T^{c}_{k}\\ 
+------------\\ 
+-0.0833333333333\sum_{j k b a i l }D^{jk}_{ba}<il||kj>T^{a}_{i}T^{b}_{l}\\ 
+-0.333333333333\sum_{j k c a i d }D^{jk}_{ac}<ic||dj>T^{a}_{i}T^{d}_{k}\\ 
+-0.0833333333333\sum_{k b c a i d }D^{ik}_{bc}<cb||da>T^{a}_{i}T^{d}_{k}\\ 
+------------\\ 
+-2.0\sum_{j a i c d k }D^{j}_{a}<ik||dc>T^{a}_{i}T^{cd}_{kj}\\ 
+2.0\sum_{b a i c k l }D^{i}_{b}<lk||ca>T^{a}_{i}T^{cb}_{kl}\\ 
+3.0\sum_{a b i j d l }D^{i}_{b}<jl||da>T^{d}_{l}T^{ab}_{ij}\\ 
+------------\\ 
+0.0833333333333\sum_{j a i c d k }D^{j}_{a}<ik||dc>T^{a}_{i}T^{cd}_{kj}\\ 
+-0.0833333333333\sum_{b a i c k l }D^{i}_{b}<lk||ca>T^{a}_{i}T^{cb}_{kl}\\ 
+-0.0833333333333\sum_{a b i j d l }D^{i}_{b}<jl||da>T^{d}_{l}T^{ab}_{ij}\\ 
+------------\\ 
+0.125\sum_{i j a b c l m }D^{ij}_{ab}<ml||ci>T^{c}_{j}T^{ba}_{lm}\\ 
+-0.0833333333333\sum_{i j a b d l m }D^{ij}_{ab}<ml||di>T^{b}_{j}T^{da}_{lm}\\ 
+-0.25\sum_{i j a b c k l }D^{ij}_{ab}<kl||ci>T^{c}_{k}T^{ba}_{lj}\\ 
+0.5\sum_{i j a b k d l }D^{ij}_{ab}<kl||di>T^{b}_{k}T^{da}_{lj}\\ 
+-0.5\sum_{i j a b c d l }D^{ij}_{ab}<bl||dc>T^{c}_{i}T^{da}_{lj}\\ 
+-0.0833333333333\sum_{i j a b d e l }D^{ij}_{ab}<bl||ed>T^{a}_{i}T^{de}_{lj}\\ 
+-0.25\sum_{i j a b c k d }D^{ij}_{ab}<bk||dc>T^{c}_{k}T^{da}_{ji}\\ 
+-0.125\sum_{i j a b k d e }D^{ij}_{ab}<bk||ed>T^{a}_{k}T^{de}_{ji}\\ 
+------------\\ 
+-0.0833333333333\sum_{l a b i j e f m }D^{il}_{ba}<jm||fe>T^{ab}_{ij}T^{ef}_{ml}\\ 
+0.0833333333333\sum_{c a b i j e m n }D^{ji}_{cb}<nm||ea>T^{ab}_{ij}T^{ec}_{mn}\\ 
+-0.0208333333333\sum_{k l a b i j e f }D^{kl}_{ba}<ji||fe>T^{ab}_{ij}T^{ef}_{lk}\\ 
+0.166666666667\sum_{l c a b i j e m }D^{il}_{cb}<jm||ea>T^{ab}_{ij}T^{ec}_{ml}\\ 
+------------\\ 
+------------\\ 
+2.0\sum_{l a b i j e f m }D^{il}_{ba}<jm||fe>T^{ab}_{ij}T^{ef}_{ml}\\ 
+-2.0\sum_{c a b i j e m n }D^{ji}_{cb}<nm||ea>T^{ab}_{ij}T^{ec}_{mn}\\ 
+0.5\sum_{k l a b i j e f }D^{kl}_{ba}<ji||fe>T^{ab}_{ij}T^{ef}_{lk}\\ 
+-4.0\sum_{l c a b i j e m }D^{il}_{cb}<jm||ea>T^{ab}_{ij}T^{ec}_{ml}\\ 
+------------\\ 
+------------\\ 
+0.5\sum_{l a b i j e f m }D^{il}_{ba}<jm||fe>T^{ab}_{ij}T^{ef}_{ml}\\ 
+-0.5\sum_{c a b i j e m n }D^{ji}_{cb}<nm||ea>T^{ab}_{ij}T^{ec}_{mn}\\ 
+0.125\sum_{k l a b i j e f }D^{kl}_{ba}<ji||fe>T^{ab}_{ij}T^{ef}_{lk}\\ 
+-1.0\sum_{l c a b i j e m }D^{il}_{cb}<jm||ea>T^{ab}_{ij}T^{ec}_{ml}\\ 
+------------\\ 
+------------\\ 
+-0.0208333333333\sum_{l a b i j e f m }D^{il}_{ba}<jm||fe>T^{ab}_{ij}T^{ef}_{ml}\\ 
+0.0208333333333\sum_{c a b i j e m n }D^{ji}_{cb}<nm||ea>T^{ab}_{ij}T^{ec}_{mn}\\ 
+-0.00520833333333\sum_{k l a b i j e f }D^{kl}_{ba}<ji||fe>T^{ab}_{ij}T^{ef}_{lk}\\ 
+0.0416666666667\sum_{l c a b i j e m }D^{il}_{cb}<jm||ea>T^{ab}_{ij}T^{ec}_{ml}\\ 
+------------\\ 
+-0.0416666666667\sum_{l a b i j e f m }D^{il}_{ba}<jm||fe>T^{ab}_{ij}T^{ef}_{ml}\\ 
+0.0416666666667\sum_{c a b i j e m n }D^{ji}_{cb}<nm||ea>T^{ab}_{ij}T^{ec}_{mn}\\ 
+-0.0104166666667\sum_{k l a b i j e f }D^{kl}_{ba}<ji||fe>T^{ab}_{ij}T^{ef}_{lk}\\ 
+0.0833333333333\sum_{l c a b i j e m }D^{il}_{cb}<jm||ea>T^{ab}_{ij}T^{ec}_{ml}\\ 
+------------\\ 
+-0.0833333333333\sum_{l a b i j e f m }D^{il}_{ba}<jm||fe>T^{ab}_{ij}T^{ef}_{ml}\\ 
+0.0833333333333\sum_{c a b i j e m n }D^{ji}_{cb}<nm||ea>T^{ab}_{ij}T^{ec}_{mn}\\ 
+-0.0208333333333\sum_{k l a b i j e f }D^{kl}_{ba}<ji||fe>T^{ab}_{ij}T^{ef}_{lk}\\ 
+0.166666666667\sum_{l c a b i j e m }D^{il}_{cb}<jm||ea>T^{ab}_{ij}T^{ec}_{ml}\\ 
+------------\\ 
+-0.0208333333333\sum_{l a b i j e f m }D^{il}_{ba}<jm||fe>T^{ab}_{ij}T^{ef}_{ml}\\ 
+0.0208333333333\sum_{c a b i j e m n }D^{ji}_{cb}<nm||ea>T^{ab}_{ij}T^{ec}_{mn}\\ 
+-0.00520833333333\sum_{k l a b i j e f }D^{kl}_{ba}<ji||fe>T^{ab}_{ij}T^{ef}_{lk}\\ 
+0.0416666666667\sum_{l c a b i j e m }D^{il}_{cb}<jm||ea>T^{ab}_{ij}T^{ec}_{ml}\\ 
+------------\\ 
+0.5\sum_{l a b i j e f m }D^{il}_{ba}<jm||fe>T^{ab}_{ij}T^{ef}_{ml}\\ 
+-0.5\sum_{c a b i j e m n }D^{ji}_{cb}<nm||ea>T^{ab}_{ij}T^{ec}_{mn}\\ 
+0.125\sum_{k l a b i j e f }D^{kl}_{ba}<ji||fe>T^{ab}_{ij}T^{ef}_{lk}\\ 
+-1.0\sum_{l c a b i j e m }D^{il}_{cb}<jm||ea>T^{ab}_{ij}T^{ec}_{ml}\\ 
+------------\\ 
+-0.0416666666667\sum_{l a b i j e f m }D^{il}_{ba}<jm||fe>T^{ab}_{ij}T^{ef}_{ml}\\ 
+0.0416666666667\sum_{c a b i j e m n }D^{ji}_{cb}<nm||ea>T^{ab}_{ij}T^{ec}_{mn}\\ 
+-0.0104166666667\sum_{k l a b i j e f }D^{kl}_{ba}<ji||fe>T^{ab}_{ij}T^{ef}_{lk}\\ 
+0.0833333333333\sum_{l c a b i j e m }D^{il}_{cb}<jm||ea>T^{ab}_{ij}T^{ec}_{ml}\\ 
+------------\\ 
+1.0\sum_{l a b i j e f m }D^{il}_{ba}<jm||fe>T^{ab}_{ij}T^{ef}_{ml}\\ 
+-1.0\sum_{c a b i j e m n }D^{ji}_{cb}<nm||ea>T^{ab}_{ij}T^{ec}_{mn}\\ 
+0.25\sum_{k l a b i j e f }D^{kl}_{ba}<ji||fe>T^{ab}_{ij}T^{ef}_{lk}\\ 
+-2.0\sum_{l c a b i j e m }D^{il}_{cb}<jm||ea>T^{ab}_{ij}T^{ec}_{ml}\\ 
+------------\\ 
+0.125\sum_{i j a b c l m }D^{ij}_{ab}<ml||ci>T^{c}_{j}T^{ba}_{lm}\\ 
+-0.0833333333333\sum_{i j a b d l m }D^{ij}_{ab}<ml||di>T^{b}_{j}T^{da}_{lm}\\ 
+-0.25\sum_{i j a b c k l }D^{ij}_{ab}<kl||ci>T^{c}_{k}T^{ba}_{lj}\\ 
+0.5\sum_{i j a b k d l }D^{ij}_{ab}<kl||di>T^{b}_{k}T^{da}_{lj}\\ 
+-0.5\sum_{i j a b c d l }D^{ij}_{ab}<bl||dc>T^{c}_{i}T^{da}_{lj}\\ 
+-0.0833333333333\sum_{i j a b d e l }D^{ij}_{ab}<bl||ed>T^{a}_{i}T^{de}_{lj}\\ 
+-0.25\sum_{i j a b c k d }D^{ij}_{ab}<bk||dc>T^{c}_{k}T^{da}_{ji}\\ 
+-0.125\sum_{i j a b k d e }D^{ij}_{ab}<bk||ed>T^{a}_{k}T^{de}_{ji}\\ 
+------------\\ 
+-1.5\sum_{i j a b c l m }D^{ij}_{ab}<ml||ci>T^{c}_{j}T^{ba}_{lm}\\ 
+1.5\sum_{i j a b d l m }D^{ij}_{ab}<ml||di>T^{b}_{j}T^{da}_{lm}\\ 
+3.0\sum_{i j a b c k l }D^{ij}_{ab}<kl||ci>T^{c}_{k}T^{ba}_{lj}\\ 
+-6.0\sum_{i j a b k d l }D^{ij}_{ab}<kl||di>T^{b}_{k}T^{da}_{lj}\\ 
+6.0\sum_{i j a b c d l }D^{ij}_{ab}<bl||dc>T^{c}_{i}T^{da}_{lj}\\ 
+1.5\sum_{i j a b d e l }D^{ij}_{ab}<bl||ed>T^{a}_{i}T^{de}_{lj}\\ 
+3.0\sum_{i j a b c k d }D^{ij}_{ab}<bk||dc>T^{c}_{k}T^{da}_{ji}\\ 
+1.5\sum_{i j a b k d e }D^{ij}_{ab}<bk||ed>T^{a}_{k}T^{de}_{ji}\\ 
+------------\\ 
+-0.75\sum_{i j a b c l m }D^{ij}_{ab}<ml||ci>T^{c}_{j}T^{ba}_{lm}\\ 
+0.75\sum_{i j a b d l m }D^{ij}_{ab}<ml||di>T^{b}_{j}T^{da}_{lm}\\ 
+1.5\sum_{i j a b c k l }D^{ij}_{ab}<kl||ci>T^{c}_{k}T^{ba}_{lj}\\ 
+-3.0\sum_{i j a b k d l }D^{ij}_{ab}<kl||di>T^{b}_{k}T^{da}_{lj}\\ 
+3.0\sum_{i j a b c d l }D^{ij}_{ab}<bl||dc>T^{c}_{i}T^{da}_{lj}\\ 
+0.75\sum_{i j a b d e l }D^{ij}_{ab}<bl||ed>T^{a}_{i}T^{de}_{lj}\\ 
+1.5\sum_{i j a b c k d }D^{ij}_{ab}<bk||dc>T^{c}_{k}T^{da}_{ji}\\ 
+0.75\sum_{i j a b k d e }D^{ij}_{ab}<bk||ed>T^{a}_{k}T^{de}_{ji}\\ 
+------------\\ 
+-1.5\sum_{i j a b c l m }D^{ij}_{ab}<ml||ci>T^{c}_{j}T^{ba}_{lm}\\ 
+1.5\sum_{i j a b d l m }D^{ij}_{ab}<ml||di>T^{b}_{j}T^{da}_{lm}\\ 
+3.0\sum_{i j a b c k l }D^{ij}_{ab}<kl||ci>T^{c}_{k}T^{ba}_{lj}\\ 
+-6.0\sum_{i j a b k d l }D^{ij}_{ab}<kl||di>T^{b}_{k}T^{da}_{lj}\\ 
+6.0\sum_{i j a b c d l }D^{ij}_{ab}<bl||dc>T^{c}_{i}T^{da}_{lj}\\ 
+1.5\sum_{i j a b d e l }D^{ij}_{ab}<bl||ed>T^{a}_{i}T^{de}_{lj}\\ 
+3.0\sum_{i j a b c k d }D^{ij}_{ab}<bk||dc>T^{c}_{k}T^{da}_{ji}\\ 
+1.5\sum_{i j a b k d e }D^{ij}_{ab}<bk||ed>T^{a}_{k}T^{de}_{ji}\\ 
+------------\\ 
+1.5\sum_{j k b a i l }D^{jk}_{ba}<il||kj>T^{a}_{i}T^{b}_{l}\\ 
+6.0\sum_{j k c a i d }D^{jk}_{ac}<ic||dj>T^{a}_{i}T^{d}_{k}\\ 
+1.5\sum_{k b c a i d }D^{ik}_{bc}<cb||da>T^{a}_{i}T^{d}_{k}\\ 
+4.0\sum_{j k b c a i }D^{jk}_{bc}<ic||ja>T^{a}_{i}T^{b}_{k}\\ 
+------------\\ 
+-0.0833333333333\sum_{j k b a i l }D^{jk}_{ba}<il||kj>T^{a}_{i}T^{b}_{l}\\ 
+-0.333333333333\sum_{j k c a i d }D^{jk}_{ac}<ic||dj>T^{a}_{i}T^{d}_{k}\\ 
+-0.0833333333333\sum_{k b c a i d }D^{ik}_{bc}<cb||da>T^{a}_{i}T^{d}_{k}\\ 
+------------\\ 
+2.0\sum_{a i b c j k }D^{j}_{a}<ik||cb>T^{a}_{i}T^{bc}_{jk}\\ 
+2.0\sum_{a i b c j k }D^{i}_{c}<kj||ba>T^{a}_{i}T^{bc}_{jk}\\ 
+3.0\sum_{a i b c j k }D^{j}_{c}<ik||ba>T^{a}_{i}T^{bc}_{jk}\\ 
+------------\\ 
+-0.0833333333333\sum_{a i b c j k }D^{j}_{a}<ik||cb>T^{a}_{i}T^{bc}_{jk}\\ 
+-0.0833333333333\sum_{a i b c j k }D^{i}_{c}<kj||ba>T^{a}_{i}T^{bc}_{jk}\\ 
+-0.0833333333333\sum_{a b i j d l }D^{i}_{b}<jl||da>T^{d}_{l}T^{ab}_{ij}\\ 
+------------\\ 
+-0.333333333333\sum_{j a i c k }D^{j}_{a}<ik||cj>T^{a}_{i}T^{c}_{k}\\ 
+0.333333333333\sum_{b a i c k }D^{i}_{b}<bk||ca>T^{a}_{i}T^{c}_{k}\\ 
+------------\\ 
+6.0\sum_{j a i c k }D^{j}_{a}<ik||cj>T^{a}_{i}T^{c}_{k}\\ 
+-6.0\sum_{b a i c k }D^{i}_{b}<bk||ca>T^{a}_{i}T^{c}_{k}\\ 
+------------\\ 
+-1.0\sum_{a i b j }<ij||ba>T^{a}_{i}T^{b}_{j}\\ 
+-2.0\sum_{i a b j }D^{i}_{a}<aj||bi>T^{b}_{j}\\ 
+-1.0\sum_{j b i a }D^{j}_{b}D^{i}_{a}<ab||ji>\\ 
+------------\\ 
+-1.0\sum_{a i b j }<ij||ba>T^{a}_{i}T^{b}_{j}\\ 
+-2.0\sum_{i a b j }D^{i}_{a}<aj||bi>T^{b}_{j}\\ 
+-1.0\sum_{j b i a }D^{j}_{b}D^{i}_{a}<ab||ji>\\ 
+------------\\ 
+-1.0\sum_{a i b j }<ij||ba>T^{a}_{i}T^{b}_{j}\\ 
+-2.0\sum_{i a b j }D^{i}_{a}<aj||bi>T^{b}_{j}\\ 
+-1.0\sum_{j b i a }D^{j}_{b}D^{i}_{a}<ab||ji>\\ 
+------------\\ 

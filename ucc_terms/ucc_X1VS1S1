@@ -1,0 +1,11 @@
+-1.0\sum_{i b j }<ij||kb>T^{c}_{i}T^{b}_{j}\\ 
+1.0\sum_{a b j }<jc||ba>T^{a}_{k}T^{b}_{j}\\ 
+-0.5\sum_{j b i }D^{j}_{b}<ib||kj>T^{c}_{i}\\ 
+0.5\sum_{j a i }D^{j}_{a}<ic||kj>T^{a}_{i}\\ 
+-0.5\sum_{b a i }D^{i}_{b}<bc||ka>T^{a}_{i}\\ 
+0.5\sum_{j b a }D^{j}_{b}<bc||ja>T^{a}_{k}\\ 
+0.5\sum_{i a j }D^{i}_{a}<jc||ki>T^{a}_{j}\\ 
+-0.5\sum_{i a b }D^{i}_{a}<ac||kb>T^{b}_{i}\\ 
+0.5\sum_{i a j }D^{i}_{a}<aj||ki>T^{c}_{j}\\ 
+-0.5\sum_{i a b }D^{i}_{a}<ac||bi>T^{b}_{k}\\ 
+------------\\ 

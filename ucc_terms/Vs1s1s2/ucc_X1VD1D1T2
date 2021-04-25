@@ -1,0 +1,11 @@
+0.5\sum_{j b i a l }D^{j}_{b}D^{i}_{a}<le||ji>T^{ab}_{ml}\\ 
+1.0\sum_{j b i a k }D^{j}_{b}D^{i}_{a}<bk||mi>T^{ae}_{kj}\\ 
+1.0\sum_{j b i a c }D^{j}_{b}D^{i}_{a}<be||ci>T^{ca}_{mj}\\ 
+1.0\sum_{j b i a l }D^{j}_{b}D^{i}_{a}<bl||ji>T^{ae}_{ml}\\ 
+0.5\sum_{j b i a c }D^{j}_{b}D^{i}_{a}<ab||mc>T^{ce}_{ij}\\ 
+-1.0\sum_{j b i a c }D^{j}_{b}D^{i}_{a}<ab||cj>T^{ce}_{mi}\\ 
+-0.666666666667\sum_{i a c j k }D^{j}_{c}D^{i}_{a}<ke||mi>T^{ac}_{jk}\\ 
+0.666666666667\sum_{i a b c j }D^{j}_{c}D^{i}_{a}<ae||mb>T^{bc}_{ji}\\ 
+0.666666666667\sum_{i a b j k }D^{j}_{b}D^{i}_{a}<ak||mi>T^{be}_{jk}\\ 
+-0.666666666667\sum_{i a b c k }D^{k}_{c}D^{i}_{a}<ae||bi>T^{bc}_{mk}\\ 
+------------\\ 

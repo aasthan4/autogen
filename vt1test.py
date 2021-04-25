@@ -1,5 +1,6 @@
 from tests import ccsd_amplitude as ccsd
 from main_tools.commutator import comm
+from main_tools.product import prod
 from library import print_terms
 from library import full_con
 
@@ -8,9 +9,10 @@ from library import full_con
 #NOTE : prefactor should be 0 in case this is not the last of the nested prefactor (clearer in the next eexample)
 
 print 'case of [V,T1]'
-list_terms=prod(['V2'],['T1'],1)
-print_terms.print_terms(VT1example)
+list_terms=comm(['V2'],['T1'],1)
+print_terms.print_terms(list_terms,'vt1test')
 
+'''
 print 'case of [V,T2]'
 list_terms=comm(['V2'],['T2'],1)
 #The following function selects only the fully contracted terms from the above list_terms
@@ -36,3 +38,4 @@ print_terms.print_terms(list_terms)
 #The code has other small things it can do but these are the basics. 
 
 #Check the results in latex_output.txt
+'''

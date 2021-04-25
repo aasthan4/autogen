@@ -1,0 +1,11 @@
+0.666666666667\sum_{j k b c i }D^{jk}_{bc}<ic||mj>T^{e}_{i}T^{b}_{k}\\ 
+-0.666666666667\sum_{j k b a i }D^{jk}_{ba}<ie||mj>T^{a}_{i}T^{b}_{k}\\ 
+-0.333333333333\sum_{j k b c i }D^{jk}_{bc}<ic||kj>T^{e}_{i}T^{b}_{m}\\ 
+0.333333333333\sum_{j k b a i }D^{jk}_{ba}<ie||kj>T^{a}_{i}T^{b}_{m}\\ 
+-0.666666666667\sum_{j k c a i }D^{jk}_{ac}<ic||mj>T^{a}_{i}T^{e}_{k}\\ 
+0.666666666667\sum_{k b c a i }D^{ik}_{bc}<ce||ma>T^{a}_{i}T^{b}_{k}\\ 
+-0.666666666667\sum_{j k b c a }D^{jk}_{bc}<ce||ja>T^{a}_{m}T^{b}_{k}\\ 
+-0.666666666667\sum_{k b c a i }D^{ik}_{bc}<ce||ka>T^{a}_{i}T^{b}_{m}\\ 
+-0.333333333333\sum_{k b c a i }D^{ik}_{bc}<cb||ma>T^{a}_{i}T^{e}_{k}\\ 
+0.333333333333\sum_{j k b c a }D^{jk}_{bc}<cb||ja>T^{a}_{m}T^{e}_{k}\\ 
+------------\\ 

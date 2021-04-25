@@ -1,0 +1,7 @@
+Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{u}_{v} ,  E^{w}_{x}\]\\
+Answer :
+$$+1.0\{E^{uw}_{xv}\}\\$$
+$$-0.5\Gamma^u_{x}\{E^{w}_{v}\}\\$$
+$$+0.5\eta^w_{v}\{E^{u}_{x}\}\\$$
+$$+0.5\Gamma^u_{x}\eta^w_{v}\\$$
+$$+1.0(\Lambda^{uw}_{vx})\\$$

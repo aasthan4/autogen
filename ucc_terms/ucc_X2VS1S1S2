@@ -1,0 +1,22 @@
+0.5\sum_{i j c d }<ij||dc>T^{f}_{i}T^{e}_{j}T^{cd}_{nm}\\ 
+1.0\sum_{i b c l }<il||cb>T^{f}_{i}T^{b}_{n}T^{ce}_{ml}\\ 
+-1.0\sum_{i b c l }<il||cb>T^{e}_{i}T^{b}_{n}T^{cf}_{ml}\\ 
+-1.0\sum_{i b c l }<il||cb>T^{f}_{i}T^{b}_{m}T^{ce}_{nl}\\ 
+1.0\sum_{i b c l }<il||cb>T^{e}_{i}T^{b}_{m}T^{cf}_{nl}\\ 
+1.0\sum_{i b j c }<ij||cb>T^{f}_{i}T^{b}_{j}T^{ce}_{nm}\\ 
+-1.0\sum_{i b j c }<ij||cb>T^{e}_{i}T^{b}_{j}T^{cf}_{nm}\\ 
+-0.5\sum_{a b k l }<lk||ba>T^{a}_{n}T^{b}_{m}T^{fe}_{kl}\\ 
+-1.0\sum_{a b j l }<jl||ba>T^{a}_{n}T^{b}_{j}T^{fe}_{ml}\\ 
+1.0\sum_{a b j l }<jl||ba>T^{a}_{m}T^{b}_{j}T^{fe}_{nl}\\ 
+------------\\ 
+0.333333333333\sum_{i j a b }D^{ij}_{ab}<fe||ni>T^{b}_{m}T^{a}_{j}\\ 
+-0.333333333333\sum_{i j a b }D^{ij}_{ab}<fe||mi>T^{b}_{n}T^{a}_{j}\\ 
+-0.333333333333\sum_{i j a b }D^{ij}_{ab}<bf||nm>T^{e}_{i}T^{a}_{j}\\ 
+0.333333333333\sum_{i j a b }D^{ij}_{ab}<be||nm>T^{f}_{i}T^{a}_{j}\\ 
+0.166666666667\sum_{i j a b }D^{ij}_{ab}<fe||ji>T^{b}_{n}T^{a}_{m}\\ 
+-0.333333333333\sum_{i j a b }D^{ij}_{ab}<bf||ni>T^{e}_{j}T^{a}_{m}\\ 
+0.333333333333\sum_{i j a b }D^{ij}_{ab}<be||ni>T^{f}_{j}T^{a}_{m}\\ 
+0.333333333333\sum_{i j a b }D^{ij}_{ab}<bf||mi>T^{e}_{j}T^{a}_{n}\\ 
+-0.333333333333\sum_{i j a b }D^{ij}_{ab}<be||mi>T^{f}_{j}T^{a}_{n}\\ 
+-0.166666666667\sum_{i j a b }D^{ij}_{ab}<ba||nm>T^{f}_{i}T^{e}_{j}\\ 
+------------\\ 
