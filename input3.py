@@ -17,10 +17,10 @@ list_terms=[]
 list_terms1=[]
 
 #test0-X1[[V2,S1],S1]
-list_terms=prod(['X1'],comm(comm(['F1'],['T11'],0.0),['T12'],0),0.5)
-#list_terms.extend(prod(['X1'],comm(comm(['V2'],['D11'],0.0),['T12'],0),-0.5))
-#list_terms.extend(prod(['X1'],comm(comm(['V2'],['T11'],0.0),['D12'],0),-0.5))
-#list_terms.extend(prod(['X1'],comm(comm(['V2'],['D11'],0.0),['D12'],0),0.5))
+list_terms=prod(['X1'],comm(comm(['V1'],['T11'],0.0),['T12'],0),0.5)
+list_terms.extend(prod(['X1'],comm(comm(['V2'],['D11'],0.0),['T12'],0),-0.5))
+list_terms.extend(prod(['X1'],comm(comm(['V2'],['T11'],0.0),['D12'],0),-0.5))
+list_terms.extend(prod(['X1'],comm(comm(['V2'],['D11'],0.0),['D12'],0),0.5))
 
 
 '''
@@ -117,7 +117,7 @@ list_terms=list_terms2+list_terms5+list_terms3#+list_terms5+list_terms6#+list_te
 
 #list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T21'],0),['D12'],0),['T23'],0),-1.0/6.0))
 #list_terms=full_con.full_terms(list_terms)
-'''
+
 
 
 list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['T21'],0),['T22'],0),['T23'],0),1.0/6.0))
@@ -129,7 +129,7 @@ list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['D21'],0),['T22'],0),['D23'
 list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['D21'],0),['D22'],0),['T23'],0),1.0/6.0))
 list_terms.extend(prod(['X2'],comm(comm(comm(['V2'],['D21'],0),['D22'],0),['D23'],0),1.0/6.0))
 list_terms=full_con.full_terms(list_terms)
-
+'''
 #list_terms.extend(prod(['X1'],comm(comm(['V2'],['T11'],0),['T12'],0),1.0))
 list_terms=full_con.full_terms(list_terms)
 list_terms=ce.compare_envelope(list_terms,1.0,1)

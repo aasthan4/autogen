@@ -1,4 +1,4 @@
-from tests import ccsd_amplitude as ccsd
+#from tests import ccsd_amplitude as ccsd
 from main_tools.commutator import comm
 from library import print_terms
 from library import full_con

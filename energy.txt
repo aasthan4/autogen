@@ -158,3 +158,7 @@
 -2.0\sum_{i a b j }D^{i}_{a}<aj||bi>T^{b}_{j}\\ 
 -1.0\sum_{j b i a }D^{j}_{b}D^{i}_{a}<ab||ji>\\ 
 ------------\\ 
+-1.0\sum_{a i b j }<ij||ba>T^{a}_{i}T^{b}_{j}\\ 
+-2.0\sum_{i a b j }D^{i}_{a}<aj||bi>T^{b}_{j}\\ 
+-1.0\sum_{j b i a }D^{j}_{b}D^{i}_{a}<ab||ji>\\ 
+------------\\ 
