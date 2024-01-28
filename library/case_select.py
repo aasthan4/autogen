@@ -41,7 +41,7 @@ def not_connected(term,twice):
                     flag=1
                     break
         if flag==0:
-            print 'ERROR: flag=0 in h_thrid function while adding permutation of same terms'
+            print('ERROR: flag=0 in h_thrid function while adding permutation of same terms')
             exit()
     #print 'oplist and no_connection', oplist,no_connection(term,oplist)
     return no_connection(term,oplist,twice)

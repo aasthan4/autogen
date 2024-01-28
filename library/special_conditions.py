@@ -52,14 +52,14 @@ def create_map2(term,equivop):
                     posop1=int(op.name[2])
                 else:
                     posop1=1
-                    print 'the operator name doesnt have a position in special condition'
+                    print('the operator name doesnt have a position in special condition')
                     exit()
             elif posop2>(len(term.large_op_list)+1):
                 if len(op.name)>2:
                     posop2=int(op.name[2])
                 else:
                    posop2=1
-                   print 'the operator name doesnt have a position in special condition'
+                   print('the operator name doesnt have a position in special condition')
                    exit()
     oplistmiddle=[]
     #print 'position of two equiv operators',posop1,posop2

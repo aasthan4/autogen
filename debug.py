@@ -1,6 +1,6 @@
 from main_tools import product as math
 from library import convert_pqr  
-from  main_tools.commutator import comm
+from main_tools.commutator import comm
 from library import pick
 from library import print_terms
 from library import rn_comm
@@ -13,18 +13,18 @@ from tests.debugcases import general_term
 term=general_term(['V2','T2','T1'])
 list_terms=[term]
 
-print_terms.print_terms(list_terms)
-print 'general term creation done'
-print 'printing done'
+print_terms.print_terms(list_terms,'VT2T2.out')
+print('general term creation done')
+print('printing done')
 list_terms=convert_pqr.convert_pqr(list_terms)
 
 #list_terms=print_terms.clean_list(list_terms)
 #list_terms=pick.pick(list_terms, ['i'],['j'])
 
-print '------'
-print_terms.print_terms(list_terms)
-print '------'
-print 'conversion done'
+print('------')
+print_terms.print_terms(list_terms,'VT2T2.out')
+print('------')
+print('conversion done')
 #for item in list_terms:
 #    print rn_comm.rank(item)
 

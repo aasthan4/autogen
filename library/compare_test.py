@@ -1,8 +1,8 @@
 import numpy as np
 import copy
-import compare_functions as cf
-import compare_functions2 as cf2
-from sign_function import level3_sign
+from . import compare_functions as cf
+from . import compare_functions2 as cf2
+from .sign_function import level3_sign
 def create_matrices(term):
     term.imatrix=np.zeros((len(term.large_op_list),len(term.large_op_list)))
     term.amatrix=np.zeros((len(term.large_op_list),len(term.large_op_list)))
@@ -44,7 +44,7 @@ def level1(term1,term2):
             return 0
     #uncontracted operator of same size
     if len(term1.st[0])!=len(term2.st[0]):
-	return 0
+        return 0
     return 1
 
 

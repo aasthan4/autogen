@@ -1,4 +1,4 @@
-import eq8
+from . import eq8
 import string
 import numpy as np
 import copy
@@ -11,11 +11,11 @@ class term(object):
         self.st=st
         self.co=co
         self.map_org=[]
-	self.dict_ind={}
+        self.dict_ind={}
         self.imatrix=np.zeros((len(coeff_list),len(coeff_list)))
         self.amatrix=np.zeros((len(coeff_list),len(coeff_list)))
     def compress(self):
-	for term in self.st:
+        for term in self.st:
             for op in term:
                 #print op
                 if op.kind=='d':
@@ -106,13 +106,13 @@ class term(object):
         #return num
 
         if (self.fac*term2.fac)<0 and num!=0:
-            print num, '-1'
+            print((num, '-1'))
             return -1
         elif (self.fac*term2.fac)>0 and num!=0:
-            print num, '1'
+            print((num, '1'))
             return 1
         else :
-            print num, '0'
+            print((num, '0'))
             return 0
 
     #algorithm to condition that each contraction should have 1 end to H
@@ -145,7 +145,7 @@ class term(object):
         elif len(x)==2 and x[0]>='a' and x[0]<='h':
             return 1
         else: 
-	    return 0
+            return 0
     def isi(self,x):
         if x>='i' and x<='n':
             return 1
@@ -154,12 +154,12 @@ class term(object):
         else:
             return 0
     def isp(self,x):
-	if x>='p' and x<='t':
-	    return 1
+        if x>='p' and x<='t':
+            return 1
         elif len(x)==2 and x[0]>='p' and x[0]<='t':
             return 1
-	else :
-	    return 0
+        else :
+            return 0
     def is_dummy(self, x):
         if x in self.sum_list:
             return 1
@@ -170,8 +170,8 @@ class term(object):
             return 'a'
         elif self.isi(x):
             return 'i'
-	elif self.isp(x):
-	    return 'p'
+        elif self.isp(x):
+            return 'p'
 
 
     def cpre_cstm(self,term2,a,b):
@@ -228,15 +228,15 @@ class term(object):
             term2.fac=0.0
 
     def print_term(self):
-        print self.fac,
-        print 'Sum', self.sum_list,
+        print((self.fac))
+        print(('Sum', self.sum_list))
         for i in range(len(self.large_op_list)):
-	    if self.large_op_list[i].name[0]!='X':
-                print self.large_op_list[i].name[0],self.coeff_list[i],
-	if self.st[0][-1].kind=='op':
+            if self.large_op_list[i].name[0]!='X':
+                print((self.large_op_list[i].name[0],self.coeff_list[i] ))
+        if self.st[0][-1].kind=='op':
 
-	    print 'E^',self.st[0][-1].upper,'_',self.st[0][-1].lower,
-        print '\n',
+            print(('E^',self.st[0][-1].upper,'_',self.st[0][-1].lower))
+        print('\n')
     def print_latex(self, f):
         #f=open('exp_out_latex.txt','a')
         f.write(str(self.fac))
@@ -254,7 +254,10 @@ class term(object):
                 f.write("<")
 
             if self.large_op_list[i].name[0]!='X':
-                for it1 in range(0,len(self.coeff_list[i])/2):
+
+                if (len(self.coeff_list[i])%2)!=0:
+                    print("error in length of operator while printing")
+                for it1 in range(0,len(self.coeff_list[i])//2):
                     f.write(self.coeff_list[i][it1])
 
             if self.large_op_list[i].name[0]!='V' and self.large_op_list[i].name[0]!='X':
@@ -263,26 +266,28 @@ class term(object):
                 f.write("||")
 
             if self.large_op_list[i].name[0]!='X':
-                for it2 in range(len(self.coeff_list[i])/2, len(self.coeff_list[i])):
+                if (len(self.coeff_list[i])%2)!=0:
+                    print("error in length of operator while printing")
+                for it2 in range(len(self.coeff_list[i])//2, len(self.coeff_list[i])):
                     f.write(self.coeff_list[i][it2])
             if self.large_op_list[i].name[0]!='V' and self.large_op_list[i].name[0]!='X':
                 f.write("}")
             elif self.large_op_list[i].name[0]=='V':
                 f.write(">")
-	if self.st[0][-1].kind=='op':
-	    f.write("E^{")
+        if self.st[0][-1].kind=='op':
+            f.write("E^{")
             for it1 in self.st[0][-1].upper:
                 f.write(it1)
-	    f.write("}_{")
+            f.write("}_{")
             for it1 in self.st[0][-1].lower:
                 f.write(it1)
-	    f.write("}")
-	
+            f.write("}")
+        
         f.write('\\\\ \n')
 
     def build_map_org(self):
-	for item in self.large_op_list:
-	    self.map_org.append(item)
+        for item in self.large_op_list:
+            self.map_org.append(item)
 
 
 

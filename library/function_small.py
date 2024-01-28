@@ -1,5 +1,5 @@
 import copy
-import class_pos as pos 
+from . import class_pos as pos 
 #*****gives the position of the partner intex to the present. 
 #****if fixed is on gives the direct partner else any of the below
 #****order gives whether you want partner above the present index or below.
@@ -28,10 +28,10 @@ def give_pos(coeff,pos,fixed,order):
                     
     else:
 
-        print 'not returning in givepos in level 5 compare'
+        print('not returning in givepos in level 5 compare')
         return 0
     #print pos.i1,pos.i2,order 
-    print "partner from function-give-pos :",coeff[pos.i1][pos.i2],"order",order
+    print(("partner from function-give-pos :",coeff[pos.i1][pos.i2],"order",order))
     return pos
 #****pickk funtion
 #**input coeff_list1 and 2, order of picking i.e in {a,b,c,d}
@@ -73,7 +73,7 @@ def pick(sign,term1,term2,seen_list1,seen_list2,order):
                     if seen(seen_list,pos1)==0 and seen(seen_list,pos2)==0:
                         return pos1,pos2
                     else :
-                        print "both options in order 1 are seen (function pick in compare)"
+                        print("both options in order 1 are seen (function pick in compare)")
                         return pos1,pos2
                 elif order==2:
                     pos1.i1=i
@@ -90,10 +90,10 @@ def pick(sign,term1,term2,seen_list1,seen_list2,order):
                     if seen(seen_list,pos1)==0 and seen(seen_list,pos2)==0:
                         return pos1,pos2
                     else :
-                        print "both options in order 1 are seen (function pick in compare)"
+                        print("both options in order 1 are seen (function pick in compare)")
                         return pos1,pos2
                 else:
-                    print "order unknown in pick in compare function"
+                    print("order unknown in pick in compare function")
                     exit()
             elif len(term1.coeff_list[i])==2 and coeff_allseen(term1,term1.coeff_list[i],seen_list1)==0 and coeff_allseen(term2,term2.coeff_list[i],seen_list2)==0:
                 pos1.i1=i

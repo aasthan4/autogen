@@ -28,7 +28,7 @@ def find(op,i,term):
                     comb.append(op2)
                     #print 'returning comb'
                     return comb
-    print 'next operator not found for i and op name', i, term.large_op_list[op]
+    print(('next operator not found for i and op name', i, term.large_op_list[op]))
     exit()
     return []
 def next_op(op,i,term):
@@ -89,7 +89,7 @@ def countloops(term):
                     if comb not in seen:
                         seen.append(comb)
                     else:
-                        print 'next operator already seen error:',seen
+                        print(('next operator already seen error:',seen))
                         exit()
                     if not term.is_dummy(comb[0]) and term.isa(comb[0]):
                         loopcount=loopcount+1

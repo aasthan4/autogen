@@ -8,47 +8,47 @@ from library import full_con
 def amplitude():
 
     list_terms=[]
-    print 'X1 Terms'
+    print('X1 Terms')
     
-    print 'X1 F1'
+    print('X1 F1')
 
     list_terms.extend(prod.prod(['X1'],['F1'],1.0) )
-    print 'X1 F1 T1'
+    print('X1 F1 T1')
 
 
     list_terms.extend(prod.prod(['X1'],comm.comm(['F1'],['T1'],0),1.0))
-    print 'X1 F1 T2'
+    print('X1 F1 T2')
     list_terms.extend(prod.prod(['X1'],comm.comm(['F1'],['T2'],0),1.0))
-    print 'X1 F1 T1 T11'
+    print('X1 F1 T1 T11')
 
     list_terms.extend(prod.prod(['X1'],comm.comm(comm.comm(['F1'],['T1'],0),['T11'],0),0.5))
-    print 'X1 F1 T2 T21'
+    print('X1 F1 T2 T21')
     list_terms.extend(prod.prod(['X1'],comm.comm(comm.comm(['F1'],['T2'],0),['T21'],0),0.5))
-    print 'X1 F1 T1 T2'
+    print('X1 F1 T1 T2')
     list_terms.extend(prod.prod(['X1'],comm.comm(comm.comm(['F1'],['T1'],0),['T2'],0),1.0))
     #list_terms=full_con.full_terms(list_terms)
     #print_terms.print_terms(list_terms,'ccsdresult2')
     #list_terms=[]
 
-    print 'X1 V2'
+    print('X1 V2')
     list_terms.extend(prod.prod(['X1'],['V2'],1.0) )
-    print 'X1 V2 T1'
+    print('X1 V2 T1')
 
     list_terms.extend(prod.prod(['X1'],comm.comm(['V2'],['T1'],0),1.0))
-    print 'X1 V2 T2'
+    print('X1 V2 T2')
     list_terms.extend(prod.prod(['X1'],comm.comm(['V2'],['T2'],0),1.0))
-    print 'X1 V2 T1 T11'
+    print('X1 V2 T1 T11')
     list_terms.extend(prod.prod(['X1'],comm.comm(comm.comm(['V2'],['T1'],0),['T12'],0),0.5))
-    print 'X1 V2 T2 T21'
+    print('X1 V2 T2 T21')
     list_terms.extend(prod.prod(['X1'],comm.comm(comm.comm(['V2'],['T2'],0),['T22'],0),0.5))
-    print 'X1 V2 T1 T2'
+    print('X1 V2 T1 T2')
 
     list_terms.extend(prod.prod(['X1'],comm.comm(comm.comm(['V2'],['T1'],0),['T2'],0),1.0))
-    print 'X1 V2 T1 T11 T12'
+    print('X1 V2 T1 T11 T12')
 
     list_terms.extend(prod.prod(['X1'],comm.comm(comm.comm(comm.comm(['V2'],['T1'],0),['T12'],0),['T13'],0),1.0/6.0))
 
-    print 'X2 Terms'
+    print('X2 Terms')
     list_terms=full_con.full_terms(list_terms)
     print_terms.print_terms(list_terms,'ccsdresult')
     list_terms=[]
@@ -56,29 +56,29 @@ def amplitude():
 
 
 
-    print 'X2 F1'
+    print('X2 F1')
     #driv2.driver(1.0,['X2','F1'])
     list_terms=prod.prod(['X2'],['F1'],1.0)
-    print 'X2 F1 T1'
+    print('X2 F1 T1')
     #driv2.driver(1.0,['X2','F1', 'T1'])
     list_terms.extend(prod.prod(['X2'],comm.comm(['F1'],['T11'],0),1.0))
-    print 'X2 F1 T1 T1'
+    print('X2 F1 T1 T1')
     #driv2.driver(0.5,['X2','F1', 'T1', 'T11'])
     list_terms.extend(prod.prod(['X2'],comm.comm(comm.comm(['F1'],['T11'],0),['T12'],0),0.5))
     list_terms=full_con.full_terms(list_terms)
 
     print_terms.print_terms(list_terms,'ccsdresult2')
     list_terms=[]
-    print 'X2 F1 T2 '
+    print('X2 F1 T2 ')
     #driv2.driver(1.0,['X2','F1', 'T2'])
     list_terms.extend(prod.prod(['X2'],comm.comm(['F1'],['T21'],0),1.0))
-    print 'X2 F1 T2 T2'
+    print('X2 F1 T2 T2')
     #driv2.driver(0.5,['X2','F1', 'T2', 'T21'])
     list_terms.extend(prod.prod(['X2'],comm.comm(comm.comm(['F1'],['T21'],0),['T22'],0),0.5))
     list_terms=full_con.full_terms(list_terms)
     print_terms.print_terms(list_terms,'ccsdresult2')
     list_terms=[]
-    print 'X2 F1 T1 T2'
+    print('X2 F1 T1 T2')
     #driv2.driver(1.0,['X2','F1', 'T1','T2'])
     list_terms.extend(prod.prod(['X2'],comm.comm(comm.comm(['F1'],['T11'],0),['T22'],0),1.0))
     list_terms=full_con.full_terms(list_terms)
@@ -86,19 +86,19 @@ def amplitude():
     list_terms=[]
 
 
-    print 'X2 V2 T1'
+    print('X2 V2 T1')
     #driv2.driver(1.0,['X2','V2', 'T1'])
     list_terms.extend(prod.prod(['X2'],comm.comm(['V2'],['T11'],0),1.0))
-    print 'X2 V2 T1 T2'
+    print('X2 V2 T1 T2')
     #driv2.driver(0.5,['X2','V2', 'T1', 'T11'])
     list_terms.extend(prod.prod(['X2'],comm.comm(comm.comm(['V2'],['T11'],0),['T12'],0),0.5))
     list_terms=full_con.full_terms(list_terms)
     print_terms.print_terms(list_terms,'ccsdresult2')
     list_terms=[]
-    print 'X2 V2 T1 T1 T1'
+    print('X2 V2 T1 T1 T1')
     #driv2.driver(1.0/6.0,['X2','V2', 'T1', 'T11', 'T12'])
     list_terms.extend(prod.prod(['X2'],comm.comm(comm.comm(comm.comm(['V2'],['T11'],0),['T12'],0),['T13'],0),1.0/6.0))
-    print 'X2 V2 T2'
+    print('X2 V2 T2')
     #driv2.driver(1.0,['X2','V2','T2'])
     list_terms.extend(prod.prod(['X2'],comm.comm(['V2'],['T21'],0),1.0))
     list_terms=full_con.full_terms(list_terms)
@@ -106,21 +106,21 @@ def amplitude():
     list_terms=[]
 
     #driv2.driver(0.5,['X2','V2','T2','T21'])
-    print 'X2 V2 T2 T2'
+    print('X2 V2 T2 T2')
     list_terms.extend(prod.prod(['X2'],comm.comm(comm.comm(['V2'],['T21'],0),['T22'],0),0.5))
     list_terms=full_con.full_terms(list_terms)
     print_terms.print_terms(list_terms,'ccsdresult2')
     list_terms=[]
-    print 'X2 V2 T1 T2'
+    print('X2 V2 T1 T2')
     #driv2.driver(1.0,['X2','V2','T1','T2'])
     list_terms.extend(prod.prod(['X2'],comm.comm(comm.comm(['V2'],['T11'],0),['T22'],0),1.0))
-    print 'X2 V2 T1 T1 T2'
+    print('X2 V2 T1 T1 T2')
     #driv2.driver(0.5,['X2','V2','T1','T11','T2'])
     list_terms.extend(prod.prod(['X2'],comm.comm(comm.comm(comm.comm(['V2'],['T11'],0),['T12'],0),['T23'],0),0.5))
     list_terms=full_con.full_terms(list_terms)
     print_terms.print_terms(list_terms,'ccsdresult2')
     list_terms=[]
-    print 'X2 V2 T1 T1 T1 T1'
+    print('X2 V2 T1 T1 T1 T1')
     #driv2.driver(1.0/24.0,['X2','V2','T1','T11','T12','T13'])
     list_terms.extend(prod.prod(['X2'],comm.comm(comm.comm(comm.comm(comm.comm(['V2'],['T11'],0),['T12'],0),['T13'],0),['T14'],0),1.0/24.0))
 

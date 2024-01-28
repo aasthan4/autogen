@@ -1,8 +1,8 @@
 def full_terms(list_terms):
     final_terms=[]
     for term in list_terms:
-	if term.st[0][-1].kind!='op':
-	    final_terms.append(term)
+        if term.st[0][-1].kind!='op':
+            final_terms.append(term)
     return final_terms
 def full_con(st, co):
     final_t=[]

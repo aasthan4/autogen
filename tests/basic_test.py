@@ -7,11 +7,11 @@ from library import full_con
 #if you want a commutator [V,T2]-> comm['op1'],['op2'],prefactor)
 #NOTE : prefactor should be 0 in case this is not the last of the nested prefactor (clearer in the next eexample)
 
-print 'case of [V,T1]'
+print('case of [V,T1]')
 list_terms=prod(['V2'],['T1'],1)
 print_terms.print_terms(VT1example)
 
-print 'case of [V,T2]'
+print('case of [V,T2]')
 list_terms=comm(['V2'],['T2'],1)
 #The following function selects only the fully contracted terms from the above list_terms
 list_terms=full_con.full_terms(list_terms)
@@ -20,7 +20,7 @@ print_terms.print_terms(list_terms)
 #Case of a nested commutator :
 #Note that the name of the operators of the same type are different 
 #Like T1,T11,T12,T13 etc
-print 'case of [[V,T1],T1]'
+print('case of [[V,T1],T1]')
 list_terms=comm(comm(['V2'],['T1'],0),['T11'],1.0)
 list_terms=full_con.full_terms(list_terms)
 print_terms.print_terms(list_terms)
@@ -28,7 +28,7 @@ print_terms.print_terms(list_terms)
 #Case of Deexcitation operators
 #Deexcitation operators can be defined by the letter D,everything else remain the same
 #Notice that we are not using the full_con function here, so it will print all terms, not just fully contracted.
-print 'case of [[V,D1],T1]'
+print('case of [[V,D1],T1]')
 list_terms=comm(comm(['V2'],['D1'],0),['T1'],1.0)
 
 print_terms.print_terms(list_terms)

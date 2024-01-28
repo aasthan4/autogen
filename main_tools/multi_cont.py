@@ -77,7 +77,7 @@ def multi_cont(st1, st2, const1, const2):
                     final_terms.append(new_term_half)
                     final_const.append(sp_multi(pre1,pre2))
                 else :
-                    print " there is a case in multi_cont file I am missing"
+                    print(" there is a case in multi_cont file I am missing")
             flag2=0
     return final_terms, final_const
 '''

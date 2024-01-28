@@ -8,4 +8,4 @@ def print_op(st, co):
             elif op.kind=='op':
                 tmp=tmp+'\{E^{'+str(op.upper)+'}'+'_'+'{'+str(op.lower)+'}\}'
         tmp=tmp+'\\\\'
-        print tmp
+        print(tmp)

@@ -1,10 +1,10 @@
-import compare as cpre
-import print_terms as pt
+from . import compare as cpre
+from . import print_terms as pt
 #arguments: list of terms, face factor, last means whether this is the last commutator or not (0,1)
 def compare_envelope(list_terms, fc,last):
     #compare terms based on 5 levels of check all in cpre.compare()
     #for i in range(1):
-	#for j in range(1,2):
+        #for j in range(1,2):
     for i in range(len(list_terms)):
         for  j in range(i+1,len(list_terms)):
             if list_terms[i].fac!=0 and list_terms[j].fac!=0:
@@ -25,15 +25,15 @@ def compare_envelope(list_terms, fc,last):
     
     #print terms properly
     if last!=0:
-	    
+            
         #pt.print_terms(list_terms)
         #delete operator coefficient in self.coeff_list
         for term in list_terms:
-	    if len(term.coeff_list)==len(term.map_org)+1:
-	        #print 'deleting operator coeff'
-	        term.coeff_list.pop()
-	    elif len(term.coeff_list)>len(term.map_org):
-	        print ' in compare envolope terminal error'
-	        sys.exit(0)
+            if len(term.coeff_list)==len(term.map_org)+1:
+                #print 'deleting operator coeff'
+                term.coeff_list.pop()
+            elif len(term.coeff_list)>len(term.map_org):
+                print(' in compare envolope terminal error')
+                sys.exit(0)
     ##list_terms=pt.clean_list(list_terms)
     return list_terms

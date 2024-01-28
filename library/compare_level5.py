@@ -1,6 +1,6 @@
 import copy
-import class_term
-import functions
+from . import class_term
+from . import functions
 from pkg import parity
 class ind(object):
     def __init__(self, name, seen, parent):
@@ -20,7 +20,7 @@ def find_ind(coeff, i):
         for j in range(len(coeff[c1])):
             if coeff[c1][j].seen==0 and coeff[c1][j].name==i.name:
                 flag2=1
-		#print 'found in find_ind ', coeff[c1][j].name
+                #print 'found in find_ind ', coeff[c1][j].name
                 return coeff[c1][j],c1,j
     if flag2==0:
         #print 'not found or already seen', i.name
@@ -42,20 +42,20 @@ def match(term1,term2,i1,i2,nondummy_map):
     if term1.type(i1.name)==term2.type(i2.name):
         '''
         if not term1.is_dummy(i1.name) and not term2.is_dummy(i2.name) and i1.name==i2.name:
-	    if i1.name not in nondummy_map:
+            if i1.name not in nondummy_map:
                 #pushing non dummy in dict
-	        nondummy_map[i1.name]=i2.name
+                nondummy_map[i1.name]=i2.name
                 return 1
-	    elif nondummy_map[i1.name]!=i2.name:
-		return 0
+            elif nondummy_map[i1.name]!=i2.name:
+                return 0
         elif not term1.is_dummy(i1.name) and not term2.is_dummy(i2.name) and i1.name!=i2.name:
-	    if i1.name not in nondummy_map:
-		nondummy_map[i1.name]=i2.name
-		return 1
-	    elif nondummy_map[i1.name]==i2.name:
-		return 1
-	    else:
-		return 0
+            if i1.name not in nondummy_map:
+                nondummy_map[i1.name]=i2.name
+                return 1
+            elif nondummy_map[i1.name]==i2.name:
+                return 1
+            else:
+                return 0
         '''
         if not term1.is_dummy(i1.name) and not term2.is_dummy(i2.name) and i1.name==i2.name:
             #they are same move forward
@@ -72,7 +72,7 @@ def match(term1,term2,i1,i2,nondummy_map):
 
 def pick(coeff1, coeff2):
     #print 'length of coeff1',len(coeff1)
-    for c1 in reversed(range(0,len(coeff1))):
+    for c1 in reversed(list(range(0,len(coeff1)))):
         '''
         print 'in pick',len(coeff1[c1]), len(coeff2[c1]), coeff1[c1][0].seen,coeff1[c1][1].seen,
         if len(coeff1[c1])==4:
@@ -96,13 +96,13 @@ def pick(coeff1, coeff2):
                 coeff2[c1][3].seen=1
                 return c1,coeff1[c1][3], coeff2[c1][3]
         elif len(coeff1[c1])==len(coeff2[c1]) and len(coeff1[c1])>4:
-	    for i in range((len(coeff1[c1])/2)-1,len(coeff1[c1])):
-		if coeff1[c1][i].seen==0:
+            for i in range((len(coeff1[c1])/2)-1,len(coeff1[c1])):
+                if coeff1[c1][i].seen==0:
 
-		    coeff1[c1][i].seen==1
-		    coeff2[c1][i].seen==1
-		    return c1, coeff1[c1][i], coeff2[c1][i]
-    print "something is wrong in picking, see compare function line 48 file in library"
+                    coeff1[c1][i].seen==1
+                    coeff2[c1][i].seen==1
+                    return c1, coeff1[c1][i], coeff2[c1][i]
+    print("something is wrong in picking, see compare function line 48 file in library")
     return -1,0,0
 
     exit()
@@ -121,26 +121,26 @@ def juggle(term,pos):
         possible_coeff=[[c[0],c[1],c[3],c[2]],[c[1],c[0],c[3],c[2]],[c[1],c[0],c[2],c[3]],[c[0],c[1],c[2],c[3]]]
     #create all possibilities of terms using permute function
     elif len(c)==6:
-	functions.permute(c,3,5,possible_coeff_tmp)
-	for item in possible_coeff_tmp:
-	    functions.permute(item,3,5, possible_coeff)
-	#print 'test that all permutations are created of operators',possible_coeff
-	#sys.exit(0)
+        functions.permute(c,3,5,possible_coeff_tmp)
+        for item in possible_coeff_tmp:
+            functions.permute(item,3,5, possible_coeff)
+        #print 'test that all permutations are created of operators',possible_coeff
+        #sys.exit(0)
     tmp_term=copy.deepcopy(term)
     ret_terms=[]
     #create the sign of each term using parity function
     for c1 in possible_coeff:
         tmp_term.fac=term.fac #reinitialize
         tmp_term.coeff_list[pos]=c1
-	'''
+        '''
         if i%2==0:
             tmp_term.fac=term.fac*-1
-	'''
-	if parity.parity(c1,term.coeff_list[pos])==1:
-	    tmp_term.fac=term.fac*-1
-	else :
-	    tmp_term.fac=term.fac
-	#print 'check the sign of terms in juggle', c1,term.coeff_list[pos], parity.parity(c1,term.coeff_list[pos]),"(",tmp_term.fac,term.fac,")"
+        '''
+        if parity.parity(c1,term.coeff_list[pos])==1:
+            tmp_term.fac=term.fac*-1
+        else :
+            tmp_term.fac=term.fac
+        #print 'check the sign of terms in juggle', c1,term.coeff_list[pos], parity.parity(c1,term.coeff_list[pos]),"(",tmp_term.fac,term.fac,")"
 
         ret_terms.append(copy.deepcopy(tmp_term))
     #print ' length og list terms after juggle is :', len(ret_terms)
@@ -162,7 +162,7 @@ def level1(term1,term2):
             return 0
     if len(term1.st[0])!=len(term2.st[0]):
 
-	return 0
+        return 0
     return 1
 
 def level2(term1,term2):
@@ -246,7 +246,7 @@ def level3(term1,term2):
                 tmp_term.append(termx[i])
                 i=i+1
 
-	if len(term2.coeff_list)!=len(term2.map_org):
+        if len(term2.coeff_list)!=len(term2.map_org):
            tmp_term.append(term2.coeff_list[-1])#adding the operator coeff----
         x=class_term.term(+1,copy.deepcopy(term2.sum_list), tmp_term, copy.deepcopy(term2.large_op_list),copy.deepcopy(term2.st),copy.deepcopy(term2.co))
         final_terms.append(x)
@@ -272,8 +272,8 @@ def level3(term1,term2):
             elif t2.name[0]=='D':
                 tmp_term.append(termx[i])
                 i=i+1
-	if len(term2.coeff_list)!=len(term2.map_org):
-       	    tmp_term.append(term2.coeff_list[-1])#adding the operator coeff----
+        if len(term2.coeff_list)!=len(term2.map_org):
+                   tmp_term.append(term2.coeff_list[-1])#adding the operator coeff----
 
         x=class_term.term(+1,copy.deepcopy(term2.sum_list), tmp_term, copy.deepcopy(term2.large_op_list),copy.deepcopy(term2.st),copy.deepcopy(term2.co))
         final_terms.append(x)
@@ -301,16 +301,16 @@ def level4(term1, term2, final_terms):
 
 def go_find(term1,term2,coeff1,coeff2,i1,i2,nondummy_map):
     if match(term1,term2,i1,i2,nondummy_map):
-	#print 'in go forward going to find ',i1.name, i2.name
+        #print 'in go forward going to find ',i1.name, i2.name
         j1,c1,d1=find_ind(coeff1,i1)
         j2,c2,d2=find_ind(coeff2,i2)
         if j1==0 and j2==0:#both are non dummy
 
-	    #print 'both non dumy'
+            #print 'both non dumy'
             return 1
         elif j1==0 or j2==0:#one of them is non dummy
 
-	    #print 'one non dumy'
+            #print 'one non dumy'
             return 0
         if c1==c2 and d1==d2:#the position are different
             if j1.seen==0:
@@ -334,7 +334,7 @@ def go_forward(term1,term2,coeff1,coeff2,i1,i2,nondummy_map):
         i1=i1.pair
         i2=i2.pair
 
-	#print 'in go forward going to find ',i1.name, i2.name
+        #print 'in go forward going to find ',i1.name, i2.name
         if i1.seen==0:
             i1.seen=1
         else:
@@ -365,9 +365,9 @@ def arrowwork(term1,term2,coeff1, coeff2):
     '''
     nondummy_map={}
     while not coeff_seen(coeff1):
-	#print len(coeff1),len(coeff2)
+        #print len(coeff1),len(coeff2)
         c1,i1, i2 =pick(coeff1, coeff2)
-	#print 'picked',i1.name, i2.name
+        #print 'picked',i1.name, i2.name
         if c1==-1:#case when the 2 coeff are of unequal length
             #print 'cant pick'
             return 0
@@ -393,12 +393,12 @@ def level5(term1, term2, final_terms):
     #build class ind
     for c1 in range(len(term1.coeff_list)):
         for i1 in term1.coeff_list[c1]:
-	    if c1==len(term1.map_org):#case when the operator E coeff come up
-            	x1=ind(i1,0,'E')
-            	tmp1.append(copy.deepcopy(x1))
-	    else:
-            	x1=ind(i1,0,term1.map_org[c1].name)
-            	tmp1.append(copy.deepcopy(x1))
+            if c1==len(term1.map_org):#case when the operator E coeff come up
+                    x1=ind(i1,0,'E')
+                    tmp1.append(copy.deepcopy(x1))
+            else:
+                    x1=ind(i1,0,term1.map_org[c1].name)
+                    tmp1.append(copy.deepcopy(x1))
 
         tmp2.append(copy.deepcopy(tmp1))
 
@@ -414,11 +414,11 @@ def level5(term1, term2, final_terms):
         for c2 in range(len(termx.coeff_list)):
             tmp1=[]
             for i2 in termx.coeff_list[c2]:
-	        if c2==len(term2.map_org):
+                if c2==len(term2.map_org):
                     x2=ind(i2,0,'E')
                     tmp1.append(copy.deepcopy(x2))
-		else:
-		    #print len(term2.map_org),c2, termx.coeff_list
+                else:
+                    #print len(term2.map_org),c2, termx.coeff_list
                     x2=ind(i2,0,term2.map_org[c2].name)
                     tmp1.append(copy.deepcopy(x2))
             tmp2.append(copy.deepcopy(tmp1))
@@ -428,20 +428,20 @@ def level5(term1, term2, final_terms):
     for c1 in coeff1:
         #for i1 in c1:
         #    print i1.name
-	for ij in range(len(c1)):
-	    if ij <len(c1)/2:
-	    	c1[ij].pair=c1[ij+len(c1)/2]
-	    else :
-		c1[ij].pair=c1[ij-len(c1)/2]
+        for ij in range(len(c1)):
+            if ij <len(c1)/2:
+                    c1[ij].pair=c1[ij+len(c1)/2]
+            else :
+                c1[ij].pair=c1[ij-len(c1)/2]
     for term2_coeffs in final_coeffs:
         for c1 in term2_coeffs:
             #for i1 in c1:
             #    print i1.name
-	    for ij in range(len(c1)):
-	    	if ij <len(c1)/2:
-	    	    c1[ij].pair=c1[ij+len(c1)/2]
-	    	else :
-		    c1[ij].pair=c1[ij-len(c1)/2]
+            for ij in range(len(c1)):
+                    if ij <len(c1)/2:
+                        c1[ij].pair=c1[ij+len(c1)/2]
+                    else :
+                        c1[ij].pair=c1[ij-len(c1)/2]
     flag=0
     '''
     for item in coeff1:
@@ -466,24 +466,24 @@ def compare(term1, term2):
     ret=[]
     if flag==1:
         flag=level1(term1,term2)
-	#print 'flag level 1 :', flag
+        #print 'flag level 1 :', flag
     if flag!=0:
         flag=level2(term1,term2)
-	#print 'flag level 2 :', flag
+        #print 'flag level 2 :', flag
     if flag!=0:
         flag, final_terms=level3(term1,term2)
-	#print 'flag level 3 :', flag
+        #print 'flag level 3 :', flag
         #print len(final_terms)
     if flag!=0:
         level4(term1,term2, final_terms)
-	#print 'flag level 4 :', flag
+        #print 'flag level 4 :', flag
 
         #print len(final_terms)
         #1.include the sign in the face
     if flag!=0:
         #2.return not only 1 but the sign of the face as well.
         flag=level5(term1,term2, final_terms)
-	#print 'flag level 5 :', flag
+        #print 'flag level 5 :', flag
         #print len(final_terms)
     final_terms=[]
     return flag

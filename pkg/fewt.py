@@ -21,12 +21,12 @@
 #fix_uv file contains the function fix which fixes contractions in an operator string. It either forms a contraction and then print it in tec.txt or simply prints in tec.txt without forming contractions, as required.
 
 
-import fix_uv
-import func_ewt
+from . import fix_uv
+from . import func_ewt
 import copy
 import sys
 from collections import deque
-import make_c
+from . import make_c
 fix_temp = fix_uv
 func = func_ewt
 f = open("tec.txt", "w")
@@ -39,14 +39,14 @@ def ewt(string1_upper, string1_lower, string2_upper, string2_lower):
     #class operator(object):
         #def __init__(self, kind, dag, pos, name, st, pair, spin):
             #self.kind = kind
-    	#self.dag = dag
-    	#self.pos = pos
-    	#self.name = name
-    	#self.string = st
-    	#self.pair = pair
-    	#self.spin = spin
+            #self.dag = dag
+            #self.pos = pos
+            #self.name = name
+            #self.string = st
+            #self.pair = pair
+            #self.spin = spin
         #def __repr__(self):
-    	    #return self.name
+                #return self.name
     '''
     #...........input for spin free wicks therem
     print "\n Spin Free GWT\n"
@@ -130,25 +130,25 @@ def ewt(string1_upper, string1_lower, string2_upper, string2_lower):
 #    full.append(full2)
 
     for item in op1 :
-	if item.kind == 'ac':
-	    u.append(item)
-	if item.kind == 'ho':
-	    i.append(item)
-	if item.kind == 'pa':
-	    a.append(item)
-	if item.kind == 'ge':
-	    i.append(item)
-	    a.append(item)
+        if item.kind == 'ac':
+            u.append(item)
+        if item.kind == 'ho':
+            i.append(item)
+        if item.kind == 'pa':
+            a.append(item)
+        if item.kind == 'ge':
+            i.append(item)
+            a.append(item)
     for item in op2 :
-	if item.kind == 'ac':
-	    u.append(item)
-	if item.kind == 'ho':
-	    i.append(item)
-	if item.kind == 'pa':
-	    a.append(item)
-	if item.kind == 'ge':
-	    i.append(item)
-	    a.append(item)
+        if item.kind == 'ac':
+            u.append(item)
+        if item.kind == 'ho':
+            i.append(item)
+        if item.kind == 'pa':
+            a.append(item)
+        if item.kind == 'ge':
+            i.append(item)
+            a.append(item)
     #print i, a, u
 
     '''
@@ -156,51 +156,51 @@ def ewt(string1_upper, string1_lower, string2_upper, string2_lower):
     #make 3 lists : a-particle operators, i-hole operators, u-active state operators
     for index in range(0, len(string1), 2):
         if (string1[index] == 'o' or string1[index] == 't'):
-    	x = operator('ac', string1[index+1], p+1, string1[index], 1, -1, 1)
-    	u.append(x)
-    	full1.append(x)
-    	full.append(x)
-    	p=p+1
+            x = operator('ac', string1[index+1], p+1, string1[index], 1, -1, 1)
+            u.append(x)
+            full1.append(x)
+            full.append(x)
+            p=p+1
         elif (string1[index] >= 'a') and (string1[index] < 'h') :
-    	x = operator('pa', string1[index+1], p+1, string1[index], 1, -1, 1)
-    	a.append(x)
-    	full1.append(x)
-    	full.append(x)
-    	p=p+1
+            x = operator('pa', string1[index+1], p+1, string1[index], 1, -1, 1)
+            a.append(x)
+            full1.append(x)
+            full.append(x)
+            p=p+1
         elif (string1[index] >= 'i') and (string1[index] < 'u') :
-    	x = operator('ho', string1[index+1], p+1, string1[index],1, -1, 1)
-    	i.append(x)
-    	full1.append(x)
-    	full.append(x)
-    	p=p+1
+            x = operator('ho', string1[index+1], p+1, string1[index],1, -1, 1)
+            i.append(x)
+            full1.append(x)
+            full.append(x)
+            p=p+1
         elif (string1[index] >='u' and string1[index]<='z'):
-    	x = operator('ac', string1[index+1], p+1, string1[index], 1, -1, 1)
-    	u.append(x)
-    	full1.append(x)
-    	full.append(x)
-    	p=p+1
+            x = operator('ac', string1[index+1], p+1, string1[index], 1, -1, 1)
+            u.append(x)
+            full1.append(x)
+            full.append(x)
+            p=p+1
     if string2:
         for index in range(0, len(string2), 2):
             if (string2[index] == 'o' or string2[index] == 't'):
-    	    x = operator('ac', string2[index+1], p+1, string2[index], 2, -1, 1)
-    	    u.append(x)
-    	    full2.append(x)
-    	    p=p+1
+                x = operator('ac', string2[index+1], p+1, string2[index], 2, -1, 1)
+                u.append(x)
+                full2.append(x)
+                p=p+1
             elif (string2[index] >= 'a') and (string2[index] < 'h') :
-    	    x = operator('pa', string2[index+1], p+1, string2[index], 2, -1, 1)
-    	    a.append(x)
-    	    full2.append(x)
-    	    p=p+1
+                x = operator('pa', string2[index+1], p+1, string2[index], 2, -1, 1)
+                a.append(x)
+                full2.append(x)
+                p=p+1
             elif (string2[index] >= 'i') and (string2[index] < 'u') :
-    	    x = operator('ho', string2[index+1], p+1, string2[index], 2, -1, 1)
-    	    i.append(x)
-    	    full2.append(x)
-    	    p=p+1
+                x = operator('ho', string2[index+1], p+1, string2[index], 2, -1, 1)
+                i.append(x)
+                full2.append(x)
+                p=p+1
             elif (string2[index] >='u' and string2[index]<='z'):
-    	    x = operator('ac', string2[index+1], p+1, string2[index], 2, -1, 1)
-    	    u.append(x)
-    	    full2.append(x)
-    	    p=p+1
+                x = operator('ac', string2[index+1], p+1, string2[index], 2, -1, 1)
+                u.append(x)
+                full2.append(x)
+                p=p+1
     '''
 
     #make list for all possible contractions for any operator
@@ -212,73 +212,73 @@ def ewt(string1_upper, string1_lower, string2_upper, string2_lower):
         poss= deque([])
         y = deque([])
         if not i_c:
-    	    full.extend(full1)
-    	    full.extend(full2)
+                full.extend(full1)
+                full.extend(full2)
         else :
 
-    	    for item in full1:
-    	        item.string=2
-    	    for item in full2:
-    	        item.string=1
-    	    full.extend(full2)
-    	    full.extend(full1)
+                for item in full1:
+                    item.string=2
+                for item in full2:
+                    item.string=1
+                full.extend(full2)
+                full.extend(full1)
         for item in full:
             full_pos.append(item.pos)
         #----------------------------------------Pairing of the operators
         #---------------------------------------Storing the spin of the operators
         is_pair=1
         spin_tracker=1
-	#for item in full:
-	    #print item.pos, 'here is the spin of the operator before '
+        #for item in full:
+            #print item.pos, 'here is the spin of the operator before '
         if is_pair:
             for index in range(len(full1)/2):
-    	        full1[index].pair=full1[len(full1)-index-1]
-    	        full1[len(full1)-index-1].pair=full1[index]
-		#if the spin is not predefined
-		
-		if full1[index].spin==0:
+                full1[index].pair=full1[len(full1)-index-1]
+                full1[len(full1)-index-1].pair=full1[index]
+                #if the spin is not predefined
+                
+                if full1[index].spin==0:
 
 
-    	            full1[index].pos2=spin_tracker
-    	            full1[len(full1)-index-1].pos2=spin_tracker
-    	            full1[index].spin=spin_tracker
-    	            full1[len(full1)-index-1].spin=spin_tracker
-    	            spin_tracker=spin_tracker+1
-		
-		'''
-		if full1[index].spin==0:
-    	            full1[index].spin=spin_tracker
-    	            full1[len(full1)/2+index].spin=spin_tracker
-    	            #print full1[index].spin
-    	            #print full1[len(full1)/2+index].spin
-    	            spin_tracker=spin_tracker+1
-		'''
+                        full1[index].pos2=spin_tracker
+                        full1[len(full1)-index-1].pos2=spin_tracker
+                        full1[index].spin=spin_tracker
+                        full1[len(full1)-index-1].spin=spin_tracker
+                        spin_tracker=spin_tracker+1
+                
+                '''
+                if full1[index].spin==0:
+                        full1[index].spin=spin_tracker
+                        full1[len(full1)/2+index].spin=spin_tracker
+                        #print full1[index].spin
+                        #print full1[len(full1)/2+index].spin
+                        spin_tracker=spin_tracker+1
+                '''
             for index in range(len(full2)/2):
-        	full2[index].pair=full2[len(full2)-index-1]
-    	    	full2[len(full2)-index-1].pair=full2[index]
-		
-		if full2[index].spin==0:
-    	            full2[index].pos2=spin_tracker
-    	            full2[len(full2)-index-1].pos2=spin_tracker
-    	    	    full2[index].spin=spin_tracker
-	            full2[len(full2)-index-1].spin=spin_tracker
-	            spin_tracker=spin_tracker+1
-		'''
-		if full2[index].spin==0:
+                full2[index].pair=full2[len(full2)-index-1]
+                full2[len(full2)-index-1].pair=full2[index]
+                
+                if full2[index].spin==0:
+                    full2[index].pos2=spin_tracker
+                    full2[len(full2)-index-1].pos2=spin_tracker
+                    full2[index].spin=spin_tracker
+                    full2[len(full2)-index-1].spin=spin_tracker
+                    spin_tracker=spin_tracker+1
+                '''
+                if full2[index].spin==0:
 
-    	            full2[index].spin=spin_tracker
-    	            full2[len(full2)/2+index].spin=spin_tracker
+                        full2[index].spin=spin_tracker
+                        full2[len(full2)/2+index].spin=spin_tracker
 
-    	            #print full2[index].spin
-    	            #print full2[len(full2)/2+index].spin
-    	            spin_tracker=spin_tracker+1
-		'''
-	#print len(full), len(full1)/2
+                        #print full2[index].spin
+                        #print full2[len(full2)/2+index].spin
+                        spin_tracker=spin_tracker+1
+                '''
+        #print len(full), len(full1)/2
         '''
-	for item in full1:
-	    print item.pos, 'here is the position of the operator'
-	for item in full2:
-	    print item.pos, 'here is the position of the operator'
+        for item in full1:
+            print item.pos, 'here is the position of the operator'
+        for item in full2:
+            print item.pos, 'here is the position of the operator'
         '''
         #-------------------------all the possible contracting operators of each operator is being sored in poss here
         #poss is a matrix
@@ -286,53 +286,53 @@ def ewt(string1_upper, string1_lower, string2_upper, string2_lower):
             for operator in full:
                 y = deque([])
                 if operator.kind == 'pa' and operator.dag=='0':
-    	            for item in a:
-	                if operator.pos<item.pos and item.dag=='1':
-		            y.append(item)
+                    for item in a:
+                        if operator.pos<item.pos and item.dag=='1':
+                            y.append(item)
 
                 elif operator.kind == 'ho' and operator.dag=='1':
-  	            for item in i:
-	                if operator.pos<item.pos and item.dag=='0':
-    		            y.append(item)
-	
+                    for item in i:
+                        if operator.pos<item.pos and item.dag=='0':
+                            y.append(item)
+        
                 elif operator.kind == 'ac':  #because active states will have eta and gamma
-	            for item in u:
-	                if operator.pos<item.pos and int(item.dag)!=int(operator.dag):
-    		            y.append(item)
+                    for item in u:
+                        if operator.pos<item.pos and int(item.dag)!=int(operator.dag):
+                            y.append(item)
                 elif operator.kind == 'ge' and operator.dag=='1':
-	            for item in i:
-	                if operator.pos<item.pos and int(item.dag)==0:
-		            y.append(item)
+                    for item in i:
+                        if operator.pos<item.pos and int(item.dag)==0:
+                            y.append(item)
                 elif operator.kind == 'ge' and operator.dag=='0':
-	            for item in a:
-	                if operator.pos<item.pos and int(item.dag)==1:
-		            y.append(item)
+                    for item in a:
+                        if operator.pos<item.pos and int(item.dag)==1:
+                            y.append(item)
 
                 poss.append(y) #list of list in dictionary order i.e 1st annhilation -> possible creation then 2nd ...
         else:
             for operator in full:
                 y = deque([])
                 if operator.kind == 'pa' and operator.dag=='0':
-    	            for item in a:
-	                if operator.pos<item.pos and item.dag=='1' and operator.string!=item.string:
-		            y.append(item)
+                    for item in a:
+                        if operator.pos<item.pos and item.dag=='1' and operator.string!=item.string:
+                            y.append(item)
                 elif operator.kind == 'ho' and operator.dag=='1':
-      	            for item in i:
-	                if operator.pos<item.pos and item.dag=='0' and operator.string!=item.string:
-		            y.append(item)
-	
+                    for item in i:
+                        if operator.pos<item.pos and item.dag=='0' and operator.string!=item.string:
+                            y.append(item)
+        
                 elif operator.kind == 'ac':  #because active states will have eta and gamma
-	            for item in u:
-	                if operator.pos<item.pos and int(item.dag)!=int(operator.dag) and operator.string!=item.string:
-    		            y.append(item)
+                    for item in u:
+                        if operator.pos<item.pos and int(item.dag)!=int(operator.dag) and operator.string!=item.string:
+                                y.append(item)
                 elif operator.kind == 'ge' and operator.dag=='1':
-	            for item in i:
-	                if operator.pos<item.pos and int(item.dag)==0 and operator.string!=item.string:
-		            y.append(item)
+                    for item in i:
+                        if operator.pos<item.pos and int(item.dag)==0 and operator.string!=item.string:
+                            y.append(item)
                 elif operator.kind == 'ge' and operator.dag=='0':
-	            for item in a:
-	                if operator.pos<item.pos and int(item.dag)==1 and operator.string!=item.string:
-		            y.append(item)
+                    for item in a:
+                        if operator.pos<item.pos and int(item.dag)==1 and operator.string!=item.string:
+                            y.append(item)
 
         #if (y): remember that empty strings are also included
 
@@ -345,41 +345,41 @@ def ewt(string1_upper, string1_lower, string2_upper, string2_lower):
 
         tmp_l=[]
         tmp_lower=[]
-	tmp_upper=[]
+        tmp_upper=[]
 
         if not i_c:
-	    if menu == '1' or menu =='2':
-	        tmp_l.append("Doing : Normal ordering of String\\\\")
-    	    else :
-	        tmp_l.append("Doing : Commutator expression Generation\\\\")
+            if menu == '1' or menu =='2':
+                tmp_l.append("Doing : Normal ordering of String\\\\")
+            else :
+                tmp_l.append("Doing : Commutator expression Generation\\\\")
             tmp_l.append('Here are the operator strings : \[E^{')
 
-    	    for item in full1:
+            for item in full1:
                 if item.dag=='1':
                     tmp_upper=item.name
-    		    tmp_l.append(tmp_upper)
+                    tmp_l.append(tmp_upper)
             tmp_l.append('}_{')
-    	    for item in full1:
-	        if item.dag=='0':
+            for item in full1:
+                if item.dag=='0':
                     tmp_lower.append(item.name)
 
-    	    tmp_lower=tmp_lower[::-1]
-	    tmp_l=tmp_l+tmp_lower
-    	    tmp_lower=[]
+            tmp_lower=tmp_lower[::-1]
+            tmp_l=tmp_l+tmp_lower
+            tmp_lower=[]
             tmp_l.append('} , ')
-    	    if menu=='2' or menu=='3':
-	        tmp_l.append(' E^{')
-	        for item in full2:
+            if menu=='2' or menu=='3':
+                tmp_l.append(' E^{')
+                for item in full2:
                     if item.dag=='1':
                         tmp_upper=item.name
-	                tmp_l.append(tmp_upper)
+                        tmp_l.append(tmp_upper)
                 tmp_l.append('}_{')
-	        for item in full2:
-	            if item.dag=='0':
+                for item in full2:
+                    if item.dag=='0':
                         tmp_lower.append(item.name)
-	        tmp_lower=tmp_lower[::-1]
-	        tmp_l=tmp_l+tmp_lower
-    	        tmp_lower=[]
+                tmp_lower=tmp_lower[::-1]
+                tmp_l=tmp_l+tmp_lower
+                tmp_lower=[]
                 tmp_l.append('}')
             tmp_l.append('\]')
             tmp_6 = "Equation : "+''.join(tmp_l)+'\\\\'+'\n'+"Answer :\n"
@@ -389,8 +389,8 @@ def ewt(string1_upper, string1_lower, string2_upper, string2_lower):
         elif commutator :
             f.write("\nThis is where the second terms start\\\\\n")
 
-	full_con = []
-	const_con = []
+        full_con = []
+        const_con = []
         make_c.make_c(len(full), contracted, a, i, u, full, poss, f, store_for_repeat, full_pos, i_c, menu, full_con, const_con)
 
 

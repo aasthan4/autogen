@@ -33,7 +33,7 @@ Examples
     if len(A) != len(B): raise ValueError("B is not a permutation of A")
 
     # represent each element in B with its index in A and run permutation_parity()
-    A_indices = dict(zip(A,range(len(A))))
+    A_indices = dict(list(zip(A,list(range(len(A))))))
 
     if len(A_indices) != len(A): raise ValueError("A contains duplicate values")
 
@@ -84,7 +84,7 @@ Examples
 
     n = len(perm)
     if check_input:
-        rangen = range(n)
+        rangen = list(range(n))
         if sorted(perm) != rangen:
             raise ValueError("Invalid input")
 
@@ -92,7 +92,7 @@ Examples
     # count the number of cycles to determine the parity
     num_cycles = 0
     seen = set()
-    for i in xrange(n):
+    for i in range(n):
         if i in seen:
             continue
         num_cycles += 1

@@ -1,4 +1,4 @@
-import class_term
+from . import class_term
 def eq(a,b,t1,t2):
     if a in t1.sum_list and b in t2.sum_list:
         if t1.isi(a) and t2.isi(b):

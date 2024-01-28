@@ -5,7 +5,7 @@
 #correction 5: dont need dict in change_term in library please delete
 #note 6 : term.mapping() stores names of Large op in map_org and build_map_org stores operators
 #immediate task : X1 T1 etc are not in one go so a i etc are threr twice. change that just pass dict
-import multi_cont
+from . import multi_cont
 import library as lib
 import library.change_terms as ct
 import library.print_terms as pt
@@ -45,7 +45,7 @@ def driver(fc,list_char_op):
         term.cond_cont(dict_ind)
         term.build_map_org()
         term.print_term()
-    print( 'list terms full con length', len(list_terms))
+    print(( 'list terms full con length', len(list_terms)))
     #---
     #for term in list_terms:
         #term.print_term()

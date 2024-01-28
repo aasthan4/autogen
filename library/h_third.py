@@ -1,8 +1,8 @@
 import copy
-import print_terms as pt
-import compare_overall2 as ce
-import full_con
-import case_select
+from . import print_terms as pt
+from . import compare_overall2 as ce
+from . import full_con
+from . import case_select
 def calrank(term,oplist):
 
     coefflist=[]
@@ -44,7 +44,7 @@ def present(l, coefflist):
     elif flag==2 :
         return 1
     else:
-        print 'l not found in present'
+        print('l not found in present')
         exit()
 
 def no_connection(term,oplist):
@@ -142,7 +142,7 @@ def select(list_terms,arg,fac):
                         flag=1
                         break
             if flag==0:
-                print 'ERROR: flag=0 in h_third function'
+                print('ERROR: flag=0 in h_third function')
                 exit()
             #print 'for rank in ', oplist
             rank=calrank(term,oplist)

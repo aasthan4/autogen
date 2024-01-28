@@ -1,4 +1,4 @@
-import func_ewt
+from . import func_ewt
 
 def returnop2(full_con_term, output, new_list):
     new_list.append('\\{E^{')
@@ -68,22 +68,22 @@ def returnop(full_con_term, output, new_list):
     '''
     new_list.append('}_{')
     for item in output :
-	#remember here the 1st string comes first as in writig in E has different rules than straight
+        #remember here the 1st string comes first as in writig in E has different rules than straight
         if item.dag=='0':
-	    #print "item name is ", item.name
+            #print "item name is ", item.name
             tmp_4 = item
             new_output1.append(item)
             down.append(tmp_4.name)
-	    new_list.append(tmp_4.name)
+            new_list.append(tmp_4.name)
     '''
     for item in output :
         if ( item.dag=='0') and item.string ==2:
 
-	    #print "item name is ", item.name
+            #print "item name is ", item.name
             tmp_4 = item
             new_output.append(item)
             down.append(tmp_4.name)
-	    new_list.append(tmp_4.name)
+            new_list.append(tmp_4.name)
     '''
     #make and object of the operator
     op_left=func_ewt.contractedobj('op', 1, 1)

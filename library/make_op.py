@@ -1,26 +1,26 @@
 from pkg import func_ewt 
-import class_large_operator as class1
-from next_op import next_op
+from . import class_large_operator as class1
+from .next_op import next_op
 def count_list(dict_ind):
     a=0
     p=0
     i=0
-    for key, value in dict_ind.items():
+    for key, value in list(dict_ind.items()):
 
-	if key>='a' and key<='h':
-	    a=a+1
-	elif key>='p' and key<='t':
-	    p=p+1
-	elif key>='i' and key<='n':
-	    i=i+1
-	elif len(key)==2:
-	    if key[0]>='a' and key[0]<='h':
-	        a=a+1
-	    elif key[0]>='p' and key[0]<='t':
-	        p=p+1
-	    elif key[0]>='i' and key[0]<='n':
-	        i=i+1
-	
+        if key>='a' and key<='h':
+            a=a+1
+        elif key>='p' and key<='t':
+            p=p+1
+        elif key>='i' and key<='n':
+            i=i+1
+        elif len(key)==2:
+            if key[0]>='a' and key[0]<='h':
+                a=a+1
+            elif key[0]>='p' and key[0]<='t':
+                p=p+1
+            elif key[0]>='i' and key[0]<='n':
+                i=i+1
+        
     return [i,a,p]
 def make_op(list_op, dict_ind):
     #dict_ind={}
@@ -28,52 +28,52 @@ def make_op(list_op, dict_ind):
     list_type=count_list(dict_ind)
     #list_type=[0,0,0]
     for lop in list_op:
-	#deactivate U operators
-	'''
-	if lop[0]=='U':
-	    ilist =[]
-	    alist=[]
+        #deactivate U operators
+        '''
+        if lop[0]=='U':
+            ilist =[]
+            alist=[]
             numi=ord('i')+list_type[0]
             numa=ord('a')+list_type[1]
-	    ilist=['i','j','k','l','m','n']
-	    alist=['a','b','c','d','e','f','g','h']
+            ilist=['i','j','k','l','m','n']
+            alist=['a','b','c','d','e','f','g','h']
             opp=func_ewt.contractedobj('op', 1, 1)
-	    summ=[]
-	    coeff=[]
+            summ=[]
+            coeff=[]
             fac=1.0
-	    for pos in range(2*int(lop[1])):
-		if lop[pos+2] in ilist:
-		    print lop
-		    if pos<int(lop[1]):
-			opp.upper.append(chr(numi))
-            		dict_ind[chr(numi)]=lop
-			numi=numi+1
-		    else:
-			opp.lower.append(chr(numi))
-            		dict_ind[chr(numi)]=lop
-			numi=numi+1
-		elif lop[pos+2] in alist:
-		    if pos<int(lop[1]):
-			opp.upper.append(chr(numa))
-            		dict_ind[chr(numa)]=lop
-			numa=numa+1
-		    else:
-			opp.lower.append(chr(numa))
-            		dict_ind[chr(numa)]=lop
-			numa=numa+1
-		
+            for pos in range(2*int(lop[1])):
+                if lop[pos+2] in ilist:
+                    print lop
+                    if pos<int(lop[1]):
+                        opp.upper.append(chr(numi))
+                            dict_ind[chr(numi)]=lop
+                        numi=numi+1
+                    else:
+                        opp.lower.append(chr(numi))
+                            dict_ind[chr(numi)]=lop
+                        numi=numi+1
+                elif lop[pos+2] in alist:
+                    if pos<int(lop[1]):
+                        opp.upper.append(chr(numa))
+                            dict_ind[chr(numa)]=lop
+                        numa=numa+1
+                    else:
+                        opp.lower.append(chr(numa))
+                            dict_ind[chr(numa)]=lop
+                        numa=numa+1
+                
 
-	    print 'upper',opp.upper
-	    print 'lower',opp.lower
+            print 'upper',opp.upper
+            print 'lower',opp.lower
             stp=[[opp]]
             co=[[1,1]]
 
             F = class1.large_operator(lop,fac, summ, coeff, stp, co)
 
-	
+        
             list_main.append(F)
             list_type[2]+=2
-	'''
+        '''
         if lop[0]=='F':
             fac=1.0
             summ=[next_op('p',list_type,0),next_op('p',list_type,1)]
@@ -82,7 +82,7 @@ def make_op(list_op, dict_ind):
             opp.upper=[next_op('p',list_type,0)]
 
             opp.lower=[next_op('p',list_type,1)]
-            print opp
+            print(opp)
             dict_ind[next_op('p',list_type,0)]=lop
             dict_ind[next_op('p',list_type,1)]=lop
             stp=[[opp]]
@@ -95,7 +95,7 @@ def make_op(list_op, dict_ind):
             list_main.append(F)
             list_type[2]+=2
 
-	    print summ,opp.upper,opp.lower
+            print((summ,opp.upper,opp.lower))
         elif lop[0]=='V':
             fac=1.0/4.0
             #num=ord('p')+list_type[2]
@@ -104,9 +104,9 @@ def make_op(list_op, dict_ind):
             coeff=[next_op('p',list_type,0),next_op('p',list_type,1),next_op('p',list_type,2),next_op('p',list_type,3)]
             opp=func_ewt.contractedobj('op', 1, 1)
             opp.upper=[next_op('p',list_type,0),next_op('p',list_type,1)]
-            print '!!!!!!!!---------',opp.upper
+            print(('!!!!!!!!---------',opp.upper))
             opp.lower=[next_op('p',list_type,2),next_op('p',list_type,3)]
-            print opp.lower
+            print((opp.lower))
             dict_ind[next_op('p',list_type,0)]=lop
             dict_ind[next_op('p',list_type,1)]=lop
             dict_ind[next_op('p',list_type,2)]=lop
@@ -119,7 +119,7 @@ def make_op(list_op, dict_ind):
             list_main.append(V)
             list_type[2]+=4
 
-	    print summ,opp.upper,opp.lower
+            print((summ,opp.upper,opp.lower))
         elif lop[0]=='D' and lop[1]=='1':
 
 
@@ -127,7 +127,7 @@ def make_op(list_op, dict_ind):
             #num1=ord('i')+list_type[0]
             #num2=ord('a')+list_type[1]
             #summ=[chr(num1), chr(num2)]
-	    #summ=[]
+            #summ=[]
             fac=1.0
             #coeff=[]
             summ=[next_op('i',list_type,0),next_op('a',list_type,0)]
@@ -145,7 +145,7 @@ def make_op(list_op, dict_ind):
 
             list_type[0]+=1
             list_type[1]+=1
-	    print summ,opp.upper,opp.lower
+            print((summ,opp.upper,opp.lower))
         elif lop[0]=='X' and lop[1]=='1':
             #num1=ord('i')+list_type[0]
             #num2=ord('a')+list_type[1]
@@ -169,7 +169,7 @@ def make_op(list_op, dict_ind):
 
 
 
-	    print summ,opp.upper,opp.lower
+            print((summ,opp.upper,opp.lower))
         elif lop[0]=='D' and lop[1]=='2':
             fac=1.0/4.0
             #num1=ord('i')+list_type[0]
@@ -198,7 +198,7 @@ def make_op(list_op, dict_ind):
             list_type[0]+=2
             list_type[1]+=2
 
-	    print summ,opp.upper,opp.lower
+            print((summ,opp.upper,opp.lower))
         elif lop[0]=='Y' and lop[1]=='2':
             fac=1.0
             #num1=ord('a')+list_type[1]
@@ -250,7 +250,7 @@ def make_op(list_op, dict_ind):
             list_type[0]+=2
             list_type[1]+=2
 
-	    print summ,opp.upper,opp.lower,coeff
+            print((summ,opp.upper,opp.lower,coeff))
 
         elif lop[0]=='T' and lop[1]=='1':
             #num1=ord('i')+list_type[0]
@@ -270,7 +270,7 @@ def make_op(list_op, dict_ind):
             list_main.append(T1)
             list_type[0]+=1
             list_type[1]+=1
-	    print summ,opp.upper,opp.lower
+            print((summ,opp.upper,opp.lower))
         elif lop[0]=='T' and lop[1]=='2':
 
             #num1=ord('i')+list_type[0]
@@ -297,7 +297,7 @@ def make_op(list_op, dict_ind):
 
             T2 = class1.large_operator(lop,fac, summ, coeff, stt, co)
             list_main.append(T2)
-	    print summ,opp.upper,opp.lower
+            print((summ,opp.upper,opp.lower))
         else :
-            print "input error in making operators--------------------"
+            print("input error in making operators--------------------")
     return list_main, dict_ind

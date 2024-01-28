@@ -1,6 +1,6 @@
 import copy
-import class_term
-import compare_functions as cf
+from . import class_term
+from . import compare_functions as cf
 import numpy as np
 
 def permute_matrix_check(term1,term2,after_permute):
